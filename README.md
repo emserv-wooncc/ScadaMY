@@ -1,9 +1,7 @@
 <p align="center">
   <picture>
-    <!-- Displayed when the user uses GitHub Dark Mode -->
-    <source media="(prefers-color-scheme: dark)" srcset="frontend/src/lib/assets/scadamy-logo.svg">
-    <!-- Displayed when the user uses GitHub Light Mode / Fallback -->
-    <img alt="SCADA MY Logo" src="frontend/src/lib/assets/scadamy-logo.svg" width="350">
+    <img alt="SCADA MY Logo" src="frontend/src/lib/assets/logo/scadamy-logo.png" height="68">
+    <img alt="SCADA MY Logo" src="frontend/src/lib/assets/logo/scadamy-logo-text.svg" width="350">
   </picture>
 </p>
 
