@@ -121,7 +121,7 @@ If you launched ScadaMY with a custom port or context path (for example, `--port
 
 ---
 
-## 6. REST API Reference Guides
+## 5. REST API Reference Guides
 
 Detailed markdown documentation specifications for ScadaMY's Spring MVC REST endpoints:
 
