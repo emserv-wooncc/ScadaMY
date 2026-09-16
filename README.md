@@ -1,8 +1,5 @@
 <p align="center">
-  <picture>
-    <img alt="SCADA MY Logo" src="frontend/src/lib/assets/logo/scadamy-logo.png" height="68">
-    <img alt="SCADA MY Logo" src="frontend/src/lib/assets/logo/scadamy-logo-text.svg" width="350">
-  </picture>
+  <img alt="SCADA MY Icon" src="frontend/src/lib/assets/logo/scadamy-logo.png" height="60" align="absmiddle"> <img alt="SCADA MY Text" src="frontend/src/lib/assets/logo/scadamy-logo-text.svg" height="100" align="absmiddle">
 </p>
 
 
