@@ -64,6 +64,10 @@ Upon a successful build, the output artifacts will be located in the `target/` d
 
 ---
 
+## 3. How to Run the JAR File
+
+ScadaMY can be run directly from the command line using `java -jar` without requiring a standalone web server installation.
+
 ### Default Execution
 To launch the server using the default configuration (Port `8080`, root context path `""`):
 
