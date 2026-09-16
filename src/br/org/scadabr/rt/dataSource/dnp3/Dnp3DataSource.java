@@ -1,4 +1,4 @@
-package br.org.scadamy.rt.dataSource.dnp3;
+package br.org.scadabr.rt.dataSource.dnp3;
 
 import java.net.ConnectException;
 import java.util.Calendar;
@@ -8,9 +8,9 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import br.org.scadamy.dnp34j.master.session.database.DataElement;
-import br.org.scadamy.vo.dataSource.dnp3.Dnp3DataSourceVO;
-import br.org.scadamy.vo.dataSource.dnp3.Dnp3PointLocatorVO;
+import br.org.scadabr.dnp34j.master.session.database.DataElement;
+import br.org.scadabr.vo.dataSource.dnp3.Dnp3DataSourceVO;
+import br.org.scadabr.vo.dataSource.dnp3.Dnp3PointLocatorVO;
 
 import com.serotonin.mango.rt.dataImage.DataPointRT;
 import com.serotonin.mango.rt.dataImage.PointValueTime;

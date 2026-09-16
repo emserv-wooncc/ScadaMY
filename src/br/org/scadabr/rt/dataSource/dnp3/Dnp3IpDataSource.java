@@ -1,8 +1,8 @@
-package br.org.scadamy.rt.dataSource.dnp3;
+package br.org.scadabr.rt.dataSource.dnp3;
 
 import java.util.Date;
 
-import br.org.scadamy.vo.dataSource.dnp3.Dnp3IpDataSourceVO;
+import br.org.scadabr.vo.dataSource.dnp3.Dnp3IpDataSourceVO;
 
 import com.serotonin.web.i18n.LocalizableMessage;
 

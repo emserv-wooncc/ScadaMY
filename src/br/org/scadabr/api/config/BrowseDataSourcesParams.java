@@ -5,36 +5,36 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.config;
+package br.org.scadabr.api.config;
 
 public class BrowseDataSourcesParams  implements java.io.Serializable {
-    private br.org.scadamy.api.constants.DataSourceType type;
+    private br.org.scadabr.api.constants.DataSourceType type;
 
     public BrowseDataSourcesParams() {
     }
 
     public BrowseDataSourcesParams(
-           br.org.scadamy.api.constants.DataSourceType type) {
+           br.org.scadabr.api.constants.DataSourceType type) {
            this.type = type;
     }
 
 
     /**
      * Gets the type value for this BrowseDataSourcesParams.
-     *
+     * 
      * @return type
      */
-    public br.org.scadamy.api.constants.DataSourceType getType() {
+    public br.org.scadabr.api.constants.DataSourceType getType() {
         return type;
     }
 
 
     /**
      * Sets the type value for this BrowseDataSourcesParams.
-     *
+     * 
      * @param type
      */
-    public void setType(br.org.scadamy.api.constants.DataSourceType type) {
+    public void setType(br.org.scadabr.api.constants.DataSourceType type) {
         this.type = type;
     }
 
@@ -49,8 +49,8 @@ public class BrowseDataSourcesParams  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
-            ((this.type==null && other.getType()==null) ||
+        _equals = true && 
+            ((this.type==null && other.getType()==null) || 
              (this.type!=null &&
               this.type.equals(other.getType())));
         __equalsCalc = null;
@@ -76,11 +76,11 @@ public class BrowseDataSourcesParams  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(BrowseDataSourcesParams.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">BrowseDataSourcesParams"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">BrowseDataSourcesParams"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("type");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "type"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "DataSourceType"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "type"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "DataSourceType"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
@@ -96,10 +96,10 @@ public class BrowseDataSourcesParams  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -108,10 +108,10 @@ public class BrowseDataSourcesParams  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

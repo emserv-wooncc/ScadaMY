@@ -1,6 +1,7 @@
-package br.org.scadamy.db.dao;
+package br.org.scadabr.db.dao;
 
 import java.sql.ResultSet;
+import com.serotonin.db.spring.GenericRowMapper;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.List;
@@ -8,10 +9,9 @@ import java.util.List;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 
-import br.org.scadamy.api.vo.FlexProject;
+import br.org.scadabr.api.vo.FlexProject;
 
 import com.serotonin.db.spring.ExtendedJdbcTemplate;
-import com.serotonin.db.spring.GenericRowMapper;
 import com.serotonin.mango.Common;
 import com.serotonin.mango.db.dao.BaseDao;
 import java.sql.Connection;
@@ -32,7 +32,7 @@ public class FlexProjectDao extends BaseDao {
 	}
 
 	private int insertFlexProject(int id, String name, String description, String xmlConfig) {
-                if (Common.getEnvironmentProfile().getString("db.type").equals("postgres")){
+                if (Common.getEnvironmentProfile().getString("db.type").equals("postgres")){                
                     try {
                         //id = doInsert(EVENT_INSERT, args, EVENT_INSERT_TYPES);
                         Connection conn = DriverManager.getConnection(Common.getEnvironmentProfile().getString("db.url"),
@@ -43,15 +43,15 @@ public class FlexProjectDao extends BaseDao {
                         preStmt.setString(2, description);
                         preStmt.setString(3, xmlConfig);
                         preStmt.executeUpdate();
-
+                        
                         ResultSet resSEQ = conn.createStatement().executeQuery("SELECT currval('flexprojects_id_seq')");
                         resSEQ.next();
                         id = resSEQ.getInt(1);
 
-                        conn.close();
-
+                        conn.close(); 
+                        
                         return id;
-
+                        
                     } catch (SQLException ex) {
                         ex.printStackTrace();
                         return 0;

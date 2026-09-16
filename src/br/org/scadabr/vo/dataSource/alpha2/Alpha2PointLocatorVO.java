@@ -1,11 +1,11 @@
-package br.org.scadamy.vo.dataSource.alpha2;
+package br.org.scadabr.vo.dataSource.alpha2;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.List;
 
-import br.org.scadamy.rt.dataSource.alpha2.Alpha2PointLocatorRT;
+import br.org.scadabr.rt.dataSource.alpha2.Alpha2PointLocatorRT;
 
 import com.i2msolucoes.alpha24j.DeviceLocator.DeviceCodes;
 import com.serotonin.json.JsonRemoteEntity;

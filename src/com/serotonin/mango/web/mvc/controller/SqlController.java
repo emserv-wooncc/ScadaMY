@@ -34,8 +34,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.validation.BindException;
+import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.AbstractFormController;
+import org.springframework.web.servlet.mvc.Controller;
 import org.springframework.web.util.WebUtils;
 
 import com.serotonin.db.spring.ConnectionCallbackVoid;
@@ -46,22 +47,49 @@ import com.serotonin.mango.vo.permission.Permissions;
 import com.serotonin.mango.web.mvc.form.SqlForm;
 import com.serotonin.util.SerializationHelper;
 
-public class SqlController extends AbstractFormController {
+public class SqlController implements Controller {
     private static final Log LOG = LogFactory.getLog(SqlController.class);
     private String formView;
+    private String commandName = "form";
+    private Class<?> commandClass = SqlForm.class;
 
     public void setFormView(String formView) {
         this.formView = formView;
     }
 
-    @Override
-    protected ModelAndView showForm(HttpServletRequest request, HttpServletResponse response, BindException errors)
-            throws Exception {
-        Permissions.ensureAdmin(request);
-        return showForm(request, errors, formView);
+    public void setCommandName(String commandName) {
+        this.commandName = commandName;
+    }
+
+    public void setCommandClass(Class<?> commandClass) {
+        this.commandClass = commandClass;
     }
 
     @Override
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        Permissions.ensureAdmin(request);
+        if ("POST".equalsIgnoreCase(request.getMethod())) {
+            SqlForm command = new SqlForm();
+            ServletRequestDataBinder binder = new ServletRequestDataBinder(command, commandName);
+            binder.bind(request);
+            BindException errors = new BindException(binder.getBindingResult());
+            return processFormSubmission(request, response, command, errors);
+        } else {
+            SqlForm command = new SqlForm();
+            BindException errors = new BindException(command, commandName);
+            return showForm(request, response, errors);
+        }
+    }
+
+    protected ModelAndView showForm(HttpServletRequest request, HttpServletResponse response, BindException errors)
+            throws Exception {
+        return showForm(request, errors, formView);
+    }
+
+    protected ModelAndView showForm(HttpServletRequest request, BindException errors, String viewName) {
+        return new ModelAndView(viewName, errors.getModel());
+    }
+
     protected ModelAndView processFormSubmission(HttpServletRequest request, HttpServletResponse response,
             Object command, BindException errors) throws Exception {
         Permissions.ensureAdmin(request);

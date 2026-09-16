@@ -1,4 +1,4 @@
-package br.org.scadamy.vo.exporter;
+package br.org.scadabr.vo.exporter;
 
 import java.io.DataInputStream;
 import java.io.File;
@@ -26,9 +26,9 @@ import com.serotonin.mango.Common;
 import com.serotonin.mango.vo.User;
 import com.serotonin.mango.web.dwr.EmportDwr;
 
-import br.org.scadamy.vo.exporter.util.FileToPack;
-import br.org.scadamy.vo.exporter.util.FileUtil;
-import br.org.scadamy.web.mvc.controller.ProjectExporterController;
+import br.org.scadabr.vo.exporter.util.FileToPack;
+import br.org.scadabr.vo.exporter.util.FileUtil;
+import br.org.scadabr.web.mvc.controller.ProjectExporterController;
 
 public class ZIPProjectManager {
 	private static final String JSON_FILE_NAME = "json_project.txt";
@@ -94,7 +94,7 @@ public class ZIPProjectManager {
 			return new ModelAndView("import_result", model);
 		}
 
-		// TODO atualizar sistema de upgrade mango -> scadamy
+		// TODO atualizar sistema de upgrade mango -> scadabr
 		// String version = (String) model.get("projectServerVersion");
 		// if (DBUpgrade.isUpgradeNeeded(version)) {
 		// errorList.add(Common.getMessage("emport.versionError", version,
@@ -122,34 +122,34 @@ public class ZIPProjectManager {
 
 	}
 
-	private void restoreFiles(List<ZipEntry> uploadFiles) {
-		String appPath = Common.ctx.getServletContext().getRealPath(FILE_SEPARATOR);
-
+	private void restoreFiles(List<ZipEntry> files) {
 		byte[] buf = new byte[1024];
-		try {
-			for (ZipEntry zipEntry : uploadFiles) {
-				InputStream zipinputstream;
 
-				zipinputstream = this.zipFile.getInputStream(zipEntry);
+		try {
+			String appPath = Common.ctx.getServletContext().getRealPath("/");
+
+			for (ZipEntry zipEntry : files) {
 
 				String entryName = zipEntry.getName();
 
+				if (zipEntry.isDirectory()) {
+					continue;
+				}
+
 				int n;
 
-				String fileName = zipEntry.getName();
+				InputStream zipinputstream = this.zipFile.getInputStream(zipEntry);
 
-				File f = new File(appPath + fileName);
+				String fileName = entryName.replace("/", File.separator);
+				fileName = fileName.replace("\\", File.separator);
 
-				File newFile = new File(entryName);
+				File f = new File(appPath, fileName);
 
-				String directory = newFile.getParent();
+				String directory = new File(fileName).getParent();
 
 				if (directory != null) {
-					if (newFile.isDirectory()) {
-						break;
-					}
-					File dirFile = new File(appPath + directory);
-					dirFile.mkdir();
+					File dirFile = new File(appPath, directory);
+					dirFile.mkdirs();
 				}
 
 				FileOutputStream out = new FileOutputStream(f);
@@ -264,6 +264,10 @@ public class ZIPProjectManager {
 
 		MultipartFile multipartFile = mpRequest.getFile("importFile");
 
+		setupToImportProject(multipartFile);
+	}
+
+	public void setupToImportProject(MultipartFile multipartFile) throws Exception {
 		File projectFile = File.createTempFile("temp", "");
 		FileOutputStream fos = new FileOutputStream(projectFile);
 		fos.write(multipartFile.getBytes());

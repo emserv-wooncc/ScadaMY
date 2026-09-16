@@ -5,7 +5,7 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.vo;
+package br.org.scadabr.api.vo;
 
 public class ModbusPointConfig  implements java.io.Serializable {
     private int id;
@@ -16,9 +16,9 @@ public class ModbusPointConfig  implements java.io.Serializable {
 
     private java.lang.Integer slaveId;
 
-    private br.org.scadamy.api.constants.ModbusRegisterRange registerRange;
+    private br.org.scadabr.api.constants.ModbusRegisterRange registerRange;
 
-    private br.org.scadamy.api.constants.ModbusDataType dataType;
+    private br.org.scadabr.api.constants.ModbusDataType dataType;
 
     private boolean settable;
 
@@ -36,8 +36,8 @@ public class ModbusPointConfig  implements java.io.Serializable {
            boolean enabled,
            java.lang.String name,
            java.lang.Integer slaveId,
-           br.org.scadamy.api.constants.ModbusRegisterRange registerRange,
-           br.org.scadamy.api.constants.ModbusDataType dataType,
+           br.org.scadabr.api.constants.ModbusRegisterRange registerRange,
+           br.org.scadabr.api.constants.ModbusDataType dataType,
            boolean settable,
            java.lang.Integer offset,
            java.lang.Integer multiplier,
@@ -57,7 +57,7 @@ public class ModbusPointConfig  implements java.io.Serializable {
 
     /**
      * Gets the id value for this ModbusPointConfig.
-     *
+     * 
      * @return id
      */
     public int getId() {
@@ -67,7 +67,7 @@ public class ModbusPointConfig  implements java.io.Serializable {
 
     /**
      * Sets the id value for this ModbusPointConfig.
-     *
+     * 
      * @param id
      */
     public void setId(int id) {
@@ -77,7 +77,7 @@ public class ModbusPointConfig  implements java.io.Serializable {
 
     /**
      * Gets the enabled value for this ModbusPointConfig.
-     *
+     * 
      * @return enabled
      */
     public boolean isEnabled() {
@@ -87,7 +87,7 @@ public class ModbusPointConfig  implements java.io.Serializable {
 
     /**
      * Sets the enabled value for this ModbusPointConfig.
-     *
+     * 
      * @param enabled
      */
     public void setEnabled(boolean enabled) {
@@ -97,7 +97,7 @@ public class ModbusPointConfig  implements java.io.Serializable {
 
     /**
      * Gets the name value for this ModbusPointConfig.
-     *
+     * 
      * @return name
      */
     public java.lang.String getName() {
@@ -107,7 +107,7 @@ public class ModbusPointConfig  implements java.io.Serializable {
 
     /**
      * Sets the name value for this ModbusPointConfig.
-     *
+     * 
      * @param name
      */
     public void setName(java.lang.String name) {
@@ -117,7 +117,7 @@ public class ModbusPointConfig  implements java.io.Serializable {
 
     /**
      * Gets the slaveId value for this ModbusPointConfig.
-     *
+     * 
      * @return slaveId
      */
     public java.lang.Integer getSlaveId() {
@@ -127,7 +127,7 @@ public class ModbusPointConfig  implements java.io.Serializable {
 
     /**
      * Sets the slaveId value for this ModbusPointConfig.
-     *
+     * 
      * @param slaveId
      */
     public void setSlaveId(java.lang.Integer slaveId) {
@@ -137,47 +137,47 @@ public class ModbusPointConfig  implements java.io.Serializable {
 
     /**
      * Gets the registerRange value for this ModbusPointConfig.
-     *
+     * 
      * @return registerRange
      */
-    public br.org.scadamy.api.constants.ModbusRegisterRange getRegisterRange() {
+    public br.org.scadabr.api.constants.ModbusRegisterRange getRegisterRange() {
         return registerRange;
     }
 
 
     /**
      * Sets the registerRange value for this ModbusPointConfig.
-     *
+     * 
      * @param registerRange
      */
-    public void setRegisterRange(br.org.scadamy.api.constants.ModbusRegisterRange registerRange) {
+    public void setRegisterRange(br.org.scadabr.api.constants.ModbusRegisterRange registerRange) {
         this.registerRange = registerRange;
     }
 
 
     /**
      * Gets the dataType value for this ModbusPointConfig.
-     *
+     * 
      * @return dataType
      */
-    public br.org.scadamy.api.constants.ModbusDataType getDataType() {
+    public br.org.scadabr.api.constants.ModbusDataType getDataType() {
         return dataType;
     }
 
 
     /**
      * Sets the dataType value for this ModbusPointConfig.
-     *
+     * 
      * @param dataType
      */
-    public void setDataType(br.org.scadamy.api.constants.ModbusDataType dataType) {
+    public void setDataType(br.org.scadabr.api.constants.ModbusDataType dataType) {
         this.dataType = dataType;
     }
 
 
     /**
      * Gets the settable value for this ModbusPointConfig.
-     *
+     * 
      * @return settable
      */
     public boolean isSettable() {
@@ -187,7 +187,7 @@ public class ModbusPointConfig  implements java.io.Serializable {
 
     /**
      * Sets the settable value for this ModbusPointConfig.
-     *
+     * 
      * @param settable
      */
     public void setSettable(boolean settable) {
@@ -197,7 +197,7 @@ public class ModbusPointConfig  implements java.io.Serializable {
 
     /**
      * Gets the offset value for this ModbusPointConfig.
-     *
+     * 
      * @return offset
      */
     public java.lang.Integer getOffset() {
@@ -207,7 +207,7 @@ public class ModbusPointConfig  implements java.io.Serializable {
 
     /**
      * Sets the offset value for this ModbusPointConfig.
-     *
+     * 
      * @param offset
      */
     public void setOffset(java.lang.Integer offset) {
@@ -217,7 +217,7 @@ public class ModbusPointConfig  implements java.io.Serializable {
 
     /**
      * Gets the multiplier value for this ModbusPointConfig.
-     *
+     * 
      * @return multiplier
      */
     public java.lang.Integer getMultiplier() {
@@ -227,7 +227,7 @@ public class ModbusPointConfig  implements java.io.Serializable {
 
     /**
      * Sets the multiplier value for this ModbusPointConfig.
-     *
+     * 
      * @param multiplier
      */
     public void setMultiplier(java.lang.Integer multiplier) {
@@ -237,7 +237,7 @@ public class ModbusPointConfig  implements java.io.Serializable {
 
     /**
      * Gets the aditive value for this ModbusPointConfig.
-     *
+     * 
      * @return aditive
      */
     public java.lang.Integer getAditive() {
@@ -247,7 +247,7 @@ public class ModbusPointConfig  implements java.io.Serializable {
 
     /**
      * Sets the aditive value for this ModbusPointConfig.
-     *
+     * 
      * @param aditive
      */
     public void setAditive(java.lang.Integer aditive) {
@@ -265,29 +265,29 @@ public class ModbusPointConfig  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
+        _equals = true && 
             this.id == other.getId() &&
             this.enabled == other.isEnabled() &&
-            ((this.name==null && other.getName()==null) ||
+            ((this.name==null && other.getName()==null) || 
              (this.name!=null &&
               this.name.equals(other.getName()))) &&
-            ((this.slaveId==null && other.getSlaveId()==null) ||
+            ((this.slaveId==null && other.getSlaveId()==null) || 
              (this.slaveId!=null &&
               this.slaveId.equals(other.getSlaveId()))) &&
-            ((this.registerRange==null && other.getRegisterRange()==null) ||
+            ((this.registerRange==null && other.getRegisterRange()==null) || 
              (this.registerRange!=null &&
               this.registerRange.equals(other.getRegisterRange()))) &&
-            ((this.dataType==null && other.getDataType()==null) ||
+            ((this.dataType==null && other.getDataType()==null) || 
              (this.dataType!=null &&
               this.dataType.equals(other.getDataType()))) &&
             this.settable == other.isSettable() &&
-            ((this.offset==null && other.getOffset()==null) ||
+            ((this.offset==null && other.getOffset()==null) || 
              (this.offset!=null &&
               this.offset.equals(other.getOffset()))) &&
-            ((this.multiplier==null && other.getMultiplier()==null) ||
+            ((this.multiplier==null && other.getMultiplier()==null) || 
              (this.multiplier!=null &&
               this.multiplier.equals(other.getMultiplier()))) &&
-            ((this.aditive==null && other.getAditive()==null) ||
+            ((this.aditive==null && other.getAditive()==null) || 
              (this.aditive!=null &&
               this.aditive.equals(other.getAditive())));
         __equalsCalc = null;
@@ -334,64 +334,64 @@ public class ModbusPointConfig  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(ModbusPointConfig.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "ModbusPointConfig"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "ModbusPointConfig"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("id");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "id"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "id"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("enabled");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "enabled"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "enabled"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("name");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "name"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "name"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("slaveId");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "slaveId"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "slaveId"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("registerRange");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "registerRange"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "ModbusRegisterRange"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "registerRange"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "ModbusRegisterRange"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("dataType");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "dataType"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "ModbusDataType"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "dataType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "ModbusDataType"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("settable");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "settable"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "settable"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("offset");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "offset"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "offset"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("multiplier");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "multiplier"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "multiplier"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("aditive");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "aditive"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "aditive"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
@@ -408,10 +408,10 @@ public class ModbusPointConfig  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -420,10 +420,10 @@ public class ModbusPointConfig  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

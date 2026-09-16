@@ -22,6 +22,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import com.serotonin.db.spring.GenericRowMapper;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.ArrayList;
@@ -41,7 +42,6 @@ import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 
 import com.serotonin.ShouldNeverHappenException;
 import com.serotonin.db.spring.ExtendedJdbcTemplate;
-import com.serotonin.db.spring.GenericRowMapper;
 import com.serotonin.db.spring.GenericTransactionCallback;
 import com.serotonin.mango.Common;
 import com.serotonin.mango.rt.event.EventInstance;
@@ -279,9 +279,13 @@ public class EventDao extends BaseDao {
 		return results;
 	}
 
-	private EventInstance getEventInstance(int eventId) {
-		return queryForObject(BASIC_EVENT_SELECT + "where e.id=?", new Object[] { eventId },
+	public EventInstance getEventInstance(int eventId) {
+		EventInstance event = queryForObject(BASIC_EVENT_SELECT + "where e.id=?", new Object[] { eventId },
 				new EventInstanceRowMapper());
+		if (event != null) {
+			attachRelationalInfo(event);
+		}
+		return event;
 	}
 
 	public static class EventInstanceRowMapper implements GenericRowMapper<EventInstance> {
@@ -536,26 +540,41 @@ public class EventDao extends BaseDao {
 
 		// Enable multiple status search
 		if (status.length > 0) {
-			StringBuilder str = new StringBuilder("(");
+			StringBuilder str = new StringBuilder();
+			int added = 0;
 
 			for (int i = 0; i < status.length; i++) {
 				if (EventsDwr.STATUS_ACTIVE.equals(status[i])) {
+					if (added > 0)
+						str.append(" or ");
+					else
+						str.append("(");
 					str.append("(e.rtnApplicable=? and e.rtnTs is null)");
 					params.add(boolToChar(true));
+					added++;
 				} else if (EventsDwr.STATUS_RTN.equals(status[i])) {
+					if (added > 0)
+						str.append(" or ");
+					else
+						str.append("(");
 					str.append("(e.rtnApplicable=? and e.rtnTs is not null)");
 					params.add(boolToChar(true));
+					added++;
 				} else if (EventsDwr.STATUS_NORTN.equals(status[i])) {
+					if (added > 0)
+						str.append(" or ");
+					else
+						str.append("(");
 					str.append("(e.rtnApplicable=?)");
 					params.add(boolToChar(false));
+					added++;
 				}
-
-				if (i != (status.length - 1))
-					str.append(" or ");
 			}
 
-			str.append(")");
-			where.add(str.toString());
+			if (added > 0) {
+				str.append(")");
+				where.add(str.toString());
+			}
 		}
 
 		// Enable multiple alarms search
@@ -806,7 +825,7 @@ public class EventDao extends BaseDao {
 			handler.setId(doInsert(
 					"insert into eventHandlers (xid, alias, eventTypeId, eventTypeRef1, eventTypeRef2, data) values (?,?,?,?,?,?)",
 					new Object[] { handler.getXid(), handler.getAlias(), typeId, typeRef1, typeRef2,
-							SerializationHelper.writeObject(handler) },
+							SerializationHelper.writeObjectToArray(handler) },
 					new int[] { Types.VARCHAR, Types.VARCHAR, Types.INTEGER, Types.INTEGER, Types.INTEGER,
 							Common.getEnvironmentProfile().getString("db.type").equals("postgres") ? Types.BINARY
 									: Types.BLOB }));
@@ -817,7 +836,7 @@ public class EventDao extends BaseDao {
 	void updateEventHandler(EventHandlerVO handler) {
 		EventHandlerVO old = getEventHandler(handler.getId());
 		ejt.update("update eventHandlers set xid=?, alias=?, data=? where id=?",
-				new Object[] { handler.getXid(), handler.getAlias(), SerializationHelper.writeObject(handler),
+				new Object[] { handler.getXid(), handler.getAlias(), SerializationHelper.writeObjectToArray(handler),
 						handler.getId() },
 				new int[] { Types.VARCHAR, Types.VARCHAR,
 						Common.getEnvironmentProfile().getString("db.type").equals("postgres") ? Types.BINARY

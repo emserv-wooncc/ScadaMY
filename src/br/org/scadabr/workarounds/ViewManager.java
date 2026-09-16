@@ -1,4 +1,4 @@
-package br.org.scadamy.workarounds;
+package br.org.scadabr.workarounds;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -7,9 +7,9 @@ import java.util.List;
 import com.serotonin.mango.view.View;
 
 /**
- * This class allows to use multiple graphic views in ScadaMY. It is not the
+ * This class allows to use multiple graphic views in ScadaBR. It is not the
  * best solution, but is an efficient workaround
- *
+ * 
  * @author celso
  */
 

@@ -1,4 +1,4 @@
-package br.org.scadamy.rt.dataSource.nodaves7;
+package br.org.scadabr.rt.dataSource.nodaves7;
 
 import java.io.File;
 import java.io.FileReader;
@@ -10,8 +10,8 @@ import java.util.regex.Pattern;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import br.org.scadamy.vo.dataSource.nodaves7.NodaveS7DataSourceVO;
-import br.org.scadamy.vo.dataSource.nodaves7.NodaveS7PointLocatorVO;
+import br.org.scadabr.vo.dataSource.nodaves7.NodaveS7DataSourceVO;
+import br.org.scadabr.vo.dataSource.nodaves7.NodaveS7PointLocatorVO;
 
 import com.serotonin.mango.rt.dataImage.DataPointRT;
 import com.serotonin.mango.rt.dataImage.PointValueTime;

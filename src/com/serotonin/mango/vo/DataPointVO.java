@@ -123,6 +123,10 @@ public class DataPointVO implements Serializable, Cloneable, JsonSerializable, C
         return pointLocator.getConfigurationDescription();
     }
 
+    public boolean isRelinquishable() {
+        return pointLocator != null && pointLocator.isRelinquishable();
+    }
+
     public boolean isNew() {
         return id == Common.NEW_ID;
     }

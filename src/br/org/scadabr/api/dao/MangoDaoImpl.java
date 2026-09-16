@@ -1,4 +1,4 @@
-package br.org.scadamy.api.dao;
+package br.org.scadabr.api.dao;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -39,26 +39,26 @@ import com.serotonin.mango.vo.permission.Permissions;
 import com.serotonin.util.StringUtils;
 import com.serotonin.web.dwr.DwrResponseI18n;
 
-import br.org.scadamy.api.constants.AlarmLevel;
-import br.org.scadamy.api.constants.DataSourceType;
-import br.org.scadamy.api.constants.ErrorCode;
-import br.org.scadamy.api.constants.EventType;
-import br.org.scadamy.api.constants.ModbusDataType;
-import br.org.scadamy.api.constants.ModbusRegisterRange;
-import br.org.scadamy.api.constants.QualityCode;
-import br.org.scadamy.api.exception.ScadaBRAPIException;
-import br.org.scadamy.api.utils.APIConstants;
-import br.org.scadamy.api.utils.APIUtils;
-import br.org.scadamy.api.vo.APIError;
-import br.org.scadamy.api.vo.EventDefinition;
-import br.org.scadamy.api.vo.EventMessage;
-import br.org.scadamy.api.vo.EventNotification;
-import br.org.scadamy.api.vo.ItemInfo;
-import br.org.scadamy.api.vo.ItemStringValue;
-import br.org.scadamy.api.vo.ItemValue;
-import br.org.scadamy.api.vo.ModbusIPConfig;
-import br.org.scadamy.api.vo.ModbusPointConfig;
-import br.org.scadamy.api.vo.ModbusSerialConfig;
+import br.org.scadabr.api.constants.AlarmLevel;
+import br.org.scadabr.api.constants.DataSourceType;
+import br.org.scadabr.api.constants.ErrorCode;
+import br.org.scadabr.api.constants.EventType;
+import br.org.scadabr.api.constants.ModbusDataType;
+import br.org.scadabr.api.constants.ModbusRegisterRange;
+import br.org.scadabr.api.constants.QualityCode;
+import br.org.scadabr.api.exception.ScadaBRAPIException;
+import br.org.scadabr.api.utils.APIConstants;
+import br.org.scadabr.api.utils.APIUtils;
+import br.org.scadabr.api.vo.APIError;
+import br.org.scadabr.api.vo.EventDefinition;
+import br.org.scadabr.api.vo.EventMessage;
+import br.org.scadabr.api.vo.EventNotification;
+import br.org.scadabr.api.vo.ItemInfo;
+import br.org.scadabr.api.vo.ItemStringValue;
+import br.org.scadabr.api.vo.ItemValue;
+import br.org.scadabr.api.vo.ModbusIPConfig;
+import br.org.scadabr.api.vo.ModbusPointConfig;
+import br.org.scadabr.api.vo.ModbusSerialConfig;
 
 public class MangoDaoImpl implements ScadaBRAPIDao {
 	private User user;

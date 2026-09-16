@@ -1,4 +1,4 @@
-package br.org.scadamy.web.dwr;
+package br.org.scadabr.web.dwr;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,10 +25,10 @@ import com.serotonin.mango.vo.permission.Permissions;
 import com.serotonin.web.dwr.DwrResponseI18n;
 import com.serotonin.web.i18n.LocalizableMessage;
 
-import br.org.scadamy.db.dao.UsersProfileDao;
-import br.org.scadamy.vo.permission.ViewAccess;
-import br.org.scadamy.vo.permission.WatchListAccess;
-import br.org.scadamy.vo.usersProfiles.UsersProfileVO;
+import br.org.scadabr.db.dao.UsersProfileDao;
+import br.org.scadabr.vo.permission.ViewAccess;
+import br.org.scadabr.vo.permission.WatchListAccess;
+import br.org.scadabr.vo.usersProfiles.UsersProfileVO;
 
 public class UsersProfilesDwr {
 
@@ -88,7 +88,7 @@ public class UsersProfilesDwr {
 			List<ViewAccess> viewsPermissions) {
 		Permissions.ensureAdmin();
 
-		HttpServletRequest request = WebContextFactory.get().getHttpServletRequest();
+
 
 		UsersProfileDao userDao = new UsersProfileDao();
 

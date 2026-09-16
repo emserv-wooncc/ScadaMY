@@ -1,4 +1,4 @@
-package cc.radiuino.scadamy.vo.datasource.radiuino;
+package cc.radiuino.scadabr.vo.datasource.radiuino;
 
 public class RadiuinoDataType {
 

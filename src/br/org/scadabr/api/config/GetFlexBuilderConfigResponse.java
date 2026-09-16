@@ -5,61 +5,61 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.config;
+package br.org.scadabr.api.config;
 
 public class GetFlexBuilderConfigResponse implements java.io.Serializable {
 	/**
-	 *
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private br.org.scadamy.api.vo.FlexProject project;
+	private br.org.scadabr.api.vo.FlexProject project;
 
-	private br.org.scadamy.api.vo.ReplyBase replyBase;
+	private br.org.scadabr.api.vo.ReplyBase replyBase;
 
 	public GetFlexBuilderConfigResponse() {
 	}
 
 	public GetFlexBuilderConfigResponse(
-			br.org.scadamy.api.vo.FlexProject project,
-			br.org.scadamy.api.vo.ReplyBase replyBase) {
+			br.org.scadabr.api.vo.FlexProject project,
+			br.org.scadabr.api.vo.ReplyBase replyBase) {
 		this.project = project;
 		this.replyBase = replyBase;
 	}
 
 	/**
 	 * Gets the project value for this GetFlexBuilderConfigResponse.
-	 *
+	 * 
 	 * @return project
 	 */
-	public br.org.scadamy.api.vo.FlexProject getProject() {
+	public br.org.scadabr.api.vo.FlexProject getProject() {
 		return project;
 	}
 
 	/**
 	 * Sets the project value for this GetFlexBuilderConfigResponse.
-	 *
+	 * 
 	 * @param project
 	 */
-	public void setProject(br.org.scadamy.api.vo.FlexProject project) {
+	public void setProject(br.org.scadabr.api.vo.FlexProject project) {
 		this.project = project;
 	}
 
 	/**
 	 * Gets the replyBase value for this GetFlexBuilderConfigResponse.
-	 *
+	 * 
 	 * @return replyBase
 	 */
-	public br.org.scadamy.api.vo.ReplyBase getReplyBase() {
+	public br.org.scadabr.api.vo.ReplyBase getReplyBase() {
 		return replyBase;
 	}
 
 	/**
 	 * Sets the replyBase value for this GetFlexBuilderConfigResponse.
-	 *
+	 * 
 	 * @param replyBase
 	 */
-	public void setReplyBase(br.org.scadamy.api.vo.ReplyBase replyBase) {
+	public void setReplyBase(br.org.scadabr.api.vo.ReplyBase replyBase) {
 		this.replyBase = replyBase;
 	}
 
@@ -111,22 +111,22 @@ public class GetFlexBuilderConfigResponse implements java.io.Serializable {
 
 	static {
 		typeDesc.setXmlType(new javax.xml.namespace.QName(
-				"http://config.api.scadamy.org.br",
+				"http://config.api.scadabr.org.br",
 				">GetFlexBuilderConfigResponse"));
 		org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
 		elemField.setFieldName("project");
 		elemField.setXmlName(new javax.xml.namespace.QName(
-				"http://config.api.scadamy.org.br", "project"));
+				"http://config.api.scadabr.org.br", "project"));
 		elemField.setXmlType(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "FlexProject"));
+				"http://vo.api.scadabr.org.br", "FlexProject"));
 		elemField.setNillable(false);
 		typeDesc.addFieldDesc(elemField);
 		elemField = new org.apache.axis.description.ElementDesc();
 		elemField.setFieldName("replyBase");
 		elemField.setXmlName(new javax.xml.namespace.QName(
-				"http://config.api.scadamy.org.br", "replyBase"));
+				"http://config.api.scadabr.org.br", "replyBase"));
 		elemField.setXmlType(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "ReplyBase"));
+				"http://vo.api.scadabr.org.br", "ReplyBase"));
 		elemField.setNillable(false);
 		typeDesc.addFieldDesc(elemField);
 	}

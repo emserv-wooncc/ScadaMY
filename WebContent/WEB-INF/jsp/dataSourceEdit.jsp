@@ -207,7 +207,7 @@
         	cancel = editPointCBImpl(locator);
         if (!cancel) {
             startImageFader("editImg"+ point.id);
-            // Improvement based on diegofontana's code suggestion at ScadaMY forum
+            // Improvement based on diegofontana's code suggestion at ScadaBR forum
             var foo = $("editImg" + currentPoint.id).getBoundingClientRect().top;
             var bar = $("pointProperties").getBoundingClientRect().top;
             $("pointDetails").style.position = "relative";

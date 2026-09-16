@@ -1,12 +1,12 @@
-package br.org.scadamy.rt.dataSource.iec101;
+package br.org.scadabr.rt.dataSource.iec101;
 
 import java.util.List;
 
-import br.org.scadamy.protocol.iec101.session.CompositeMessage;
-import br.org.scadamy.protocol.iec101.session.IECConfig;
-import br.org.scadamy.protocol.iec101.session.IECUser;
-import br.org.scadamy.protocol.iec101.session.database.DataElement;
-import br.org.scadamy.protocol.iec101.session.database.Database;
+import br.org.scadabr.protocol.iec101.session.CompositeMessage;
+import br.org.scadabr.protocol.iec101.session.IECConfig;
+import br.org.scadabr.protocol.iec101.session.IECUser;
+import br.org.scadabr.protocol.iec101.session.database.DataElement;
+import br.org.scadabr.protocol.iec101.session.database.Database;
 
 public class IEC101Master {
 	private IECUser user;

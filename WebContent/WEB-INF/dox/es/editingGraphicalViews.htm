@@ -1,28 +1,28 @@
 ﻿<!--
-  ScadaMY 1.0  - Pacote de Modificações Community Edition
-  http://www.scadamy.org.br
+  ScadaBR 1.0  - Pacote de Modificações Community Edition
+  http://www.scadabr.org.br
   Adecuación y Tradución para Español: Copyright (C) 2012 por Mílmero González milmero@gmail.com
-
-  This file is free software: you may copy, redistribute and/or modify it
-  under the terms of the GNU General Public License as published by the
-  Free Software Foundation, either version 3 of the License, or (at your
-  option) any later version.
-
-  This file is distributed in the hope that it will be useful, but
-  WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-  General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-  This file incorporates work covered by the following copyright and
+  
+  This file is free software: you may copy, redistribute and/or modify it  
+  under the terms of the GNU General Public License as published by the  
+  Free Software Foundation, either version 3 of the License, or (at your  
+  option) any later version.  
+  
+  This file is distributed in the hope that it will be useful, but  
+  WITHOUT ANY WARRANTY; without even the implied warranty of  
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  
+  General Public License for more details.  
+  
+  You should have received a copy of the GNU General Public License  
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.  
+   
+  This file incorporates work covered by the following copyright and  
   permission notice:
 
     Mango - Open Source M2M - http://mango.serotoninsoftware.com
     Copyright (C) 2006-2011 Serotonin Software Technologies Inc.
     @author Matthew Lohbihler
-
+    
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -46,7 +46,7 @@
 
 <h1>Atributos de las vistas gr&aacute;ficas</h1>
 <p>
-  Todas las vistas gr&aacute;ficas tienen un nombre con el cual son referidas dentro de la lista de la vistas gr&aacute;ficas.
+  Todas las vistas gr&aacute;ficas tienen un nombre con el cual son referidas dentro de la lista de la vistas gr&aacute;ficas. 
  Este nombre puede, aunque no es requerido, ser &uacute;nico. Opcionalmente una vista puede tener una <b>imagen de fondo</b> sobre la cual
  sus componentes ser&aacute;n superpuestos. Los Usuarios pueden utilizar sobre la imagen de fondo cualquier tipo de formato de imagen
  mostrable en un navegador, incluyendo GIF, JPEG, y PNG. El atributo de <b>Acceso Anonymous</b> determina cuando un usuario que no ha
@@ -61,7 +61,7 @@
  el icono <img src="images/plugin_add.png"/>. De forma predefinida, los nuevos componentes ser&aacute;n mostrados en el centro de la vista, y
  posteriormente pueden se reubicados seleccion&aacute;ndolos y arrastr&aacute;ndolos a donde requiera sean posicionados sobre la imagen de fondo.
  Note que las vistas de puntos pueden solaparse con otras. Durante la edici&oacute;n de una vista, los componentes ser&aacute;n escritos en el orden
- en el cual estos fueron definidos. Esto puede afectar en el c&oacute;mo se sobrepondr&aacute;n cuando hay solapamientos.
+ en el cual estos fueron definidos. Esto puede afectar en el c&oacute;mo se sobrepondr&aacute;n cuando hay solapamientos. 
 </p>
 
 <h1>Contenido Est&aacute;tico</h1>
@@ -121,7 +121,7 @@
 </p>
 
 <p>
-  La representaci&oacute;n gr&aacute;fica de un componente puede cambiarse haciendo clic en el icono de representaci&oacute;n gr&aacute;fica
+  La representaci&oacute;n gr&aacute;fica de un componente puede cambiarse haciendo clic en el icono de representaci&oacute;n gr&aacute;fica 
  (<img src="images/graphic.png"/>). Al hacer clic en el se desplegar&aacute; un panel donde podr&aacute; editar los atributos de
  la representaci&oacute;n del componente. Por ejemplo, el componente <b>Gr&aacute;fico Anal&oacute;gico</b> puede utilizarse para
  cuantificar visualmente un punto num&eacute;rico. Utilizando los valores <b>Min</b> y <b>Max</b>, las im&aacute;genes ser&aacute;n uniformemente
@@ -130,12 +130,12 @@
  del valor actual del punto. Las im&aacute;genes animadas son soportadas, por lo que puede utilizar una animaci&oacute;n para indicar que
  un equipo se encuentra movi&eacute;ndose para un valor del punto y en el otro valor no. Si desea mostrar la representaci&oacute;n en texto
  de un punto sobre las im&aacute;genes, seleccione la opci&oacute;n <b>Mostrar Texto</b>. Un <b>Punto simple</b> mostrar&aacute; solamente
- la representaci&oacute;n en texto del punto.
+ la representaci&oacute;n en texto del punto. 
 </p>
 
 <p>
   El componente <b>Gr&aacute;fico Din&aacute;mico</b> es similar al generador de de imagen anal&oacute;gica ya que en este es posible visualizar
- puntos num&eacute;ricos, la diferencia consiste en que este dibuja autom&aacute;ticamente el indicador del valor en lugar de mostrar un
+ puntos num&eacute;ricos, la diferencia consiste en que este dibuja autom&aacute;ticamente el indicador del valor en lugar de mostrar un 
  conjunto de im&aacute;genes. Por ejemplo, el puntero puede dibujar una imagen simple de disco. Para agregar un nuevo representador din&aacute;mico
  agregue un nuevo subdirectorio en la direcci&oacute;n del directorio de gr&aacute;ficos y coloque la imagen est&aacute;tica con su archivo de
  informaci&oacute;n dentro. Luego, a&ntilde;ada la funci&oacute;n de generaci&oacute;n en el archivo resources/view.js. La funci&oacute;n debe nombrarse acorde con
@@ -146,8 +146,8 @@
   El componente <b>Script Server-side</b> puede ser utilizado para definir su propia l&oacute;gica de representaci&oacute;n.
  El lenguaje utilizado para realizar los scripts es JavaScript, tambi&eacute;n conocido como ECMAScript.
  (Las especificaciones completas del ECMAScript est&aacute;n disponibles <a href="http://www.ecma-international.org/publications/standards/Ecma-262.htm" target="_blank">aqu&iacute;</a>). Es por esto que no hay "ventanas" u objetos de "documentos" disponibles desde el script
- por lo que es evaluado en el servidor en lugar de el navegador. El lugar de esto, est&aacute; disponible el valor actual del punto
- utilizando la variable <b>value</b>, y su estampa de tiempo con la variable <b>time</b>. Adicionalmente, las variables
+ por lo que es evaluado en el servidor en lugar de el navegador. El lugar de esto, est&aacute; disponible el valor actual del punto 
+ utilizando la variable <b>value</b>, y su estampa de tiempo con la variable <b>time</b>. Adicionalmente, las variables  
  <b>pointComponent</b> y <b>point</b> tambi&eacute;n est&aacute;n definidas, con valores anal&oacute;gicos, "htmlText" y "renderedText" que
  representan la versi&oacute;n a representar del valor. Finalmente, "events" proporciona una lista de los eventos activos para el punto,
  y "hasUnacknowledgedEvent" es un valor booleano que indica si el &uacute;ltimo evento activo a&uacute;n no ha sido reconocido.

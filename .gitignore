@@ -1,2 +1,61 @@
-# Ignorar o SVN, já que estamos usando o Git
-.svn/
+# Local security & configurations
+secret/
+.env
+
+
+# Java bytecode files
+*.class
+*.ctxt
+*.log
+*.tmp
+
+# Packaged Java archives
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Visual Studio Code
+.vscode/
+
+# =========================================================================
+# Java Build Tools & Dependencies
+# =========================================================================
+#
+.jdk-11/
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.nextReleaseBackup
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle/
+build/
+!src/**/build/
+gradle-app.setting
+.gradletasknamecache
+/gradlew
+/gradlew.bat
+/gradle/wrapper/gradle-wrapper.jar
+
+# =========================================================================
+# Frontend / SvelteKit Build Tools & Dependencies
+# =========================================================================
+#
+# Node dependencies (Never push this massive folder)
+frontend/node_modules/
+
+# SvelteKit local build outputs and generation directories
+frontend/.svelte-kit/
+frontend/.vscode/
+WebContent/app/

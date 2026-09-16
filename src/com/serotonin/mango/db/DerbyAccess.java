@@ -41,11 +41,11 @@ import org.apache.derby.tools.ij;
 import org.springframework.jdbc.CannotGetJdbcConnectionException;
 import org.springframework.jdbc.core.CallableStatementCreator;
 import org.springframework.jdbc.datasource.DataSourceUtils;
+import org.springframework.jdbc.core.RowMapper;
 
 import com.serotonin.ShouldNeverHappenException;
 import com.serotonin.db.spring.ConnectionCallbackVoid;
 import com.serotonin.db.spring.ExtendedJdbcTemplate;
-import com.serotonin.db.spring.GenericRowMapper;
 import com.serotonin.mango.Common;
 
 public class DerbyAccess extends DatabaseAccess {
@@ -70,6 +70,14 @@ public class DerbyAccess extends DatabaseAccess {
 	@Override
 	protected void initializeImpl(String propertyPrefix) {
 		log.info("Initializing derby connection manager");
+		if (System.getProperty("derby.stream.error.file") == null) {
+			String logDir = Common.getEnvironmentProfile().getString(propertyPrefix + "db.update.log.dir", "target/logs/");
+			File derbyLog = new File(logDir, "derby.log");
+			if (derbyLog.getParentFile() != null)
+				derbyLog.getParentFile().mkdirs();
+			System.setProperty("derby.stream.error.file", derbyLog.getAbsolutePath());
+			log.info("Set derby.stream.error.file to: " + derbyLog.getAbsolutePath());
+		}
 		dataSource = new EmbeddedXADataSource40();
 		dataSource.setCreateDatabase("create");
 
@@ -89,14 +97,22 @@ public class DerbyAccess extends DatabaseAccess {
 
 	private String getUrl(String propertyPrefix) {
 		String name = Common.getEnvironmentProfile().getString(propertyPrefix + "db.url", "~/../../mangoDB");
-		if (name.startsWith("~"))
-			name = ctx.getRealPath(name.substring(1));
+		log.info("Derby getUrl raw property: '" + name + "' for prefix: '" + propertyPrefix + "'");
+		if (name.startsWith("~")) {
+			String sub = name.substring(1);
+			String real = ctx.getRealPath(sub);
+			log.info("Derby getUrl ~ resolved '" + sub + "' with ctx.getRealPath to: '" + real + "'");
+			if (real != null && !real.trim().isEmpty())
+				name = real;
+		}
+		log.info("Derby getUrl returning: '" + name + "'");
 		return name;
 	}
 
 	@Override
 	public void terminate() {
 		log.info("Stopping database");
+		dataSource.setCreateDatabase(null);
 		dataSource.setDatabaseName("");
 		dataSource.setShutdownDatabase("shutdown");
 		Connection conn = null;
@@ -184,7 +200,7 @@ public class DerbyAccess extends DatabaseAccess {
 	private void updateIndentityStarts(ExtendedJdbcTemplate ejt) {
 		List<IdentityStart> starts = ejt.query("select t.tablename, c.columnname, c.autoincrementvalue " + //
 				"from sys.syscolumns c join sys.systables t on c.referenceid = t.tableid " + //
-				"where t.tabletype='T' and c.autoincrementvalue is not null", new GenericRowMapper<IdentityStart>() {
+				"where t.tabletype='T' and c.autoincrementvalue is not null", new RowMapper<IdentityStart>() {
 					@Override
 					public IdentityStart mapRow(ResultSet rs, int index) throws SQLException {
 						IdentityStart is = new IdentityStart();

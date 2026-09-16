@@ -1,12 +1,12 @@
-package br.org.scadamy.rt.dataSource.alpha2;
+package br.org.scadabr.rt.dataSource.alpha2;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import br.org.scadamy.vo.dataSource.alpha2.Alpha2DataSourceVO;
-import br.org.scadamy.vo.dataSource.alpha2.Alpha2PointLocatorVO;
+import br.org.scadabr.vo.dataSource.alpha2.Alpha2DataSourceVO;
+import br.org.scadabr.vo.dataSource.alpha2.Alpha2PointLocatorVO;
 
 import com.i2msolucoes.alpha24j.DeviceLocator;
 import com.i2msolucoes.alpha24j.DeviceValue;

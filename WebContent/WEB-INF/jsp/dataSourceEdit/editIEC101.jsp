@@ -17,7 +17,7 @@
     along with this program.  If not, see http://www.gnu.org/licenses/.
 --%>
 <%@ include file="/WEB-INF/jsp/include/tech.jsp" %>
-<%@page import="br.org.scadamy.rt.dataSource.iec101.IEC101Master"%>
+<%@page import="br.org.scadabr.rt.dataSource.iec101.IEC101Master"%>
 <%@page import="com.serotonin.modbus4j.code.DataType"%>
 
 <script type="text/javascript">

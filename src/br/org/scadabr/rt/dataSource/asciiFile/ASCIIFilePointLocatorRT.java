@@ -1,6 +1,6 @@
-package br.org.scadamy.rt.dataSource.asciiFile;
+package br.org.scadabr.rt.dataSource.asciiFile;
 
-import br.org.scadamy.vo.dataSource.asciiFile.ASCIIFilePointLocatorVO;
+import br.org.scadabr.vo.dataSource.asciiFile.ASCIIFilePointLocatorVO;
 
 import com.serotonin.mango.rt.dataSource.PointLocatorRT;
 

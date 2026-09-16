@@ -1,10 +1,10 @@
-package br.org.scadamy.vo.dataSource.iec101;
+package br.org.scadabr.vo.dataSource.iec101;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import br.org.scadamy.rt.dataSource.iec101.IEC101EthernetDataSource;
+import br.org.scadabr.rt.dataSource.iec101.IEC101EthernetDataSource;
 
 import com.serotonin.json.JsonRemoteEntity;
 import com.serotonin.json.JsonRemoteProperty;

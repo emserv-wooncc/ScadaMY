@@ -20,7 +20,7 @@
 <%@page import="com.serotonin.mango.Common"%>
 <%@page import="com.serotonin.mango.vo.event.ScheduledEventVO"%>
 <%@page import="org.joda.time.DateTimeConstants"%>
-<%@page import="br.org.scadamy.rt.scripting.context.*"%>
+<%@page import="br.org.scadabr.rt.scripting.context.*"%>
 <c:set var="NEW_ID"><%= Common.NEW_ID %></c:set>
 
 <tag:page dwr="ScriptsDwr,DataSourceEditDwr" onload="init">
@@ -390,7 +390,7 @@
 									<td> <fmt:message key="scripts.objectsContext.add"/> </td>
 									<td> &nbsp; </td>
 								</tr>
-				        		<c:forEach var="object" items="<%=br.org.scadamy.rt.scripting.context.ScriptContextObject.Type.values()%>">
+				        		<c:forEach var="object" items="<%=br.org.scadabr.rt.scripting.context.ScriptContextObject.Type.values()%>">
 								<tr style="width: 100%;" class="smRow">
 									<td title="${object.id}" style="display: none;"> </td>
 									<td> <fmt:message key="${object.key}"/>  </td>

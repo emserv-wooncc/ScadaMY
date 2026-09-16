@@ -1,4 +1,4 @@
-package br.org.scadamy.view.component;
+package br.org.scadabr.view.component;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

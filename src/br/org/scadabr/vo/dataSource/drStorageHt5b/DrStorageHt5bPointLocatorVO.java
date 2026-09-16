@@ -1,4 +1,4 @@
-package br.org.scadamy.vo.dataSource.drStorageHt5b;
+package br.org.scadabr.vo.dataSource.drStorageHt5b;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -8,7 +8,7 @@ import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 
-import br.org.scadamy.rt.dataSource.drStorageHt5b.DrStorageHt5bPointLocatorRT;
+import br.org.scadabr.rt.dataSource.drStorageHt5b.DrStorageHt5bPointLocatorRT;
 
 import com.serotonin.json.JsonException;
 import com.serotonin.json.JsonObject;

@@ -2,7 +2,7 @@
     Mango - Open Source M2M - http://mango.serotoninsoftware.com
     Copyright (C) 2006-2011 Serotonin Software Technologies Inc.
     @author Matthew Lohbihler
-
+    
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -26,6 +26,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSessionBindingEvent;
 import javax.servlet.http.HttpSessionBindingListener;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.serotonin.ShouldNeverHappenException;
 import com.serotonin.json.JsonArray;
 import com.serotonin.json.JsonException;
@@ -55,8 +56,8 @@ import com.serotonin.util.StringUtils;
 import com.serotonin.web.dwr.DwrResponseI18n;
 import com.serotonin.web.i18n.LocalizableMessage;
 
-import br.org.scadamy.vo.exporter.ZIPProjectManager;
-import br.org.scadamy.vo.usersProfiles.UsersProfileVO;
+import br.org.scadabr.vo.exporter.ZIPProjectManager;
+import br.org.scadabr.vo.usersProfiles.UsersProfileVO;
 
 @JsonRemoteEntity
 public class User implements SetPointSource, HttpSessionBindingListener, JsonSerializable {
@@ -237,6 +238,7 @@ public class User implements SetPointSource, HttpSessionBindingListener, JsonSer
 		this.username = username;
 	}
 
+	@JsonIgnore
 	public View getView() {
 		return view;
 	}
@@ -245,6 +247,7 @@ public class User implements SetPointSource, HttpSessionBindingListener, JsonSer
 		this.view = view;
 	}
 
+	@JsonIgnore
 	public WatchList getWatchList() {
 		return watchList;
 	}
@@ -253,6 +256,7 @@ public class User implements SetPointSource, HttpSessionBindingListener, JsonSer
 		this.watchList = watchList;
 	}
 
+	@JsonIgnore
 	public DataPointVO getEditPoint() {
 		return editPoint;
 	}
@@ -285,6 +289,7 @@ public class User implements SetPointSource, HttpSessionBindingListener, JsonSer
 		this.dataPointPermissions = dataPointPermissions;
 	}
 
+	@JsonIgnore
 	public DataSourceVO<?> getEditDataSource() {
 		return editDataSource;
 	}
@@ -317,6 +322,7 @@ public class User implements SetPointSource, HttpSessionBindingListener, JsonSer
 		this.lastLogin = lastLogin;
 	}
 
+	@JsonIgnore
 	public Map<String, byte[]> getReportImageData() {
 		return reportImageData;
 	}
@@ -325,6 +331,7 @@ public class User implements SetPointSource, HttpSessionBindingListener, JsonSer
 		this.reportImageData = reportImageData;
 	}
 
+	@JsonIgnore
 	public PublisherVO<? extends PublishedPointVO> getEditPublisher() {
 		return editPublisher;
 	}
@@ -333,6 +340,7 @@ public class User implements SetPointSource, HttpSessionBindingListener, JsonSer
 		this.editPublisher = editPublisher;
 	}
 
+	@JsonIgnore
 	public ImportTask getImportTask() {
 		return importTask;
 	}
@@ -365,6 +373,7 @@ public class User implements SetPointSource, HttpSessionBindingListener, JsonSer
 		this.receiveOwnAuditEvents = receiveOwnAuditEvents;
 	}
 
+	@JsonIgnore
 	public DataExportDefinition getDataExportDefinition() {
 		return dataExportDefinition;
 	}
@@ -373,6 +382,7 @@ public class User implements SetPointSource, HttpSessionBindingListener, JsonSer
 		this.dataExportDefinition = dataExportDefinition;
 	}
 
+	@JsonIgnore
 	public EventExportDefinition getEventExportDefinition() {
 		return eventExportDefinition;
 	}

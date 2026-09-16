@@ -1,9 +1,9 @@
-package cc.radiuino.scadamy.rt.datasource.radiuino;
+package cc.radiuino.scadabr.rt.datasource.radiuino;
 
 import java.nio.ByteBuffer;
 
-import cc.radiuino.scadamy.vo.datasource.radiuino.RadiuinoDataType;
-import cc.radiuino.scadamy.vo.datasource.radiuino.RadiuinoPointLocatorVO;
+import cc.radiuino.scadabr.vo.datasource.radiuino.RadiuinoDataType;
+import cc.radiuino.scadabr.vo.datasource.radiuino.RadiuinoPointLocatorVO;
 
 import com.serotonin.mango.rt.dataImage.PointValueTime;
 

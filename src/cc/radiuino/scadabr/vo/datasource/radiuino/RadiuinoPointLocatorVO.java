@@ -1,4 +1,4 @@
-package cc.radiuino.scadamy.vo.datasource.radiuino;
+package cc.radiuino.scadabr.vo.datasource.radiuino;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -6,7 +6,7 @@ import java.io.ObjectOutputStream;
 import java.util.List;
 import java.util.Map;
 
-import cc.radiuino.scadamy.rt.datasource.radiuino.RadiuinoPointLocatorRT;
+import cc.radiuino.scadabr.rt.datasource.radiuino.RadiuinoPointLocatorRT;
 
 import com.serotonin.json.JsonException;
 import com.serotonin.json.JsonObject;

@@ -5,10 +5,10 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.ae;
+package br.org.scadabr.api.ae;
 
 public class EventsHistoryOptions  implements java.io.Serializable {
-    private br.org.scadamy.api.constants.AlarmLevel alarmLevel;
+    private br.org.scadabr.api.constants.AlarmLevel alarmLevel;
 
     private java.util.Calendar initialDate;
 
@@ -20,7 +20,7 @@ public class EventsHistoryOptions  implements java.io.Serializable {
     }
 
     public EventsHistoryOptions(
-           br.org.scadamy.api.constants.AlarmLevel alarmLevel,
+           br.org.scadabr.api.constants.AlarmLevel alarmLevel,
            java.util.Calendar initialDate,
            java.util.Calendar finalDate,
            int maxReturn) {
@@ -33,27 +33,27 @@ public class EventsHistoryOptions  implements java.io.Serializable {
 
     /**
      * Gets the alarmLevel value for this EventsHistoryOptions.
-     *
+     * 
      * @return alarmLevel
      */
-    public br.org.scadamy.api.constants.AlarmLevel getAlarmLevel() {
+    public br.org.scadabr.api.constants.AlarmLevel getAlarmLevel() {
         return alarmLevel;
     }
 
 
     /**
      * Sets the alarmLevel value for this EventsHistoryOptions.
-     *
+     * 
      * @param alarmLevel
      */
-    public void setAlarmLevel(br.org.scadamy.api.constants.AlarmLevel alarmLevel) {
+    public void setAlarmLevel(br.org.scadabr.api.constants.AlarmLevel alarmLevel) {
         this.alarmLevel = alarmLevel;
     }
 
 
     /**
      * Gets the initialDate value for this EventsHistoryOptions.
-     *
+     * 
      * @return initialDate
      */
     public java.util.Calendar getInitialDate() {
@@ -63,7 +63,7 @@ public class EventsHistoryOptions  implements java.io.Serializable {
 
     /**
      * Sets the initialDate value for this EventsHistoryOptions.
-     *
+     * 
      * @param initialDate
      */
     public void setInitialDate(java.util.Calendar initialDate) {
@@ -73,7 +73,7 @@ public class EventsHistoryOptions  implements java.io.Serializable {
 
     /**
      * Gets the finalDate value for this EventsHistoryOptions.
-     *
+     * 
      * @return finalDate
      */
     public java.util.Calendar getFinalDate() {
@@ -83,7 +83,7 @@ public class EventsHistoryOptions  implements java.io.Serializable {
 
     /**
      * Sets the finalDate value for this EventsHistoryOptions.
-     *
+     * 
      * @param finalDate
      */
     public void setFinalDate(java.util.Calendar finalDate) {
@@ -93,7 +93,7 @@ public class EventsHistoryOptions  implements java.io.Serializable {
 
     /**
      * Gets the maxReturn value for this EventsHistoryOptions.
-     *
+     * 
      * @return maxReturn
      */
     public int getMaxReturn() {
@@ -103,7 +103,7 @@ public class EventsHistoryOptions  implements java.io.Serializable {
 
     /**
      * Sets the maxReturn value for this EventsHistoryOptions.
-     *
+     * 
      * @param maxReturn
      */
     public void setMaxReturn(int maxReturn) {
@@ -121,14 +121,14 @@ public class EventsHistoryOptions  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
-            ((this.alarmLevel==null && other.getAlarmLevel()==null) ||
+        _equals = true && 
+            ((this.alarmLevel==null && other.getAlarmLevel()==null) || 
              (this.alarmLevel!=null &&
               this.alarmLevel.equals(other.getAlarmLevel()))) &&
-            ((this.initialDate==null && other.getInitialDate()==null) ||
+            ((this.initialDate==null && other.getInitialDate()==null) || 
              (this.initialDate!=null &&
               this.initialDate.equals(other.getInitialDate()))) &&
-            ((this.finalDate==null && other.getFinalDate()==null) ||
+            ((this.finalDate==null && other.getFinalDate()==null) || 
              (this.finalDate!=null &&
               this.finalDate.equals(other.getFinalDate()))) &&
             this.maxReturn == other.getMaxReturn();
@@ -162,28 +162,28 @@ public class EventsHistoryOptions  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(EventsHistoryOptions.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "EventsHistoryOptions"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "EventsHistoryOptions"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("alarmLevel");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "alarmLevel"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "AlarmLevel"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "alarmLevel"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "AlarmLevel"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("initialDate");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "initialDate"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "initialDate"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("finalDate");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "finalDate"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "finalDate"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("maxReturn");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "maxReturn"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "maxReturn"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
@@ -200,10 +200,10 @@ public class EventsHistoryOptions  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -212,10 +212,10 @@ public class EventsHistoryOptions  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

@@ -5,7 +5,7 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.vo;
+package br.org.scadabr.api.vo;
 
 public class ReplyBase  implements java.io.Serializable {
     private java.util.Calendar rcvTime;
@@ -25,7 +25,7 @@ public class ReplyBase  implements java.io.Serializable {
 
     /**
      * Gets the rcvTime value for this ReplyBase.
-     *
+     * 
      * @return rcvTime
      */
     public java.util.Calendar getRcvTime() {
@@ -35,7 +35,7 @@ public class ReplyBase  implements java.io.Serializable {
 
     /**
      * Sets the rcvTime value for this ReplyBase.
-     *
+     * 
      * @param rcvTime
      */
     public void setRcvTime(java.util.Calendar rcvTime) {
@@ -45,7 +45,7 @@ public class ReplyBase  implements java.io.Serializable {
 
     /**
      * Gets the replyTime value for this ReplyBase.
-     *
+     * 
      * @return replyTime
      */
     public java.util.Calendar getReplyTime() {
@@ -55,7 +55,7 @@ public class ReplyBase  implements java.io.Serializable {
 
     /**
      * Sets the replyTime value for this ReplyBase.
-     *
+     * 
      * @param replyTime
      */
     public void setReplyTime(java.util.Calendar replyTime) {
@@ -73,11 +73,11 @@ public class ReplyBase  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
-            ((this.rcvTime==null && other.getRcvTime()==null) ||
+        _equals = true && 
+            ((this.rcvTime==null && other.getRcvTime()==null) || 
              (this.rcvTime!=null &&
               this.rcvTime.equals(other.getRcvTime()))) &&
-            ((this.replyTime==null && other.getReplyTime()==null) ||
+            ((this.replyTime==null && other.getReplyTime()==null) || 
              (this.replyTime!=null &&
               this.replyTime.equals(other.getReplyTime())));
         __equalsCalc = null;
@@ -106,16 +106,16 @@ public class ReplyBase  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(ReplyBase.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "ReplyBase"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "ReplyBase"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("rcvTime");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "rcvTime"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "rcvTime"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("replyTime");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "replyTime"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "replyTime"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
@@ -132,10 +132,10 @@ public class ReplyBase  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -144,10 +144,10 @@ public class ReplyBase  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

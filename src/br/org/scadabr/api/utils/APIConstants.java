@@ -1,7 +1,7 @@
-package br.org.scadamy.api.utils;
+package br.org.scadabr.api.utils;
 
-import br.org.scadamy.api.constants.ErrorCode;
-import br.org.scadamy.api.vo.APIError;
+import br.org.scadabr.api.constants.ErrorCode;
+import br.org.scadabr.api.vo.APIError;
 
 public interface APIConstants {
 	public static final int MAX_READ_DATA_RETURN = 2000;

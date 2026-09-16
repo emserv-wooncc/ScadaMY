@@ -1,5 +1,5 @@
-<%--
-    ScadaMY - Automação para todos - http://www.scadamy.com.br
+ï»¿<%--
+    ScadaBR - AutomaÃ§Ã£o para todos - http://www.scadabr.com.br
     Copyright (C) 2012-2014 MCA Desenvolvimento de Sistemas Ltda.
     @author Diego R. Ferreira
 

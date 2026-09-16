@@ -1,4 +1,4 @@
-package br.org.scadamy.view.component;
+package br.org.scadabr.view.component;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -26,7 +26,7 @@ public class FlexBuilderComponent extends HtmlComponent {
 	private boolean projectDefined = false;
 
 	@JsonRemoteProperty
-	private String projectSource = "http://localhost:8080/ScadaMY/services/API?wsdl";
+	private String projectSource = "http://localhost:8080/ScadaBR/services/API?wsdl";
 
 	@JsonRemoteProperty
 	private int projectId = 1;

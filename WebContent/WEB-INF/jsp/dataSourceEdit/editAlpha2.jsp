@@ -17,7 +17,7 @@
     along with this program.  If not, see http://www.gnu.org/licenses/.
 --%>
 <%@ include file="/WEB-INF/jsp/include/tech.jsp"%>
-<%@page import="br.org.scadamy.vo.dataSource.alpha2.Alpha2PointLocatorVO"%>
+<%@page import="br.org.scadabr.vo.dataSource.alpha2.Alpha2PointLocatorVO"%>
 <%@page import="com.i2msolucoes.alpha24j.DeviceLocator.DeviceCodes"%>
 <script type="text/javascript">
   var currentChangeType;

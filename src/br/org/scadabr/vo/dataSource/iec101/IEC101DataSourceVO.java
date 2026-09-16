@@ -1,4 +1,4 @@
-package br.org.scadamy.vo.dataSource.iec101;
+package br.org.scadabr.vo.dataSource.iec101;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -6,7 +6,7 @@ import java.io.ObjectOutputStream;
 import java.util.List;
 import java.util.Map;
 
-import br.org.scadamy.rt.dataSource.iec101.IEC101DataSource;
+import br.org.scadabr.rt.dataSource.iec101.IEC101DataSource;
 
 import com.serotonin.json.JsonException;
 import com.serotonin.json.JsonObject;

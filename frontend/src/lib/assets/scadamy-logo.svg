@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 80" width="100%" height="100%">
+  <defs>
+    <!-- Cyan to Blue Gradient for SCADA -->
+    <linearGradient id="cyan-blue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d2ff" />
+      <stop offset="100%" stop-color="#2f80ed" />
+    </linearGradient>
+
+    <!-- Emerald to Teal Gradient for MY -->
+    <linearGradient id="emerald-teal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00c9a7" />
+      <stop offset="100%" stop-color="#009b85" />
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="soft-shadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <text x="20" y="55" fill="url(#cyan-blue)" font-family="system-ui, -apple-system, Arial, sans-serif" font-size="52" font-weight="900" letter-spacing="0.5" filter="url(#soft-shadow)">SCADA</text>
+  <text x="202" y="55" fill="url(#emerald-teal)" font-family="system-ui, -apple-system, Arial, sans-serif" font-size="52" font-weight="900" letter-spacing="0.5" filter="url(#soft-shadow)">MY</text>
+</svg>

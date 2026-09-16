@@ -2,7 +2,7 @@
     Mango - Open Source M2M - http://mango.serotoninsoftware.com
     Copyright (C) 2006-2011 Serotonin Software Technologies Inc.
     @author Matthew Lohbihler
-
+    
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -23,11 +23,11 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import br.org.scadamy.api.exception.DAOException;
-import br.org.scadamy.db.dao.ScriptDao;
-import br.org.scadamy.vo.exporter.util.SystemSettingsJSONWrapper;
-import br.org.scadamy.vo.importer.UsersProfileImporter;
-import br.org.scadamy.vo.scripting.ScriptVO;
+import br.org.scadabr.api.exception.DAOException;
+import br.org.scadabr.db.dao.ScriptDao;
+import br.org.scadabr.vo.exporter.util.SystemSettingsJSONWrapper;
+import br.org.scadabr.vo.importer.UsersProfileImporter;
+import br.org.scadabr.vo.scripting.ScriptVO;
 
 import com.serotonin.json.JsonArray;
 import com.serotonin.json.JsonException;

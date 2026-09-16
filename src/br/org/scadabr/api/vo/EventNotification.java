@@ -5,18 +5,18 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.vo;
+package br.org.scadabr.api.vo;
 
 public class EventNotification  implements java.io.Serializable {
     private int id;
 
     private java.lang.String alias;
 
-    private br.org.scadamy.api.constants.EventType eventType;
+    private br.org.scadabr.api.constants.EventType eventType;
 
-    private br.org.scadamy.api.constants.AlarmLevel alarmLevel;
+    private br.org.scadabr.api.constants.AlarmLevel alarmLevel;
 
-    private br.org.scadamy.api.vo.EventMessage[] message;
+    private br.org.scadabr.api.vo.EventMessage[] message;
 
     private java.util.Calendar timestamp;
 
@@ -30,9 +30,9 @@ public class EventNotification  implements java.io.Serializable {
     public EventNotification(
            int id,
            java.lang.String alias,
-           br.org.scadamy.api.constants.EventType eventType,
-           br.org.scadamy.api.constants.AlarmLevel alarmLevel,
-           br.org.scadamy.api.vo.EventMessage[] message,
+           br.org.scadabr.api.constants.EventType eventType,
+           br.org.scadabr.api.constants.AlarmLevel alarmLevel,
+           br.org.scadabr.api.vo.EventMessage[] message,
            java.util.Calendar timestamp,
            java.util.Calendar ackTime,
            java.util.Calendar rtnTime) {
@@ -49,7 +49,7 @@ public class EventNotification  implements java.io.Serializable {
 
     /**
      * Gets the id value for this EventNotification.
-     *
+     * 
      * @return id
      */
     public int getId() {
@@ -59,7 +59,7 @@ public class EventNotification  implements java.io.Serializable {
 
     /**
      * Sets the id value for this EventNotification.
-     *
+     * 
      * @param id
      */
     public void setId(int id) {
@@ -69,7 +69,7 @@ public class EventNotification  implements java.io.Serializable {
 
     /**
      * Gets the alias value for this EventNotification.
-     *
+     * 
      * @return alias
      */
     public java.lang.String getAlias() {
@@ -79,7 +79,7 @@ public class EventNotification  implements java.io.Serializable {
 
     /**
      * Sets the alias value for this EventNotification.
-     *
+     * 
      * @param alias
      */
     public void setAlias(java.lang.String alias) {
@@ -89,75 +89,75 @@ public class EventNotification  implements java.io.Serializable {
 
     /**
      * Gets the eventType value for this EventNotification.
-     *
+     * 
      * @return eventType
      */
-    public br.org.scadamy.api.constants.EventType getEventType() {
+    public br.org.scadabr.api.constants.EventType getEventType() {
         return eventType;
     }
 
 
     /**
      * Sets the eventType value for this EventNotification.
-     *
+     * 
      * @param eventType
      */
-    public void setEventType(br.org.scadamy.api.constants.EventType eventType) {
+    public void setEventType(br.org.scadabr.api.constants.EventType eventType) {
         this.eventType = eventType;
     }
 
 
     /**
      * Gets the alarmLevel value for this EventNotification.
-     *
+     * 
      * @return alarmLevel
      */
-    public br.org.scadamy.api.constants.AlarmLevel getAlarmLevel() {
+    public br.org.scadabr.api.constants.AlarmLevel getAlarmLevel() {
         return alarmLevel;
     }
 
 
     /**
      * Sets the alarmLevel value for this EventNotification.
-     *
+     * 
      * @param alarmLevel
      */
-    public void setAlarmLevel(br.org.scadamy.api.constants.AlarmLevel alarmLevel) {
+    public void setAlarmLevel(br.org.scadabr.api.constants.AlarmLevel alarmLevel) {
         this.alarmLevel = alarmLevel;
     }
 
 
     /**
      * Gets the message value for this EventNotification.
-     *
+     * 
      * @return message
      */
-    public br.org.scadamy.api.vo.EventMessage[] getMessage() {
+    public br.org.scadabr.api.vo.EventMessage[] getMessage() {
         return message;
     }
 
 
     /**
      * Sets the message value for this EventNotification.
-     *
+     * 
      * @param message
      */
-    public void setMessage(br.org.scadamy.api.vo.EventMessage[] message) {
+    public void setMessage(br.org.scadabr.api.vo.EventMessage[] message) {
         this.message = message;
     }
 
-    public br.org.scadamy.api.vo.EventMessage getMessage(int i) {
+    public br.org.scadabr.api.vo.EventMessage getMessage(int i) {
         return this.message[i];
     }
 
-    public void setMessage(int i, br.org.scadamy.api.vo.EventMessage _value) {
+    public void setMessage(int i, br.org.scadabr.api.vo.EventMessage _value) {
         this.message[i] = _value;
     }
 
 
     /**
      * Gets the timestamp value for this EventNotification.
-     *
+     * 
      * @return timestamp
      */
     public java.util.Calendar getTimestamp() {
@@ -167,7 +167,7 @@ public class EventNotification  implements java.io.Serializable {
 
     /**
      * Sets the timestamp value for this EventNotification.
-     *
+     * 
      * @param timestamp
      */
     public void setTimestamp(java.util.Calendar timestamp) {
@@ -177,7 +177,7 @@ public class EventNotification  implements java.io.Serializable {
 
     /**
      * Gets the ackTime value for this EventNotification.
-     *
+     * 
      * @return ackTime
      */
     public java.util.Calendar getAckTime() {
@@ -187,7 +187,7 @@ public class EventNotification  implements java.io.Serializable {
 
     /**
      * Sets the ackTime value for this EventNotification.
-     *
+     * 
      * @param ackTime
      */
     public void setAckTime(java.util.Calendar ackTime) {
@@ -197,7 +197,7 @@ public class EventNotification  implements java.io.Serializable {
 
     /**
      * Gets the rtnTime value for this EventNotification.
-     *
+     * 
      * @return rtnTime
      */
     public java.util.Calendar getRtnTime() {
@@ -207,7 +207,7 @@ public class EventNotification  implements java.io.Serializable {
 
     /**
      * Sets the rtnTime value for this EventNotification.
-     *
+     * 
      * @param rtnTime
      */
     public void setRtnTime(java.util.Calendar rtnTime) {
@@ -225,27 +225,27 @@ public class EventNotification  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
+        _equals = true && 
             this.id == other.getId() &&
-            ((this.alias==null && other.getAlias()==null) ||
+            ((this.alias==null && other.getAlias()==null) || 
              (this.alias!=null &&
               this.alias.equals(other.getAlias()))) &&
-            ((this.eventType==null && other.getEventType()==null) ||
+            ((this.eventType==null && other.getEventType()==null) || 
              (this.eventType!=null &&
               this.eventType.equals(other.getEventType()))) &&
-            ((this.alarmLevel==null && other.getAlarmLevel()==null) ||
+            ((this.alarmLevel==null && other.getAlarmLevel()==null) || 
              (this.alarmLevel!=null &&
               this.alarmLevel.equals(other.getAlarmLevel()))) &&
-            ((this.message==null && other.getMessage()==null) ||
+            ((this.message==null && other.getMessage()==null) || 
              (this.message!=null &&
               java.util.Arrays.equals(this.message, other.getMessage()))) &&
-            ((this.timestamp==null && other.getTimestamp()==null) ||
+            ((this.timestamp==null && other.getTimestamp()==null) || 
              (this.timestamp!=null &&
               this.timestamp.equals(other.getTimestamp()))) &&
-            ((this.ackTime==null && other.getAckTime()==null) ||
+            ((this.ackTime==null && other.getAckTime()==null) || 
              (this.ackTime!=null &&
               this.ackTime.equals(other.getAckTime()))) &&
-            ((this.rtnTime==null && other.getRtnTime()==null) ||
+            ((this.rtnTime==null && other.getRtnTime()==null) || 
              (this.rtnTime!=null &&
               this.rtnTime.equals(other.getRtnTime())));
         __equalsCalc = null;
@@ -298,54 +298,54 @@ public class EventNotification  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(EventNotification.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "EventNotification"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "EventNotification"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("id");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "id"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "id"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("alias");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "alias"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "alias"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("eventType");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "eventType"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "EventType"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "eventType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "EventType"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("alarmLevel");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "alarmLevel"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "AlarmLevel"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "alarmLevel"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "AlarmLevel"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("message");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "message"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "EventMessage"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "message"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "EventMessage"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         elemField.setMaxOccursUnbounded(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("timestamp");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "timestamp"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "timestamp"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("ackTime");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "ackTime"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "ackTime"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("rtnTime");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "rtnTime"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "rtnTime"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
@@ -362,10 +362,10 @@ public class EventNotification  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -374,10 +374,10 @@ public class EventNotification  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

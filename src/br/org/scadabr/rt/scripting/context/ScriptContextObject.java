@@ -1,4 +1,4 @@
-package br.org.scadamy.rt.scripting.context;
+package br.org.scadabr.rt.scripting.context;
 
 import java.util.ArrayList;
 import java.util.List;

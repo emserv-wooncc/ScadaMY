@@ -1,4 +1,4 @@
-package br.org.scadamy.rt.dataSource.drStorageHt5b;
+package br.org.scadabr.rt.dataSource.drStorageHt5b;
 
 import gnu.io.CommPortIdentifier;
 import gnu.io.SerialPort;
@@ -11,8 +11,8 @@ import java.util.Enumeration;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import br.org.scadamy.vo.dataSource.drStorageHt5b.DrStorageHt5bDataSourceVO;
-import br.org.scadamy.vo.dataSource.drStorageHt5b.DrStorageHt5bPointLocatorVO;
+import br.org.scadabr.vo.dataSource.drStorageHt5b.DrStorageHt5bDataSourceVO;
+import br.org.scadabr.vo.dataSource.drStorageHt5b.DrStorageHt5bPointLocatorVO;
 
 import com.serotonin.mango.rt.dataImage.DataPointRT;
 import com.serotonin.mango.rt.dataImage.PointValueTime;

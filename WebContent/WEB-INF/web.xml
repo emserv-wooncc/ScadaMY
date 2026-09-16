@@ -9,7 +9,7 @@
 	or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for 
 	more details. You should have received a copy of the GNU General Public License 
 	along with this program. If not, see http://www.gnu.org/licenses/. -->
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4">
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
   <context-param>
     <param-name>com.serotonin.web.taglib.ListSortTag.styleClass</param-name>
     <param-value>rowHeaderLink</param-value>
@@ -61,8 +61,14 @@
     <param-value>FILE HTTP</param-value>
   </context-param>
   <filter>
+    <filter-name>LegacyWeb</filter-name>
+    <filter-class>my.com.emserv.web.filter.LegacyWebFilter</filter-class>
+    <async-supported>true</async-supported>
+  </filter>
+  <filter>
     <filter-name>CharacterSet</filter-name>
     <filter-class>com.serotonin.web.filter.CharacterSetFilter</filter-class>
+    <async-supported>true</async-supported>
     <init-param>
       <param-name>charset</param-name>
       <param-value>UTF-8</param-value>
@@ -71,6 +77,7 @@
   <filter>
     <filter-name>IsLoggedIn</filter-name>
     <filter-class>com.serotonin.mango.web.filter.NormalLoggedInFilter</filter-class>
+    <async-supported>true</async-supported>
     <init-param>
       <param-name>forwardUrl</param-name>
       <param-value>/login.htm</param-value>
@@ -79,15 +86,21 @@
   <filter>
     <filter-name>WebContext</filter-name>
     <filter-class>com.serotonin.mango.web.filter.WebContextFilter</filter-class>
+    <async-supported>true</async-supported>
   </filter>
   <filter>
     <filter-name>CacheHeaders</filter-name>
     <filter-class>com.serotonin.mango.web.filter.HttpResponseHeaderFilter</filter-class>
+    <async-supported>true</async-supported>
     <init-param>
       <param-name>Cache-Control</param-name>
       <param-value>max-age=5184000</param-value>
     </init-param>
   </filter>
+  <filter-mapping>
+    <filter-name>LegacyWeb</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
   <filter-mapping>
     <filter-name>CharacterSet</filter-name>
     <url-pattern>*.htm</url-pattern>
@@ -135,11 +148,13 @@
   <servlet>
     <servlet-name>springDispatcher</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <async-supported>true</async-supported>
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet>
     <servlet-name>dwr-invoker</servlet-name>
     <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+    <async-supported>true</async-supported>
     <init-param>
       <param-name>debug</param-name>
       <param-value>false</param-value>
@@ -157,38 +172,47 @@
   <servlet>
     <servlet-name>imageChart</servlet-name>
     <servlet-class>com.serotonin.mango.web.servlet.ImageChartServlet</servlet-class>
+    <async-supported>true</async-supported>
   </servlet>
   <servlet>
     <servlet-name>asyncImageChart</servlet-name>
     <servlet-class>com.serotonin.mango.web.servlet.AsyncImageChartServlet</servlet-class>
+    <async-supported>true</async-supported>
   </servlet>
   <servlet>
     <servlet-name>reportExport</servlet-name>
     <servlet-class>com.serotonin.mango.web.servlet.ReportExportServlet</servlet-class>
+    <async-supported>true</async-supported>
   </servlet>
   <servlet>
     <servlet-name>reportEventExport</servlet-name>
     <servlet-class>com.serotonin.mango.web.servlet.ReportEventExportServlet</servlet-class>
+    <async-supported>true</async-supported>
   </servlet>
   <servlet>
     <servlet-name>reportUserCommentExport</servlet-name>
     <servlet-class>com.serotonin.mango.web.servlet.ReportUserCommentExportServlet</servlet-class>
+    <async-supported>true</async-supported>
   </servlet>
   <servlet>
     <servlet-name>reportChart</servlet-name>
     <servlet-class>com.serotonin.mango.web.servlet.ReportChartServlet</servlet-class>
+    <async-supported>true</async-supported>
   </servlet>
   <servlet>
     <servlet-name>httpDataSource</servlet-name>
     <servlet-class>com.serotonin.mango.web.servlet.HttpDataSourceServlet</servlet-class>
+    <async-supported>true</async-supported>
   </servlet>
   <servlet>
     <servlet-name>imageValue</servlet-name>
     <servlet-class>com.serotonin.mango.web.servlet.ImageValueServlet</servlet-class>
+    <async-supported>true</async-supported>
   </servlet>
   <servlet>
     <servlet-name>RoseServlet</servlet-name>
     <servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
+    <async-supported>true</async-supported>
   </servlet>
   <servlet-mapping>
     <servlet-name>springDispatcher</servlet-name>
@@ -197,6 +221,38 @@
   <servlet-mapping>
     <servlet-name>springDispatcher</servlet-name>
     <url-pattern>*.shtm</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>springDispatcher</servlet-name>
+    <url-pattern>/api/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>springDispatcher</servlet-name>
+    <url-pattern>/app/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>springDispatcher</servlet-name>
+    <url-pattern>/ws/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>springDispatcher</servlet-name>
+    <url-pattern>/ws</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>springDispatcher</servlet-name>
+    <url-pattern>/v2/api-docs</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>springDispatcher</servlet-name>
+    <url-pattern>/swagger-resources/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>springDispatcher</servlet-name>
+    <url-pattern>/swagger-ui.html</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>springDispatcher</servlet-name>
+    <url-pattern>/webjars/*</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>dwr-invoker</servlet-name>

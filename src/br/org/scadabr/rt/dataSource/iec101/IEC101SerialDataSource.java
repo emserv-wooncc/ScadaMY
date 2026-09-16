@@ -1,8 +1,8 @@
-package br.org.scadamy.rt.dataSource.iec101;
+package br.org.scadabr.rt.dataSource.iec101;
 
-import br.org.scadamy.protocol.iec101.session.IECConfig;
-import br.org.scadamy.protocol.iec101.session.IECConfig.COMM;
-import br.org.scadamy.vo.dataSource.iec101.IEC101SerialDataSourceVO;
+import br.org.scadabr.protocol.iec101.session.IECConfig;
+import br.org.scadabr.protocol.iec101.session.IECConfig.COMM;
+import br.org.scadabr.vo.dataSource.iec101.IEC101SerialDataSourceVO;
 
 public class IEC101SerialDataSource extends IEC101DataSource {
 

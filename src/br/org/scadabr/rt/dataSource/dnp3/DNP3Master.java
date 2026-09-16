@@ -1,16 +1,16 @@
-package br.org.scadamy.rt.dataSource.dnp3;
+package br.org.scadabr.rt.dataSource.dnp3;
 
 import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import br.org.scadamy.dnp34j.master.common.AppFeatures;
-import br.org.scadamy.dnp34j.master.session.DNPUser;
-import br.org.scadamy.dnp34j.master.session.config.DNPConfig;
-import br.org.scadamy.dnp34j.master.session.config.EthernetParameters;
-import br.org.scadamy.dnp34j.master.session.config.SerialParameters;
-import br.org.scadamy.dnp34j.master.session.database.DataElement;
+import br.org.scadabr.dnp34j.master.common.AppFeatures;
+import br.org.scadabr.dnp34j.master.session.DNPUser;
+import br.org.scadabr.dnp34j.master.session.config.DNPConfig;
+import br.org.scadabr.dnp34j.master.session.config.EthernetParameters;
+import br.org.scadabr.dnp34j.master.session.config.SerialParameters;
+import br.org.scadabr.dnp34j.master.session.database.DataElement;
 
 public class DNP3Master {
 	private Log log = LogFactory.getLog(DNP3Master.class);

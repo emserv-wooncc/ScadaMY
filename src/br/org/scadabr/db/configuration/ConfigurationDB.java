@@ -1,4 +1,4 @@
-package br.org.scadamy.db.configuration;
+package br.org.scadabr.db.configuration;
 
 import java.io.File;
 import java.io.FileInputStream;

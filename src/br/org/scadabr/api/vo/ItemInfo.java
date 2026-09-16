@@ -5,12 +5,12 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.vo;
+package br.org.scadabr.api.vo;
 
 public class ItemInfo  implements java.io.Serializable {
     private java.lang.String itemName;
 
-    private br.org.scadamy.api.constants.DataType dataType;
+    private br.org.scadabr.api.constants.DataType dataType;
 
     private java.lang.Boolean writable;
 
@@ -19,7 +19,7 @@ public class ItemInfo  implements java.io.Serializable {
 
     public ItemInfo(
            java.lang.String itemName,
-           br.org.scadamy.api.constants.DataType dataType,
+           br.org.scadabr.api.constants.DataType dataType,
            java.lang.Boolean writable) {
            this.itemName = itemName;
            this.dataType = dataType;
@@ -29,7 +29,7 @@ public class ItemInfo  implements java.io.Serializable {
 
     /**
      * Gets the itemName value for this ItemInfo.
-     *
+     * 
      * @return itemName
      */
     public java.lang.String getItemName() {
@@ -39,7 +39,7 @@ public class ItemInfo  implements java.io.Serializable {
 
     /**
      * Sets the itemName value for this ItemInfo.
-     *
+     * 
      * @param itemName
      */
     public void setItemName(java.lang.String itemName) {
@@ -49,27 +49,27 @@ public class ItemInfo  implements java.io.Serializable {
 
     /**
      * Gets the dataType value for this ItemInfo.
-     *
+     * 
      * @return dataType
      */
-    public br.org.scadamy.api.constants.DataType getDataType() {
+    public br.org.scadabr.api.constants.DataType getDataType() {
         return dataType;
     }
 
 
     /**
      * Sets the dataType value for this ItemInfo.
-     *
+     * 
      * @param dataType
      */
-    public void setDataType(br.org.scadamy.api.constants.DataType dataType) {
+    public void setDataType(br.org.scadabr.api.constants.DataType dataType) {
         this.dataType = dataType;
     }
 
 
     /**
      * Gets the writable value for this ItemInfo.
-     *
+     * 
      * @return writable
      */
     public java.lang.Boolean getWritable() {
@@ -79,7 +79,7 @@ public class ItemInfo  implements java.io.Serializable {
 
     /**
      * Sets the writable value for this ItemInfo.
-     *
+     * 
      * @param writable
      */
     public void setWritable(java.lang.Boolean writable) {
@@ -97,14 +97,14 @@ public class ItemInfo  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
-            ((this.itemName==null && other.getItemName()==null) ||
+        _equals = true && 
+            ((this.itemName==null && other.getItemName()==null) || 
              (this.itemName!=null &&
               this.itemName.equals(other.getItemName()))) &&
-            ((this.dataType==null && other.getDataType()==null) ||
+            ((this.dataType==null && other.getDataType()==null) || 
              (this.dataType!=null &&
               this.dataType.equals(other.getDataType()))) &&
-            ((this.writable==null && other.getWritable()==null) ||
+            ((this.writable==null && other.getWritable()==null) || 
              (this.writable!=null &&
               this.writable.equals(other.getWritable())));
         __equalsCalc = null;
@@ -136,22 +136,22 @@ public class ItemInfo  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(ItemInfo.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "ItemInfo"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "ItemInfo"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("itemName");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "itemName"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "itemName"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("dataType");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "dataType"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "DataType"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "dataType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "DataType"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("writable");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "writable"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "writable"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
@@ -168,10 +168,10 @@ public class ItemInfo  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -180,10 +180,10 @@ public class ItemInfo  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

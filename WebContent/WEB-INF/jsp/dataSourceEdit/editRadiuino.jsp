@@ -4,7 +4,7 @@
 
 --%>
 <%@ include file="/WEB-INF/jsp/include/tech.jsp"%>
-<%@page import="cc.radiuino.scadamy.vo.datasource.radiuino.RadiuinoDataType"%>
+<%@page import="cc.radiuino.scadabr.vo.datasource.radiuino.RadiuinoDataType"%>
 
 <script type="text/javascript">
 

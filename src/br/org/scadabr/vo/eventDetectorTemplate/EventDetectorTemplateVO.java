@@ -1,9 +1,9 @@
-package br.org.scadamy.vo.eventDetectorTemplate;
+package br.org.scadabr.vo.eventDetectorTemplate;
 
 import java.util.List;
 import java.util.Map;
 
-import br.org.scadamy.rt.EventDetectorTemplateRT;
+import br.org.scadabr.rt.EventDetectorTemplateRT;
 
 import com.serotonin.json.JsonException;
 import com.serotonin.json.JsonObject;

@@ -2,7 +2,7 @@
     Mango - Open Source M2M - http://mango.serotoninsoftware.com
     Copyright (C) 2006-2011 Serotonin Software Technologies Inc.
     @author Matthew Lohbihler
-
+    
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -75,26 +75,26 @@ import com.serotonin.util.StringUtils;
 import com.serotonin.web.dwr.DwrResponseI18n;
 import com.serotonin.web.dwr.MethodFilter;
 
-import br.org.scadamy.api.vo.FlexProject;
-import br.org.scadamy.db.dao.FlexProjectDao;
-import br.org.scadamy.db.dao.ScriptDao;
-import br.org.scadamy.db.dao.UsersProfileDao;
-import br.org.scadamy.rt.scripting.ScriptRT;
-import br.org.scadamy.view.component.AlarmListComponent;
-import br.org.scadamy.view.component.ButtonComponent;
-import br.org.scadamy.view.component.ChartComparatorComponent;
-import br.org.scadamy.view.component.CustomComponent;
-import br.org.scadamy.view.component.FlexBuilderComponent;
-import br.org.scadamy.view.component.LinkComponent;
-import br.org.scadamy.view.component.ScriptButtonComponent;
-import br.org.scadamy.vo.scripting.ScriptVO;
-import br.org.scadamy.vo.usersProfiles.UsersProfileVO;
-import br.org.scadamy.workarounds.ViewManager;
+import br.org.scadabr.api.vo.FlexProject;
+import br.org.scadabr.db.dao.FlexProjectDao;
+import br.org.scadabr.db.dao.ScriptDao;
+import br.org.scadabr.db.dao.UsersProfileDao;
+import br.org.scadabr.rt.scripting.ScriptRT;
+import br.org.scadabr.view.component.AlarmListComponent;
+import br.org.scadabr.view.component.ButtonComponent;
+import br.org.scadabr.view.component.ChartComparatorComponent;
+import br.org.scadabr.view.component.CustomComponent;
+import br.org.scadabr.view.component.FlexBuilderComponent;
+import br.org.scadabr.view.component.LinkComponent;
+import br.org.scadabr.view.component.ScriptButtonComponent;
+import br.org.scadabr.vo.scripting.ScriptVO;
+import br.org.scadabr.vo.usersProfiles.UsersProfileVO;
+import br.org.scadabr.workarounds.ViewManager;
 
 /**
  * This class is so not threadsafe. Do not use class fields except for the
  * resource bundle stuff.
- *
+ * 
  * @author mlohbihler
  */
 public class ViewDwr extends BaseDwr {
@@ -161,7 +161,7 @@ public class ViewDwr extends BaseDwr {
 	/**
 	 * Retrieves point state for all points on a given view. This is the monitoring
 	 * version of the method. See below for the view editing version.
-	 *
+	 * 
 	 * @param viewId
 	 * @return
 	 */
@@ -481,7 +481,7 @@ public class ViewDwr extends BaseDwr {
 	/**
 	 * Allows the setting of a given data point. Overrides BaseDwr to resolve the
 	 * point view id.
-	 *
+	 * 
 	 * @param pointId
 	 * @param valueStr
 	 * @return

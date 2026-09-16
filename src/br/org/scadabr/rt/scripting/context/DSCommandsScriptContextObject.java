@@ -1,4 +1,4 @@
-package br.org.scadamy.rt.scripting.context;
+package br.org.scadabr.rt.scripting.context;
 
 import com.serotonin.mango.Common;
 import com.serotonin.mango.db.dao.DataSourceDao;

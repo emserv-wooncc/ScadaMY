@@ -1,4 +1,4 @@
-package br.org.scadamy.rt.dataSource;
+package br.org.scadabr.rt.dataSource;
 
 import java.util.List;
 
@@ -11,7 +11,7 @@ import org.quartz.Trigger;
 import com.serotonin.mango.Common;
 import com.serotonin.mango.vo.User;
 
-import br.org.scadamy.api.constants.ServerStateCode;
+import br.org.scadabr.api.constants.ServerStateCode;
 
 public class ServerStateChecker implements org.quartz.SchedulerListener, Job {
 

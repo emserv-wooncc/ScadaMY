@@ -1,13 +1,13 @@
-package br.org.scadamy.vo.usersProfiles;
+package br.org.scadabr.vo.usersProfiles;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import br.org.scadamy.vo.permission.Permission;
-import br.org.scadamy.vo.permission.ViewAccess;
-import br.org.scadamy.vo.permission.WatchListAccess;
+import br.org.scadabr.vo.permission.Permission;
+import br.org.scadabr.vo.permission.ViewAccess;
+import br.org.scadabr.vo.permission.WatchListAccess;
 
 import com.serotonin.json.JsonException;
 import com.serotonin.json.JsonObject;

@@ -18,19 +18,91 @@
  */
 package com.serotonin.mango.web.mvc;
 
-import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.validation.BindException;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.SimpleFormController;
+import org.springframework.web.servlet.mvc.Controller;
 import org.springframework.web.servlet.view.RedirectView;
 import org.springframework.web.util.WebUtils;
 
-public class SimpleFormRedirectController extends SimpleFormController {
+public abstract class SimpleFormRedirectController implements Controller {
     private String successUrl;
+    private String commandName = "form";
+    private Class<?> commandClass = Object.class;
+    private String formView;
 
     public void setSuccessUrl(String successUrl) {
         this.successUrl = successUrl;
     }
+
+    public void setCommandName(String commandName) {
+        this.commandName = commandName;
+    }
+
+    public void setCommandClass(Class<?> commandClass) {
+        this.commandClass = commandClass;
+    }
+
+    public void setFormView(String formView) {
+        this.formView = formView;
+    }
+
+    @Override
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        Object command = formBackingObject(request);
+        if ("POST".equalsIgnoreCase(request.getMethod())) {
+            ServletRequestDataBinder binder = new ServletRequestDataBinder(command, commandName);
+            binder.bind(request);
+            BindException errors = new BindException(binder.getBindingResult());
+            onBindAndValidate(request, command, errors);
+            if (isFormChangeRequest(request) || errors.hasErrors()) {
+                Map<String, Object> model = errors.getModel();
+                Map<String, Object> ref = referenceData(request, command, errors);
+                if (ref != null) {
+                    model.putAll(ref);
+                }
+                return new ModelAndView(formView, model);
+            }
+            return onSubmit(request, response, command, errors);
+        } else {
+            BindException errors = new BindException(command, commandName);
+            Map<String, Object> model = errors.getModel();
+            Map<String, Object> ref = referenceData(request, command, errors);
+            if (ref != null) {
+                model.putAll(ref);
+            }
+            return new ModelAndView(formView, model);
+        }
+    }
+
+    protected Object formBackingObject(HttpServletRequest request) throws Exception {
+        return commandClass.newInstance();
+    }
+
+    @SuppressWarnings("rawtypes")
+    protected Map referenceData(HttpServletRequest request, Object command, Errors errors) throws Exception {
+        return null;
+    }
+
+    protected void onBindAndValidate(HttpServletRequest request, Object command, BindException errors) throws Exception {
+    }
+
+    protected boolean isFormChangeRequest(HttpServletRequest request) {
+        return false;
+    }
+
+    protected boolean isFormSubmission(HttpServletRequest request) {
+        return "POST".equalsIgnoreCase(request.getMethod());
+    }
+
+    protected abstract ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object command,
+            BindException errors) throws Exception;
 
     public ModelAndView getSuccessRedirectView() {
         return getSuccessRedirectView(null);

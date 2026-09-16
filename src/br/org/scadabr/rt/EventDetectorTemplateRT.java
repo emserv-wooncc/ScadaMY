@@ -1,9 +1,9 @@
-package br.org.scadamy.rt;
+package br.org.scadabr.rt;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import br.org.scadamy.vo.eventDetectorTemplate.EventDetectorTemplateVO;
+import br.org.scadabr.vo.eventDetectorTemplate.EventDetectorTemplateVO;
 
 import com.serotonin.mango.Common;
 import com.serotonin.mango.vo.DataPointVO;

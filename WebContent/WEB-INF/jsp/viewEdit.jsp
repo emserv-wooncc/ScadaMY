@@ -57,7 +57,7 @@
 		var hasContent = viewComponent.content || false;
 
         if (isFake)
-            // Fake template is a ScadaMY-EF workaround
+            // Fake template is a ScadaBR-EF workaround
             content = $("fakeTemplate").cloneNode(true);
         else if (hasContent && viewComponent.content.includes("<!--FAKE COMPONENT-->"))
             content = $("fakeTemplate").cloneNode(true);

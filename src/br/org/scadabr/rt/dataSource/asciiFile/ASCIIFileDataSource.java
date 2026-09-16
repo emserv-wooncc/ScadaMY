@@ -1,4 +1,4 @@
-package br.org.scadamy.rt.dataSource.asciiFile;
+package br.org.scadabr.rt.dataSource.asciiFile;
 
 import java.io.File;
 import java.io.FileReader;
@@ -10,8 +10,8 @@ import java.util.regex.Pattern;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import br.org.scadamy.vo.dataSource.asciiFile.ASCIIFileDataSourceVO;
-import br.org.scadamy.vo.dataSource.asciiFile.ASCIIFilePointLocatorVO;
+import br.org.scadabr.vo.dataSource.asciiFile.ASCIIFileDataSourceVO;
+import br.org.scadabr.vo.dataSource.asciiFile.ASCIIFilePointLocatorVO;
 
 import com.serotonin.mango.rt.dataImage.DataPointRT;
 import com.serotonin.mango.rt.dataImage.PointValueTime;

@@ -2,7 +2,7 @@
     Mango - Open Source M2M - http://mango.serotoninsoftware.com
     Copyright (C) 2006-2011 Serotonin Software Technologies Inc.
     @author Matthew Lohbihler
-
+    
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -184,29 +184,29 @@ import com.serotonin.web.i18n.LocalizableException;
 import com.serotonin.web.i18n.LocalizableMessage;
 import com.serotonin.web.taglib.DateFunctions;
 
-import br.org.scadamy.OPCItem;
-import br.org.scadamy.OPCUtils;
-import br.org.scadamy.RealOPCMaster;
-import br.org.scadamy.vo.dataSource.alpha2.Alpha2DataSourceVO;
-import br.org.scadamy.vo.dataSource.alpha2.Alpha2PointLocatorVO;
-import br.org.scadamy.vo.dataSource.asciiFile.ASCIIFileDataSourceVO;
-import br.org.scadamy.vo.dataSource.asciiFile.ASCIIFilePointLocatorVO;
-import br.org.scadamy.vo.dataSource.asciiSerial.ASCIISerialDataSourceVO;
-import br.org.scadamy.vo.dataSource.asciiSerial.ASCIISerialPointLocatorVO;
-import br.org.scadamy.vo.dataSource.dnp3.Dnp3IpDataSourceVO;
-import br.org.scadamy.vo.dataSource.dnp3.Dnp3PointLocatorVO;
-import br.org.scadamy.vo.dataSource.dnp3.Dnp3SerialDataSourceVO;
-import br.org.scadamy.vo.dataSource.drStorageHt5b.DrStorageHt5bDataSourceVO;
-import br.org.scadamy.vo.dataSource.drStorageHt5b.DrStorageHt5bPointLocatorVO;
-import br.org.scadamy.vo.dataSource.iec101.IEC101EthernetDataSourceVO;
-import br.org.scadamy.vo.dataSource.iec101.IEC101PointLocatorVO;
-import br.org.scadamy.vo.dataSource.iec101.IEC101SerialDataSourceVO;
-import br.org.scadamy.vo.dataSource.nodaves7.NodaveS7DataSourceVO;
-import br.org.scadamy.vo.dataSource.nodaves7.NodaveS7PointLocatorVO;
-import br.org.scadamy.vo.dataSource.opc.OPCDataSourceVO;
-import br.org.scadamy.vo.dataSource.opc.OPCPointLocatorVO;
-import cc.radiuino.scadamy.vo.datasource.radiuino.RadiuinoDataSourceVO;
-import cc.radiuino.scadamy.vo.datasource.radiuino.RadiuinoPointLocatorVO;
+import br.org.scadabr.OPCItem;
+import br.org.scadabr.OPCUtils;
+import br.org.scadabr.RealOPCMaster;
+import br.org.scadabr.vo.dataSource.alpha2.Alpha2DataSourceVO;
+import br.org.scadabr.vo.dataSource.alpha2.Alpha2PointLocatorVO;
+import br.org.scadabr.vo.dataSource.asciiFile.ASCIIFileDataSourceVO;
+import br.org.scadabr.vo.dataSource.asciiFile.ASCIIFilePointLocatorVO;
+import br.org.scadabr.vo.dataSource.asciiSerial.ASCIISerialDataSourceVO;
+import br.org.scadabr.vo.dataSource.asciiSerial.ASCIISerialPointLocatorVO;
+import br.org.scadabr.vo.dataSource.dnp3.Dnp3IpDataSourceVO;
+import br.org.scadabr.vo.dataSource.dnp3.Dnp3PointLocatorVO;
+import br.org.scadabr.vo.dataSource.dnp3.Dnp3SerialDataSourceVO;
+import br.org.scadabr.vo.dataSource.drStorageHt5b.DrStorageHt5bDataSourceVO;
+import br.org.scadabr.vo.dataSource.drStorageHt5b.DrStorageHt5bPointLocatorVO;
+import br.org.scadabr.vo.dataSource.iec101.IEC101EthernetDataSourceVO;
+import br.org.scadabr.vo.dataSource.iec101.IEC101PointLocatorVO;
+import br.org.scadabr.vo.dataSource.iec101.IEC101SerialDataSourceVO;
+import br.org.scadabr.vo.dataSource.nodaves7.NodaveS7DataSourceVO;
+import br.org.scadabr.vo.dataSource.nodaves7.NodaveS7PointLocatorVO;
+import br.org.scadabr.vo.dataSource.opc.OPCDataSourceVO;
+import br.org.scadabr.vo.dataSource.opc.OPCPointLocatorVO;
+import cc.radiuino.scadabr.vo.datasource.radiuino.RadiuinoDataSourceVO;
+import cc.radiuino.scadabr.vo.datasource.radiuino.RadiuinoPointLocatorVO;
 import net.sf.mbus4j.Connection;
 import net.sf.mbus4j.MBusAddressing;
 import net.sf.mbus4j.TcpIpConnection;

@@ -5,12 +5,12 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.vo;
+package br.org.scadabr.api.vo;
 
 public class ServerStatus  implements java.io.Serializable {
     private java.util.Calendar startTime;
 
-    private br.org.scadamy.api.constants.ServerStateCode serverState;
+    private br.org.scadabr.api.constants.ServerStateCode serverState;
 
     private java.lang.String productVersion;
 
@@ -21,7 +21,7 @@ public class ServerStatus  implements java.io.Serializable {
 
     public ServerStatus(
            java.util.Calendar startTime,
-           br.org.scadamy.api.constants.ServerStateCode serverState,
+           br.org.scadabr.api.constants.ServerStateCode serverState,
            java.lang.String productVersion,
            java.lang.String[] supportedLocaleIDs) {
            this.startTime = startTime;
@@ -33,7 +33,7 @@ public class ServerStatus  implements java.io.Serializable {
 
     /**
      * Gets the startTime value for this ServerStatus.
-     *
+     * 
      * @return startTime
      */
     public java.util.Calendar getStartTime() {
@@ -43,7 +43,7 @@ public class ServerStatus  implements java.io.Serializable {
 
     /**
      * Sets the startTime value for this ServerStatus.
-     *
+     * 
      * @param startTime
      */
     public void setStartTime(java.util.Calendar startTime) {
@@ -53,27 +53,27 @@ public class ServerStatus  implements java.io.Serializable {
 
     /**
      * Gets the serverState value for this ServerStatus.
-     *
+     * 
      * @return serverState
      */
-    public br.org.scadamy.api.constants.ServerStateCode getServerState() {
+    public br.org.scadabr.api.constants.ServerStateCode getServerState() {
         return serverState;
     }
 
 
     /**
      * Sets the serverState value for this ServerStatus.
-     *
+     * 
      * @param serverState
      */
-    public void setServerState(br.org.scadamy.api.constants.ServerStateCode serverState) {
+    public void setServerState(br.org.scadabr.api.constants.ServerStateCode serverState) {
         this.serverState = serverState;
     }
 
 
     /**
      * Gets the productVersion value for this ServerStatus.
-     *
+     * 
      * @return productVersion
      */
     public java.lang.String getProductVersion() {
@@ -83,7 +83,7 @@ public class ServerStatus  implements java.io.Serializable {
 
     /**
      * Sets the productVersion value for this ServerStatus.
-     *
+     * 
      * @param productVersion
      */
     public void setProductVersion(java.lang.String productVersion) {
@@ -93,7 +93,7 @@ public class ServerStatus  implements java.io.Serializable {
 
     /**
      * Gets the supportedLocaleIDs value for this ServerStatus.
-     *
+     * 
      * @return supportedLocaleIDs
      */
     public java.lang.String[] getSupportedLocaleIDs() {
@@ -103,7 +103,7 @@ public class ServerStatus  implements java.io.Serializable {
 
     /**
      * Sets the supportedLocaleIDs value for this ServerStatus.
-     *
+     * 
      * @param supportedLocaleIDs
      */
     public void setSupportedLocaleIDs(java.lang.String[] supportedLocaleIDs) {
@@ -129,17 +129,17 @@ public class ServerStatus  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
-            ((this.startTime==null && other.getStartTime()==null) ||
+        _equals = true && 
+            ((this.startTime==null && other.getStartTime()==null) || 
              (this.startTime!=null &&
               this.startTime.equals(other.getStartTime()))) &&
-            ((this.serverState==null && other.getServerState()==null) ||
+            ((this.serverState==null && other.getServerState()==null) || 
              (this.serverState!=null &&
               this.serverState.equals(other.getServerState()))) &&
-            ((this.productVersion==null && other.getProductVersion()==null) ||
+            ((this.productVersion==null && other.getProductVersion()==null) || 
              (this.productVersion!=null &&
               this.productVersion.equals(other.getProductVersion()))) &&
-            ((this.supportedLocaleIDs==null && other.getSupportedLocaleIDs()==null) ||
+            ((this.supportedLocaleIDs==null && other.getSupportedLocaleIDs()==null) || 
              (this.supportedLocaleIDs!=null &&
               java.util.Arrays.equals(this.supportedLocaleIDs, other.getSupportedLocaleIDs())));
         __equalsCalc = null;
@@ -182,28 +182,28 @@ public class ServerStatus  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(ServerStatus.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "ServerStatus"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "ServerStatus"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("startTime");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "startTime"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "startTime"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("serverState");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "serverState"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "ServerStateCode"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "serverState"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "ServerStateCode"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("productVersion");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "productVersion"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "productVersion"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("supportedLocaleIDs");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "supportedLocaleIDs"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "supportedLocaleIDs"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
@@ -222,10 +222,10 @@ public class ServerStatus  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -234,10 +234,10 @@ public class ServerStatus  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

@@ -2,7 +2,7 @@
     Mango - Open Source M2M - http://mango.serotoninsoftware.com
     Copyright (C) 2006-2011 Serotonin Software Technologies Inc.
     @author Matthew Lohbihler
-
+    
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -83,7 +83,7 @@ public class PostgreSQLAccess extends BasePooledAccess {
             Connection conn = DriverManager.getConnection(Common.getEnvironmentProfile().getString("db.url.public"),
                     Common.getEnvironmentProfile().getString("db.username"),
                     Common.getEnvironmentProfile().getString("db.password"));
-            ResultSet res = conn.createStatement().executeQuery("SELECT 1 from pg_database WHERE datname='scadamy'");
+            ResultSet res = conn.createStatement().executeQuery("SELECT 1 from pg_database WHERE datname='scadabr'");
             if (res.next()){
                 //se possui registros então é porque a base de dados existe
                 conn.close();
@@ -91,7 +91,7 @@ public class PostgreSQLAccess extends BasePooledAccess {
             }
             else{
                 //como a base de dados não existe então ela deverá ser criada
-                conn.createStatement().executeUpdate("CREATE DATABASE scadamy WITH OWNER = postgres ENCODING = 'UTF8'");
+                conn.createStatement().executeUpdate("CREATE DATABASE scadabr WITH OWNER = postgres ENCODING = 'UTF8'");
                 conn.close();
                 //uma vez com o banco de dados criado procederemos com a criação das tabelas
                 conn = DriverManager.getConnection(Common.getEnvironmentProfile().getString("db.url"),
@@ -99,10 +99,10 @@ public class PostgreSQLAccess extends BasePooledAccess {
                     Common.getEnvironmentProfile().getString("db.password"));
                 createSchema("/WEB-INF/db/createTables-postgresql.sql");
                 conn.close();
-                return true;
+                return true;                
             }
         } catch (SQLException ex) {
-            //Logger.getLogger(PostgreSQLAccess.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(PostgreSQLAccess.class.getName()).log(Level.SEVERE, null, ex);          
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(PostgreSQLAccess.class.getName()).log(Level.SEVERE, null, ex);
         }

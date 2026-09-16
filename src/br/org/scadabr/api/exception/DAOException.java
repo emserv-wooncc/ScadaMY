@@ -1,4 +1,4 @@
-package br.org.scadamy.api.exception;
+package br.org.scadabr.api.exception;
 
 public class DAOException extends Exception {
 

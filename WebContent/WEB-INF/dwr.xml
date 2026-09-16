@@ -2,7 +2,7 @@
     Mango - Open Source M2M - http://mango.serotoninsoftware.com
     Copyright (C) 2006-2011 Serotonin Software Technologies Inc.
     @author Matthew Lohbihler
-
+    
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -22,14 +22,14 @@
   <init>
     <converter id="localizableMessage" class="com.serotonin.web.dwr.LocalizableMessageConverter"/>
   </init>
-
+  
   <allow>
     <filter class="com.serotonin.mango.web.filter.ExceptionDetectionFilter"/>
     <filter class="com.serotonin.web.dwr.LocalizationFilter">
       <param name="localeResolverName">localeResolver</param>
       <param name="bundleBaseName">messages</param>
     </filter>
-
+  
     <create creator="spring" javascript="CompoundEventsDwr">
       <param name="beanName" value="CompoundEventsDwr"/>
       <filter class="com.serotonin.mango.web.dwr.util.LoggedInAjaxFilter"/>
@@ -126,28 +126,28 @@
       <param name="beanName" value="UsersProfilesDwr"/>
       <filter class="com.serotonin.mango.web.dwr.util.LoggedInAjaxFilter"/>
     </create>
-
-    <convert converter="bean" match="br.org.scadamy.OPCItem" />
-    <convert converter="bean" match="br.org.scadamy.api.vo.*" />
-
+    
+    <convert converter="bean" match="br.org.scadabr.OPCItem" />
+    <convert converter="bean" match="br.org.scadabr.api.vo.*" />
+    
     <convert converter="bean" match="com.serotonin.db.IntValuePair"/>
     <convert converter="bean" match="com.serotonin.db.KeyValuePair"/>
-
+    
     <convert converter="bean" match="com.serotonin.mango.rt.dataSource.http.HttpReceiverPointSample"/>
     <convert converter="bean" match="com.serotonin.mango.rt.dataSource.onewire.OneWireContainerInfo"/>
     <convert converter="bean" match="com.serotonin.mango.rt.dataSource.onewire.OneWireContainerAttribute"/>
-
+    
     <convert converter="bean" match="com.serotonin.mango.util.IntMessagePair"/>
-
+    
     <convert converter="bean" match="com.serotonin.mango.view.chart.*"/>
     <convert converter="bean" match="com.serotonin.mango.view.component.*"/>
-    <convert converter="bean" match="br.org.scadamy.view.component.*"/>
+    <convert converter="bean" match="br.org.scadabr.view.component.*"/>
     <convert converter="bean" match="com.serotonin.mango.view.text.*"/>
     <convert converter="bean" match="com.serotonin.mango.view.DynamicImage"/>
     <convert converter="bean" match="com.serotonin.mango.view.ImageSet"/>
     <convert converter="bean" match="com.serotonin.mango.view.ImplDefinition"/>
     <convert converter="bean" match="com.serotonin.mango.view.ShareUser"/>
-
+    
     <convert converter="bean" match="com.serotonin.mango.vo.bean.*"/>
     <convert converter="bean" match="com.serotonin.mango.vo.dataSource.AbstractPointLocatorVO">
       <param name="exclude" value="dataPointSaveHandler"/>
@@ -155,7 +155,7 @@
     <convert converter="bean" match="com.serotonin.mango.vo.dataSource.DataSourceVO"/>
     <convert converter="bean" match="com.serotonin.mango.vo.dataSource.galil.PointTypeVO"/>
     <convert converter="bean" match="com.serotonin.mango.vo.dataSource.virtual.*"/>
-
+    
     <convert converter="bean" match="com.serotonin.mango.vo.event.handlers.*"/>
     <convert converter="bean" match="com.serotonin.mango.vo.event.CompoundEventDetectorVO"/>
     <convert converter="bean" match="com.serotonin.mango.vo.event.EventHandlerVO"/>
@@ -181,32 +181,32 @@
     <convert converter="bean" match="com.serotonin.mango.vo.User">
       <param name="include" value="id,username,email,phone,admin,disabled,receiveAlarmEmails,receiveOwnAuditEvents,dataSourcePermissions,dataPointPermissions, userProfile"/>
     </convert>
-    <convert converter="bean" match="br.org.scadamy.vo.permission.WatchListAccess">
+    <convert converter="bean" match="br.org.scadabr.vo.permission.WatchListAccess">
      	<param name="include" value="id,permission"/>
     </convert>
-    <convert converter="bean" match="br.org.scadamy.vo.permission.ViewAccess">
+    <convert converter="bean" match="br.org.scadabr.vo.permission.ViewAccess">
      	<param name="include" value="id,permission"/>
     </convert>
     <convert converter="bean" match="com.serotonin.mango.view.View">
      	<param name="include" value="id,name"/>
     </convert>
-    <convert converter="bean" match="br.org.scadamy.vo.usersProfiles.UsersProfileVO">
+    <convert converter="bean" match="br.org.scadabr.vo.usersProfiles.UsersProfileVO">
       <param name="include" value="id,name,dataSourcePermissions,dataPointPermissions, watchlistPermissions, viewPermissions"/>
     </convert>
     <convert converter="bean" match="com.serotonin.mango.vo.WatchList">
       <param name="include" value="id,name"/>
     </convert>
     <convert converter="bean" match="com.serotonin.mango.vo.UserComment"/>
-
+    
     <convert converter="bean" match="com.serotonin.mango.web.dwr.beans.*"/>
     <convert converter="bean" match="com.serotonin.mango.web.dwr.longPoll.LongPollRequest"/>
     <convert converter="bean" match="com.serotonin.mango.web.mvc.form.PointViewForm"/>
-
+    
     <convert converter="bean" match="com.serotonin.web.dwr.DwrMessageI18n"/>
     <convert converter="bean" match="com.serotonin.web.dwr.DwrResponseI18n"/>
-
+    
     <convert converter="localizableMessage" match="com.serotonin.web.i18n.LocalizableMessage"/>
-    <convert converter="bean" match="br.org.scadamy.vo.scripting.ScriptVO">
+    <convert converter="bean" match="br.org.scadabr.vo.scripting.ScriptVO">
     	<param name="exclude" value="type"/>
     </convert>
      <!-- MBus4J stuff-->
@@ -232,7 +232,7 @@
     <!- - Fhz4J stuff-->
 
 
-
+  
     <convert converter="exception" match="java.lang.Exception">
       <param name="include" value="message"/>
     </convert>
@@ -240,37 +240,37 @@
   <signatures>
     <![CDATA[
       import java.util.List;
-
+      
       import com.serotonin.db.IntValuePair;
       import com.serotonin.mango.web.dwr.DataPointEditDwr;
       import com.serotonin.mango.view.text.RangeValue;
       import com.serotonin.mango.view.text.MultistateValue;
       import com.serotonin.mango.vo.permission.DataPointAccess;
-
+      
       DataPointEditDwr.setRangeRenderer(String, List<RangeValue>);
       DataPointEditDwr.setMultistateRenderer(List<MultistateValue>);
-
+      
       import com.serotonin.mango.web.dwr.MailingListsDwr;
       import com.serotonin.mango.web.dwr.beans.RecipientListEntryBean;
       MailingListsDwr.saveMailingList(int, String, String, List<RecipientListEntryBean>, List<Integer>);
       MailingListsDwr.sendTestEmail(int, String, List<RecipientListEntryBean>);
-
+      
       import com.serotonin.mango.web.dwr.MiscDwr;
       MiscDwr.sendTestEmail(List<RecipientListEntryBean>, String, String);
-
+      
       import com.serotonin.mango.web.dwr.UsersDwr;
-      import br.org.scadamy.web.dwr.UsersProfilesDwr
+      import br.org.scadabr.web.dwr.UsersProfilesDwr
       UsersDwr.saveUserAdmin(int, String, String, String, String, boolean, boolean, int, boolean, List<Integer>, List<DataPointAccess>, int usersProfileId);
-
-      import br.org.scadamy.vo.permission.WatchListAccess;
-      import br.org.scadamy.vo.permission.ViewAccess;
+      
+      import br.org.scadabr.vo.permission.WatchListAccess;
+      import br.org.scadabr.vo.permission.ViewAccess;
       import com.serotonin.mango.view.View;
       UsersProfilesDwr.saveUserAdmin(int, String, List<Integer>, List<DataPointAccess>, List<WatchListAccess>, List<ViewAccess>);
-
+      
       import com.serotonin.mango.vo.hierarchy.PointFolder;
       PointFolder.setPoints(List<IntValuePair>);
       PointFolder.setSubfolders(List<PointFolder>);
-
+      
       import com.serotonin.mango.web.dwr.beans.IntegerPair;
       SystemSettingsDwr.saveSystemEventAlarmLevels(List<IntegerPair>);
     ]]>

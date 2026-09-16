@@ -1,14 +1,14 @@
-package br.org.scadamy.db.dao;
+package br.org.scadabr.db.dao;
 
 import java.sql.ResultSet;
+import com.serotonin.db.spring.GenericRowMapper;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.List;
 
-import br.org.scadamy.api.exception.DAOException;
-import br.org.scadamy.vo.eventDetectorTemplate.EventDetectorTemplateVO;
+import br.org.scadabr.api.exception.DAOException;
+import br.org.scadabr.vo.eventDetectorTemplate.EventDetectorTemplateVO;
 
-import com.serotonin.db.spring.GenericRowMapper;
 import com.serotonin.mango.db.dao.BaseDao;
 import com.serotonin.mango.vo.event.PointEventDetectorVO;
 

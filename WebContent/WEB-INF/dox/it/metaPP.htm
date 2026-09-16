@@ -2,7 +2,7 @@
     Mango - Open Source M2M - http://mango.serotoninsoftware.com
     Copyright (C) 2006-2011 Serotonin Software Technologies Inc.
     @author Matthew Lohbihler
-
+    
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -17,25 +17,25 @@
     along with this program.  If not, see http://www.gnu.org/licenses/.
  -->
 <h1>Overview</h1>
-<p>Meta points are configured by creating a "context" of existing points,
-which become available for access within the script when it executes.
-These context points can be any point saved in ScadaMY at the time, including
-the current point being edited. (The current point must be saved&mdash;i.e.
+<p>Meta points are configured by creating a "context" of existing points, 
+which become available for access within the script when it executes. 
+These context points can be any point saved in ScadaBR at the time, including 
+the current point being edited. (The current point must be saved&mdash;i.e. 
 cannot be "new"&mdash;before it will appear in the context point list.)</p>
 
 <h1>Point configuration</h1>
-<p>The <b>Data type</b> determines the type that will be expected to be returned from the script.
+<p>The <b>Data type</b> determines the type that will be expected to be returned from the script. 
 The point attempts to convert the returned value to this type.</p>
-<p>The <b>Script context</b> defines the points that will be available to the script when it executes.
-Each point that is added must be given a <b>Var</b>, which is the variable name the point data will be
-assigned to in the script. These script var names must be valid ECMAScript variable names: they must start
-with either a letter or an underscore, and may not contain spaces. Other constraints may apply. You will
-receive validation or script execution exceptions if script var names are not correctly defined. To add a
-point to the context, select it from the list and click the <img src="images/add.png"/> icon. To delete an
-existing point from the context click the <img src="images/bullet_delete.png"/> icon associated with the
-point. Points that are not needed in the script should not be added to the context since some overhead
-is involved in preparing the data for the script. Also, unnecessary script vars may cause unintended
-script executions. (See "Script execution" below.) However, the contrary may also be true: it may be useful
+<p>The <b>Script context</b> defines the points that will be available to the script when it executes. 
+Each point that is added must be given a <b>Var</b>, which is the variable name the point data will be 
+assigned to in the script. These script var names must be valid ECMAScript variable names: they must start 
+with either a letter or an underscore, and may not contain spaces. Other constraints may apply. You will 
+receive validation or script execution exceptions if script var names are not correctly defined. To add a 
+point to the context, select it from the list and click the <img src="images/add.png"/> icon. To delete an 
+existing point from the context click the <img src="images/bullet_delete.png"/> icon associated with the 
+point. Points that are not needed in the script should not be added to the context since some overhead 
+is involved in preparing the data for the script. Also, unnecessary script vars may cause unintended 
+script executions. (See "Script execution" below.) However, the contrary may also be true: it may be useful 
 to include a script var in a context in order to cause script execution.</p>
 
 <h1>Scripts</h1>
@@ -55,7 +55,7 @@ else {
 }
 return tmp;</pre>
 <p>The above is not intended to calculate any useful value, but rather to show the potential for script complexity.</p>
-<p>In addition to the ECMAScript context, ScadaMY also defines a few useful global functions including max(), min(), avg(), and sum(). (These functions are implemented in a script file located at WEB-INF/scripts/scriptFunctions.js. This file can be altered or extended as necessary to implement your own global functions. The file is loaded once per ScadaMY runtime, and so to deploy changes a system restart is required.) To use them, simply call them from your script, for example:</p>
+<p>In addition to the ECMAScript context, ScadaBR also defines a few useful global functions including max(), min(), avg(), and sum(). (These functions are implemented in a script file located at WEB-INF/scripts/scriptFunctions.js. This file can be altered or extended as necessary to implement your own global functions. The file is loaded once per ScadaBR runtime, and so to deploy changes a system restart is required.) To use them, simply call them from your script, for example:</p>
 <pre>return max(x.value, y.value, z.value);</pre>
 <p>This returns the maximum of the present values of 'x', 'y', and 'z'. Any number of parameters can be provided to any of these global functions.</p>
 <p>Once the script has been entered, click the <img src="images/accept.png"/> icon to execute it and attempt to calculate the result.</p>
@@ -85,7 +85,7 @@ return tmp;</pre>
   <dd>four digits</dd>
 </dl>
 <p>
-  To explicitly set the timestamp of a value, set the TIMESTAMP context variable before your return statement. The
+  To explicitly set the timestamp of a value, set the TIMESTAMP context variable before your return statement. The 
   value to which to set this variable must be milliseconds since the epoch (not a native date). For example:
 </p>
 <pre>TIMESTAMP = new Date().getTime();
@@ -96,7 +96,7 @@ return p.value + 1;
 <p>The script var that represents a point in a script is actually an 'object', in JavaScript terminology. An object is a container of values and functions that can be referenced by their property names. To get a description of the properties available for use in a script var, use the help property, e.g.:</p>
 <pre>return x.help;</pre>
 <p>This script works best if the data type is set to alphanumeric, but this is not required. The help property is identical to the toString() function, which is available on all context objects (i.e. not just script vars).</p>
-<p>The <b>value</b> property is the present value of the point. The JavaScript type of the value is analogous to its ScadaMY type: Binary become boolean, Numeric becomes float, Multistate becomes integer, and Alphanumeric becomes string.</p>
+<p>The <b>value</b> property is the present value of the point. The JavaScript type of the value is analogous to its ScadaBR type: Binary become boolean, Numeric becomes float, Multistate becomes integer, and Alphanumeric becomes string.</p>
 <p>Each script var also implements four functions. The objects returned by these functions depend upon the data type of the point the var refers to. Again, the help property can be used to get a description of the returned object's properties. For the "periodType" parameter in all of the functions below, the following pre-defined global variables can be used: SECOND, MINUTE, HOUR, DAY, WEEK, MONTH, and YEAR.</p>
 <p>The <b>ago()</b> function returns the value that the point had the given amount of time ago. For example, the call "x.ago(HOUR, 3)" returns the point's value exactly 3 hours ago.</p>
 <p>The <b>past()</b> function returns an object containing statistics over the given period ending now. See below for a description of the various statistics objects.</p>
@@ -125,7 +125,7 @@ return p.value + 1;
 <pre>return n.past(HOUR).minimum;</pre>
 
 <p>
-  The <b>StartsAndRuntimeList</b> object is returned by Binary and Multistate points. It contains the following
+  The <b>StartsAndRuntimeList</b> object is returned by Binary and Multistate points. It contains the following 
   properties:
 </p>
 <ul>
@@ -159,18 +159,18 @@ Each StartAndRuntime object has the following properties:
 <pre>return x.value + y.value;</pre>
 
 <h1>Script execution</h1>
-<p>Each time a point's script is run, the result is assigned to the point as a value update.
-The times at which a script gets executed can be controlled with the <b>Update event</b> value.
-The "Context update" setting causes the script to be run whenever a point within its context is updated.
+<p>Each time a point's script is run, the result is assigned to the point as a value update. 
+The times at which a script gets executed can be controlled with the <b>Update event</b> value. 
+The "Context update" setting causes the script to be run whenever a point within its context is updated. 
 The other setting cause the script to run at the indicated time event.</p>
-<p>The <b>Execution delay</b> setting can be used to prevent unwanted multiple executions of a script.
-Often, a script's context will use multiple points, but&mdash;when using "Context update"
-execution&mdash;because each point's update causes a script execution, the update of all points each,
-say, hour, will cause the script to run as many times as it has points each hour. Similarly, for time-based
-script runs, the script may execute slightly before its context points are updated, and so may yield spurious
-results. The execution delay can be used to have scripts execute more as intended. When using "Context update"
-execution, the script will not run following a context update until the given number of seconds has passed without
-a subsequent update. For time-based execution, the script will run the given number of seconds after the given
+<p>The <b>Execution delay</b> setting can be used to prevent unwanted multiple executions of a script. 
+Often, a script's context will use multiple points, but&mdash;when using "Context update" 
+execution&mdash;because each point's update causes a script execution, the update of all points each, 
+say, hour, will cause the script to run as many times as it has points each hour. Similarly, for time-based 
+script runs, the script may execute slightly before its context points are updated, and so may yield spurious 
+results. The execution delay can be used to have scripts execute more as intended. When using "Context update" 
+execution, the script will not run following a context update until the given number of seconds has passed without 
+a subsequent update. For time-based execution, the script will run the given number of seconds after the given 
 time event.</p>
 
 <h1>More examples</h1>

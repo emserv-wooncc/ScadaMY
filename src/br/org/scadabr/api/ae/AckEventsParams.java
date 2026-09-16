@@ -5,19 +5,19 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.ae;
+package br.org.scadabr.api.ae;
 
 public class AckEventsParams  implements java.io.Serializable {
     private java.lang.Integer[] eventsId;
 
-    private br.org.scadamy.api.ae.AckEventsOptions options;
+    private br.org.scadabr.api.ae.AckEventsOptions options;
 
     public AckEventsParams() {
     }
 
     public AckEventsParams(
            java.lang.Integer[] eventsId,
-           br.org.scadamy.api.ae.AckEventsOptions options) {
+           br.org.scadabr.api.ae.AckEventsOptions options) {
            this.eventsId = eventsId;
            this.options = options;
     }
@@ -25,7 +25,7 @@ public class AckEventsParams  implements java.io.Serializable {
 
     /**
      * Gets the eventsId value for this AckEventsParams.
-     *
+     * 
      * @return eventsId
      */
     public java.lang.Integer[] getEventsId() {
@@ -35,7 +35,7 @@ public class AckEventsParams  implements java.io.Serializable {
 
     /**
      * Sets the eventsId value for this AckEventsParams.
-     *
+     * 
      * @param eventsId
      */
     public void setEventsId(java.lang.Integer[] eventsId) {
@@ -53,20 +53,20 @@ public class AckEventsParams  implements java.io.Serializable {
 
     /**
      * Gets the options value for this AckEventsParams.
-     *
+     * 
      * @return options
      */
-    public br.org.scadamy.api.ae.AckEventsOptions getOptions() {
+    public br.org.scadabr.api.ae.AckEventsOptions getOptions() {
         return options;
     }
 
 
     /**
      * Sets the options value for this AckEventsParams.
-     *
+     * 
      * @param options
      */
-    public void setOptions(br.org.scadamy.api.ae.AckEventsOptions options) {
+    public void setOptions(br.org.scadabr.api.ae.AckEventsOptions options) {
         this.options = options;
     }
 
@@ -81,11 +81,11 @@ public class AckEventsParams  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
-            ((this.eventsId==null && other.getEventsId()==null) ||
+        _equals = true && 
+            ((this.eventsId==null && other.getEventsId()==null) || 
              (this.eventsId!=null &&
               java.util.Arrays.equals(this.eventsId, other.getEventsId()))) &&
-            ((this.options==null && other.getOptions()==null) ||
+            ((this.options==null && other.getOptions()==null) || 
              (this.options!=null &&
               this.options.equals(other.getOptions())));
         __equalsCalc = null;
@@ -122,18 +122,18 @@ public class AckEventsParams  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(AckEventsParams.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">AckEventsParams"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">AckEventsParams"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("eventsId");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "eventsId"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "eventsId"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(true);
         elemField.setMaxOccursUnbounded(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("options");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "options"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "AckEventsOptions"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "options"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "AckEventsOptions"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
@@ -149,10 +149,10 @@ public class AckEventsParams  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -161,10 +161,10 @@ public class AckEventsParams  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

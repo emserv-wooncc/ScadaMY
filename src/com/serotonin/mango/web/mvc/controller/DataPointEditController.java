@@ -25,11 +25,14 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.validation.BindException;
 import org.springframework.validation.Errors;
+import org.springframework.validation.MessageCodesResolver;
 import org.springframework.web.bind.ServletRequestDataBinder;
-import org.springframework.web.servlet.mvc.SimpleFormController;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.Controller;
 import org.springframework.web.util.WebUtils;
 
 import com.serotonin.ShouldNeverHappenException;
@@ -49,13 +52,65 @@ import com.serotonin.propertyEditor.IntegerFormatEditor;
 import com.serotonin.util.StringUtils;
 import com.serotonin.util.ValidationUtils;
 
-public class DataPointEditController extends SimpleFormController {
+public class DataPointEditController implements Controller {
     public static final String SUBMIT_SAVE = "save";
     public static final String SUBMIT_DISABLE = "disable";
     public static final String SUBMIT_ENABLE = "enable";
     public static final String SUBMIT_RESTART = "restart";
 
+    private String commandName = "form";
+    private Class<?> commandClass = DataPointVO.class;
+    private String formView = "dataPointEdit";
+    private String successView = "data_point_edit.shtm";
+    private MessageCodesResolver messageCodesResolver;
+
+    public void setCommandName(String commandName) {
+        this.commandName = commandName;
+    }
+
+    public void setCommandClass(Class<?> commandClass) {
+        this.commandClass = commandClass;
+    }
+
+    public void setFormView(String formView) {
+        this.formView = formView;
+    }
+
+    public void setSuccessView(String successView) {
+        this.successView = successView;
+    }
+
+    public void setMessageCodesResolver(MessageCodesResolver messageCodesResolver) {
+        this.messageCodesResolver = messageCodesResolver;
+    }
+
+    protected boolean isFormSubmission(HttpServletRequest request) {
+        return "POST".equalsIgnoreCase(request.getMethod());
+    }
+
     @Override
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        Object command = formBackingObject(request);
+        if (isFormSubmission(request)) {
+            ServletRequestDataBinder binder = new ServletRequestDataBinder(command, commandName);
+            if (messageCodesResolver != null) {
+                binder.setMessageCodesResolver(messageCodesResolver);
+            }
+            initBinder(request, binder);
+            binder.bind(request);
+            BindException errors = new BindException(binder.getBindingResult());
+            onBindAndValidate(request, command, errors);
+            Map<String, Object> model = errors.getModel();
+            model.putAll(referenceData(request, command, errors));
+            return new ModelAndView(formView, model);
+        } else {
+            BindException errors = new BindException(command, commandName);
+            Map<String, Object> model = errors.getModel();
+            model.putAll(referenceData(request, command, errors));
+            return new ModelAndView(formView, model);
+        }
+    }
+
     protected Object formBackingObject(HttpServletRequest request) {
         DataPointVO dataPoint;
         User user = Common.getUser(request);
@@ -92,7 +147,6 @@ public class DataPointEditController extends SimpleFormController {
         return dataPoint;
     }
 
-    @Override
     protected Map referenceData(HttpServletRequest request, Object command, Errors errors) {
         Map<String, Object> result = new HashMap<String, Object>();
         DataPointVO point = (DataPointVO) command;
@@ -108,7 +162,6 @@ public class DataPointEditController extends SimpleFormController {
         return result;
     }
 
-    @Override
     protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) {
         binder.registerCustomEditor(Double.TYPE, "tolerance", new DecimalFormatEditor(new DecimalFormat("#.##"), false));
         binder.registerCustomEditor(Integer.TYPE, "purgePeriod", new IntegerFormatEditor(new DecimalFormat("#"), false));
@@ -118,7 +171,6 @@ public class DataPointEditController extends SimpleFormController {
                 false));
     }
 
-    @Override
     protected void onBindAndValidate(HttpServletRequest request, Object command, BindException errors) throws Exception {
         DataPointVO point = (DataPointVO) command;
 

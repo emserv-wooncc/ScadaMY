@@ -1,4 +1,4 @@
-package br.org.scadamy.rt.dataSource.opc;
+package br.org.scadabr.rt.dataSource.opc;
 
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -7,10 +7,10 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jinterop.dcom.common.JISystem;
 
-import br.org.scadamy.OPCMaster;
-import br.org.scadamy.RealOPCMaster;
-import br.org.scadamy.vo.dataSource.opc.OPCDataSourceVO;
-import br.org.scadamy.vo.dataSource.opc.OPCPointLocatorVO;
+import br.org.scadabr.OPCMaster;
+import br.org.scadabr.RealOPCMaster;
+import br.org.scadabr.vo.dataSource.opc.OPCDataSourceVO;
+import br.org.scadabr.vo.dataSource.opc.OPCPointLocatorVO;
 
 import com.serotonin.mango.DataTypes;
 import com.serotonin.mango.rt.dataImage.DataPointRT;

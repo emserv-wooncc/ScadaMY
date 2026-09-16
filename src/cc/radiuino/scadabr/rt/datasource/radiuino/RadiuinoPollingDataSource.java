@@ -1,4 +1,4 @@
-package cc.radiuino.scadamy.rt.datasource.radiuino;
+package cc.radiuino.scadabr.rt.datasource.radiuino;
 
 import gnu.io.CommPortIdentifier;
 import gnu.io.SerialPort;
@@ -18,9 +18,9 @@ import java.util.TooManyListenersException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import cc.radiuino.scadamy.vo.datasource.radiuino.RadiuinoDataSourceVO;
-import cc.radiuino.scadamy.vo.datasource.radiuino.RadiuinoDataType;
-import cc.radiuino.scadamy.vo.datasource.radiuino.RadiuinoPointLocatorVO;
+import cc.radiuino.scadabr.vo.datasource.radiuino.RadiuinoDataSourceVO;
+import cc.radiuino.scadabr.vo.datasource.radiuino.RadiuinoDataType;
+import cc.radiuino.scadabr.vo.datasource.radiuino.RadiuinoPointLocatorVO;
 
 import com.serotonin.mango.rt.dataImage.DataPointRT;
 import com.serotonin.mango.rt.dataImage.PointValueTime;

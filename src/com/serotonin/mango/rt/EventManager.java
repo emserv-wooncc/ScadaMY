@@ -46,7 +46,8 @@ import com.serotonin.mango.vo.permission.Permissions;
 import com.serotonin.util.ILifecycle;
 import com.serotonin.web.i18n.LocalizableMessage;
 
-import br.org.scadamy.vo.userCache.UserCache;
+import br.org.scadabr.vo.userCache.UserCache;
+import my.com.emserv.web.ws.service.EventsWebSocketService;
 
 /**
  * @author Matthew Lohbihler
@@ -90,10 +91,25 @@ public class EventManager implements ILifecycle {
 	}
 
 	private final MyMap<Integer, List<Integer>> eventUserPair = new MyMap<Integer, List<Integer>>();
+	private final Map<Integer, Integer> userHighestAlarmLevel = new HashMap<>();
 	private EventDao eventDao;
 	private UserCache userCache;
 	private long lastAlarmTimestamp = 0;
 	private int highestActiveAlarmLevel = 0;
+
+	public List<String> getUsernamesForEvent(int eventId) {
+		List<String> usernames = new ArrayList<>();
+		List<Integer> userIds = eventUserPair.get(eventId);
+		if (userIds != null) {
+			for (Integer uid : userIds) {
+				User u = userCache.getUser(uid);
+				if (u != null) {
+					usernames.add(u.getUsername());
+				}
+			}
+		}
+		return usernames;
+	}
 
 	//
 	//
@@ -174,8 +190,8 @@ public class EventManager implements ILifecycle {
 		if (evt.isRtnApplicable()) {
 			activeEvents.add(evt);
 			activeDatapointIds.addRemove(0, evt.getEventType().getDataPointId());
-			if (evt.getEventType().getEventSourceId() == EventType.EventSources.DATA_POINT
-					&& evt.getAlarmLevel() != AlarmLevels.NONE) {
+			// ScadaMY Modification: Removed EventType.EventSources.DATA_POINT restriction so all active alarms are counted
+			if (evt.getAlarmLevel() != AlarmLevels.NONE) {
 				eventUserPair.putRemove(0, evt.getId(), eventUserIds);
 				for (Integer id : eventUserIds) {
 					// userEventPair.put(key, value)
@@ -188,20 +204,28 @@ public class EventManager implements ILifecycle {
 			}
 		}
 
+		List<String> usernames = new ArrayList<>();
+		for (Integer uid : eventUserIds) {
+			User u = userCache.getUser(uid);
+			if (u != null) {
+				usernames.add(u.getUsername());
+			}
+		}
+
 		if (suppressed)
 			eventDao.ackEvent(evt.getId(), time, 0, EventInstance.AlternateAcknowledgementSources.MAINTENANCE_MODE);
 		else {
 			if (evt.isRtnApplicable()) {
-				if (alarmLevel > highestActiveAlarmLevel) {
-					int oldValue = highestActiveAlarmLevel;
-					highestActiveAlarmLevel = alarmLevel;
-					SystemEventType.raiseEvent(new SystemEventType(SystemEventType.TYPE_MAX_ALARM_LEVEL_CHANGED), time,
-							false, getAlarmLevelChangeMessage("event.alarmMaxIncreased", oldValue));
-				}
+				resetHighestAlarmLevel(time, false);
 			}
 
 			// Call raiseEvent handlers.
 			handleRaiseEvent(evt, emailUsers);
+
+			EventsWebSocketService wsService = EventsWebSocketService.getInstance();
+			if (wsService != null) {
+				wsService.notifyEventRaised(evt, usernames);
+			}
 
 			if (log.isDebugEnabled())
 				log.debug(
@@ -214,20 +238,12 @@ public class EventManager implements ILifecycle {
 	}
 
 	public void returnToNormal(EventType type, long time, int cause) {
-		EventInstance evt = remove(type);
+		EventInstance evt = get(type);
 
 		// Loop in case of multiples
 		while (evt != null) {
-			resetHighestAlarmLevel(time, false);
-
-			evt.returnToNormal(time, cause);
-			eventDao.saveEvent(evt);
-
-			// Call inactiveEvent handlers.
-			handleInactiveEvent(evt);
-
-			// Check for another
-			evt = remove(type);
+			deactivateEvent(evt, time, cause);
+			evt = get(type);
 		}
 
 		if (log.isDebugEnabled())
@@ -235,6 +251,7 @@ public class EventManager implements ILifecycle {
 	}
 
 	private void deactivateEvent(EventInstance evt, long time, int inactiveCause) {
+		List<String> usernames = getUsernamesForEvent(evt.getId());
 		activeEvents.remove(evt);
 		removeFromControlLists(evt);
 
@@ -244,6 +261,11 @@ public class EventManager implements ILifecycle {
 
 		// Call inactiveEvent handlers.
 		handleInactiveEvent(evt);
+
+		EventsWebSocketService wsService = EventsWebSocketService.getInstance();
+		if (wsService != null) {
+			wsService.notifyEventReturnToNormal(evt, time, inactiveCause, usernames);
+		}
 	}
 
 	public long getLastAlarmTimestamp() {
@@ -294,6 +316,23 @@ public class EventManager implements ILifecycle {
 				SystemEventType.raiseEvent(new SystemEventType(SystemEventType.TYPE_MAX_ALARM_LEVEL_CHANGED), time,
 						false, getAlarmLevelChangeMessage("event.alarmMaxDecreased", oldValue));
 			}
+		} else {
+			highestActiveAlarmLevel = max;
+		}
+
+		EventsWebSocketService wsService = EventsWebSocketService.getInstance();
+		if (wsService != null) {
+			for (User user : userCache.getActiveUsers()) {
+				int userMax = getHighestActiveEventLevelByUser(user.getId());
+				Integer oldUserMaxObj = userHighestAlarmLevel.get(user.getId());
+				int oldUserMax = oldUserMaxObj == null ? 0 : oldUserMaxObj;
+				if (userMax != oldUserMax) {
+					userHighestAlarmLevel.put(user.getId(), userMax);
+					if (!init) {
+						wsService.notifyMaxAlarmLevelChanged(user.getUsername(), oldUserMax, userMax);
+					}
+				}
+			}
 		}
 	}
 
@@ -334,8 +373,8 @@ public class EventManager implements ILifecycle {
 						eventUserIds.add(user.getId());
 					}
 				}
-				if (ev.getEventType().getEventSourceId() == EventType.EventSources.DATA_POINT
-						&& ev.getAlarmLevel() != AlarmLevels.NONE) {
+				// ScadaMY Modification: Removed EventType.EventSources.DATA_POINT restriction so all active alarms are counted
+				if (ev.getAlarmLevel() != AlarmLevels.NONE) {
 					eventUserPair.putRemove(0, ev.getId(), eventUserIds);
 					for (Integer id : eventUserIds) {
 						// userEventPair.put(key, value)

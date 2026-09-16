@@ -1,4 +1,4 @@
-package br.org.scadamy.rt.scripting;
+package br.org.scadabr.rt.scripting;
 
 import java.util.List;
 import java.util.Map;
@@ -24,8 +24,8 @@ import com.serotonin.mango.rt.dataSource.meta.ScriptExecutor;
 import com.serotonin.mango.rt.dataSource.meta.WrapperContext;
 import com.serotonin.mango.vo.User;
 
-import br.org.scadamy.rt.scripting.context.ScriptContextObject;
-import br.org.scadamy.vo.scripting.ContextualizedScriptVO;
+import br.org.scadabr.rt.scripting.context.ScriptContextObject;
+import br.org.scadabr.vo.scripting.ContextualizedScriptVO;
 
 public class ContextualizedScriptRT extends ScriptRT {
 	private static final String SCRIPT_PREFIX = "function __scriptExecutor__() {";

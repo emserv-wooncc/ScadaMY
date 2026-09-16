@@ -1,4 +1,4 @@
-package br.org.scadamy.vo.scripting;
+package br.org.scadabr.vo.scripting;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -19,7 +19,7 @@ import com.serotonin.mango.vo.User;
 import com.serotonin.util.StringUtils;
 import com.serotonin.web.dwr.DwrResponseI18n;
 
-import br.org.scadamy.rt.scripting.ScriptRT;
+import br.org.scadabr.rt.scripting.ScriptRT;
 
 public abstract class ScriptVO<T extends ScriptVO<?>> implements Serializable, JsonSerializable {
 	abstract public Type getType();

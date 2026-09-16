@@ -40,16 +40,14 @@ public class IncrementAnalogChangeRT extends ChangeTypeRT {
                 newValue = vo.getMin();
             if (newValue < vo.getMin())
                 newValue = vo.getMax();
-        }
-        else {
+        } else {
             if (decrement) {
                 newValue -= vo.getChange();
                 if (newValue <= vo.getMin()) {
                     newValue = vo.getMin();
                     decrement = false;
                 }
-            }
-            else {
+            } else {
                 newValue += vo.getChange();
                 if (newValue >= vo.getMax()) {
                     newValue = vo.getMax();

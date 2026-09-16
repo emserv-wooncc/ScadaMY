@@ -1,6 +1,6 @@
-package br.org.scadamy.rt.dataSource.nodaves7;
+package br.org.scadabr.rt.dataSource.nodaves7;
 
-import br.org.scadamy.vo.dataSource.nodaves7.NodaveS7PointLocatorVO;
+import br.org.scadabr.vo.dataSource.nodaves7.NodaveS7PointLocatorVO;
 
 import com.serotonin.mango.rt.dataSource.PointLocatorRT;
 

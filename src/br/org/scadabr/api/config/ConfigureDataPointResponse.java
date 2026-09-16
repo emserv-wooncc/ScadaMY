@@ -5,22 +5,22 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.config;
+package br.org.scadabr.api.config;
 
 public class ConfigureDataPointResponse  implements java.io.Serializable {
     private int id;
 
-    private br.org.scadamy.api.vo.APIError[] errors;
+    private br.org.scadabr.api.vo.APIError[] errors;
 
-    private br.org.scadamy.api.vo.ReplyBase replyBase;
+    private br.org.scadabr.api.vo.ReplyBase replyBase;
 
     public ConfigureDataPointResponse() {
     }
 
     public ConfigureDataPointResponse(
            int id,
-           br.org.scadamy.api.vo.APIError[] errors,
-           br.org.scadamy.api.vo.ReplyBase replyBase) {
+           br.org.scadabr.api.vo.APIError[] errors,
+           br.org.scadabr.api.vo.ReplyBase replyBase) {
            this.id = id;
            this.errors = errors;
            this.replyBase = replyBase;
@@ -29,7 +29,7 @@ public class ConfigureDataPointResponse  implements java.io.Serializable {
 
     /**
      * Gets the id value for this ConfigureDataPointResponse.
-     *
+     * 
      * @return id
      */
     public int getId() {
@@ -39,7 +39,7 @@ public class ConfigureDataPointResponse  implements java.io.Serializable {
 
     /**
      * Sets the id value for this ConfigureDataPointResponse.
-     *
+     * 
      * @param id
      */
     public void setId(int id) {
@@ -49,48 +49,48 @@ public class ConfigureDataPointResponse  implements java.io.Serializable {
 
     /**
      * Gets the errors value for this ConfigureDataPointResponse.
-     *
+     * 
      * @return errors
      */
-    public br.org.scadamy.api.vo.APIError[] getErrors() {
+    public br.org.scadabr.api.vo.APIError[] getErrors() {
         return errors;
     }
 
 
     /**
      * Sets the errors value for this ConfigureDataPointResponse.
-     *
+     * 
      * @param errors
      */
-    public void setErrors(br.org.scadamy.api.vo.APIError[] errors) {
+    public void setErrors(br.org.scadabr.api.vo.APIError[] errors) {
         this.errors = errors;
     }
 
-    public br.org.scadamy.api.vo.APIError getErrors(int i) {
+    public br.org.scadabr.api.vo.APIError getErrors(int i) {
         return this.errors[i];
     }
 
-    public void setErrors(int i, br.org.scadamy.api.vo.APIError _value) {
+    public void setErrors(int i, br.org.scadabr.api.vo.APIError _value) {
         this.errors[i] = _value;
     }
 
 
     /**
      * Gets the replyBase value for this ConfigureDataPointResponse.
-     *
+     * 
      * @return replyBase
      */
-    public br.org.scadamy.api.vo.ReplyBase getReplyBase() {
+    public br.org.scadabr.api.vo.ReplyBase getReplyBase() {
         return replyBase;
     }
 
 
     /**
      * Sets the replyBase value for this ConfigureDataPointResponse.
-     *
+     * 
      * @param replyBase
      */
-    public void setReplyBase(br.org.scadamy.api.vo.ReplyBase replyBase) {
+    public void setReplyBase(br.org.scadabr.api.vo.ReplyBase replyBase) {
         this.replyBase = replyBase;
     }
 
@@ -105,12 +105,12 @@ public class ConfigureDataPointResponse  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
+        _equals = true && 
             this.id == other.getId() &&
-            ((this.errors==null && other.getErrors()==null) ||
+            ((this.errors==null && other.getErrors()==null) || 
              (this.errors!=null &&
               java.util.Arrays.equals(this.errors, other.getErrors()))) &&
-            ((this.replyBase==null && other.getReplyBase()==null) ||
+            ((this.replyBase==null && other.getReplyBase()==null) || 
              (this.replyBase!=null &&
               this.replyBase.equals(other.getReplyBase())));
         __equalsCalc = null;
@@ -148,25 +148,25 @@ public class ConfigureDataPointResponse  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(ConfigureDataPointResponse.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">ConfigureDataPointResponse"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">ConfigureDataPointResponse"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("id");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "id"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "id"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("errors");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "errors"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "APIError"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "errors"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "APIError"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         elemField.setMaxOccursUnbounded(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("replyBase");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "replyBase"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "ReplyBase"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "replyBase"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "ReplyBase"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }
@@ -182,10 +182,10 @@ public class ConfigureDataPointResponse  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -194,10 +194,10 @@ public class ConfigureDataPointResponse  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

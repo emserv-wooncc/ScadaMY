@@ -1,4 +1,4 @@
-package br.org.scadamy.web.mvc.controller;
+package br.org.scadabr.web.mvc.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
 
-import br.org.scadamy.vo.exporter.ZIPProjectManager;
+import br.org.scadabr.vo.exporter.ZIPProjectManager;
 
 public class ProjectExporterController extends AbstractController {
 
@@ -19,7 +19,13 @@ public class ProjectExporterController extends AbstractController {
 
 		ZIPProjectManager exporter = new ZIPProjectManager();
 
-		exporter.exportProject(request, response);
+		com.serotonin.mango.vo.User user = com.serotonin.mango.Common.getUser(request);
+		com.serotonin.mango.util.BackgroundContext.set(user);
+		try {
+			exporter.exportProject(request, response);
+		} finally {
+			com.serotonin.mango.util.BackgroundContext.remove();
+		}
 
 		return null;
 	}

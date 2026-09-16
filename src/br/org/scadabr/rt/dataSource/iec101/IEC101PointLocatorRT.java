@@ -1,6 +1,6 @@
-package br.org.scadamy.rt.dataSource.iec101;
+package br.org.scadabr.rt.dataSource.iec101;
 
-import br.org.scadamy.vo.dataSource.iec101.IEC101PointLocatorVO;
+import br.org.scadabr.vo.dataSource.iec101.IEC101PointLocatorVO;
 
 import com.serotonin.mango.rt.dataSource.PointLocatorRT;
 

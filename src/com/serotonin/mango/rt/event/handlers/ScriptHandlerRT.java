@@ -2,8 +2,8 @@ package com.serotonin.mango.rt.event.handlers;
 
 import javax.script.ScriptException;
 
-import br.org.scadamy.db.dao.ScriptDao;
-import br.org.scadamy.vo.scripting.ScriptVO;
+import br.org.scadabr.db.dao.ScriptDao;
+import br.org.scadabr.vo.scripting.ScriptVO;
 
 import com.serotonin.mango.rt.event.EventInstance;
 import com.serotonin.mango.vo.event.EventHandlerVO;

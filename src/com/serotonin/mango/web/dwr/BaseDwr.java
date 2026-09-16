@@ -163,7 +163,10 @@ abstract public class BaseDwr {
 
 	protected void setMessages(BasePointState state, HttpServletRequest request, String snippet,
 			Map<String, Object> model) {
-		state.setMessages(generateContent(request, snippet + ".jsp", model).trim());
+		String content = generateContent(request, snippet + ".jsp", model);
+		if (content != null) {
+			state.setMessages(content.trim());
+		}
 	}
 
 	/**

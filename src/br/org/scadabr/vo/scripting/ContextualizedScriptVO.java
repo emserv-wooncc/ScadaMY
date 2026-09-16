@@ -1,4 +1,4 @@
-package br.org.scadamy.vo.scripting;
+package br.org.scadabr.vo.scripting;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -8,9 +8,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import br.org.scadamy.rt.scripting.ContextualizedScriptRT;
-import br.org.scadamy.rt.scripting.ScriptRT;
-import br.org.scadamy.rt.scripting.context.ScriptContextObject;
+import br.org.scadabr.rt.scripting.ContextualizedScriptRT;
+import br.org.scadabr.rt.scripting.ScriptRT;
+import br.org.scadabr.rt.scripting.context.ScriptContextObject;
 
 import com.serotonin.db.IntValuePair;
 import com.serotonin.json.JsonArray;
@@ -31,7 +31,7 @@ public class ContextualizedScriptVO extends ScriptVO<ContextualizedScriptVO>
 	public static final Type TYPE = Type.CONTEXTUALIZED_SCRIPT;
 
 	@Override
-	public br.org.scadamy.vo.scripting.ScriptVO.Type getType() {
+	public br.org.scadabr.vo.scripting.ScriptVO.Type getType() {
 		return TYPE;
 	}
 

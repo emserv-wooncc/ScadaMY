@@ -5,19 +5,19 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.ae;
+package br.org.scadabr.api.ae;
 
 public class GetActiveEventsParams  implements java.io.Serializable {
     private java.lang.String eventsPath;
 
-    private br.org.scadamy.api.ae.ActiveEventsOptions options;
+    private br.org.scadabr.api.ae.ActiveEventsOptions options;
 
     public GetActiveEventsParams() {
     }
 
     public GetActiveEventsParams(
            java.lang.String eventsPath,
-           br.org.scadamy.api.ae.ActiveEventsOptions options) {
+           br.org.scadabr.api.ae.ActiveEventsOptions options) {
            this.eventsPath = eventsPath;
            this.options = options;
     }
@@ -25,7 +25,7 @@ public class GetActiveEventsParams  implements java.io.Serializable {
 
     /**
      * Gets the eventsPath value for this GetActiveEventsParams.
-     *
+     * 
      * @return eventsPath
      */
     public java.lang.String getEventsPath() {
@@ -35,7 +35,7 @@ public class GetActiveEventsParams  implements java.io.Serializable {
 
     /**
      * Sets the eventsPath value for this GetActiveEventsParams.
-     *
+     * 
      * @param eventsPath
      */
     public void setEventsPath(java.lang.String eventsPath) {
@@ -45,20 +45,20 @@ public class GetActiveEventsParams  implements java.io.Serializable {
 
     /**
      * Gets the options value for this GetActiveEventsParams.
-     *
+     * 
      * @return options
      */
-    public br.org.scadamy.api.ae.ActiveEventsOptions getOptions() {
+    public br.org.scadabr.api.ae.ActiveEventsOptions getOptions() {
         return options;
     }
 
 
     /**
      * Sets the options value for this GetActiveEventsParams.
-     *
+     * 
      * @param options
      */
-    public void setOptions(br.org.scadamy.api.ae.ActiveEventsOptions options) {
+    public void setOptions(br.org.scadabr.api.ae.ActiveEventsOptions options) {
         this.options = options;
     }
 
@@ -73,11 +73,11 @@ public class GetActiveEventsParams  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
-            ((this.eventsPath==null && other.getEventsPath()==null) ||
+        _equals = true && 
+            ((this.eventsPath==null && other.getEventsPath()==null) || 
              (this.eventsPath!=null &&
               this.eventsPath.equals(other.getEventsPath()))) &&
-            ((this.options==null && other.getOptions()==null) ||
+            ((this.options==null && other.getOptions()==null) || 
              (this.options!=null &&
               this.options.equals(other.getOptions())));
         __equalsCalc = null;
@@ -106,17 +106,17 @@ public class GetActiveEventsParams  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(GetActiveEventsParams.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">GetActiveEventsParams"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">GetActiveEventsParams"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("eventsPath");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "eventsPath"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "eventsPath"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("options");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "options"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "ActiveEventsOptions"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "options"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "ActiveEventsOptions"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
@@ -132,10 +132,10 @@ public class GetActiveEventsParams  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -144,10 +144,10 @@ public class GetActiveEventsParams  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

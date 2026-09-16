@@ -5,11 +5,11 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.vo;
+package br.org.scadabr.api.vo;
 
 public class FlexProject implements java.io.Serializable {
 	/**
-	 *
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
@@ -34,7 +34,7 @@ public class FlexProject implements java.io.Serializable {
 
 	/**
 	 * Gets the id value for this FlexProject.
-	 *
+	 * 
 	 * @return id
 	 */
 	public java.lang.Integer getId() {
@@ -43,7 +43,7 @@ public class FlexProject implements java.io.Serializable {
 
 	/**
 	 * Sets the id value for this FlexProject.
-	 *
+	 * 
 	 * @param id
 	 */
 	public void setId(java.lang.Integer id) {
@@ -52,7 +52,7 @@ public class FlexProject implements java.io.Serializable {
 
 	/**
 	 * Gets the name value for this FlexProject.
-	 *
+	 * 
 	 * @return name
 	 */
 	public java.lang.String getName() {
@@ -61,7 +61,7 @@ public class FlexProject implements java.io.Serializable {
 
 	/**
 	 * Sets the name value for this FlexProject.
-	 *
+	 * 
 	 * @param name
 	 */
 	public void setName(java.lang.String name) {
@@ -70,7 +70,7 @@ public class FlexProject implements java.io.Serializable {
 
 	/**
 	 * Gets the description value for this FlexProject.
-	 *
+	 * 
 	 * @return description
 	 */
 	public java.lang.String getDescription() {
@@ -79,7 +79,7 @@ public class FlexProject implements java.io.Serializable {
 
 	/**
 	 * Sets the description value for this FlexProject.
-	 *
+	 * 
 	 * @param description
 	 */
 	public void setDescription(java.lang.String description) {
@@ -88,7 +88,7 @@ public class FlexProject implements java.io.Serializable {
 
 	/**
 	 * Gets the xmlConfig value for this FlexProject.
-	 *
+	 * 
 	 * @return xmlConfig
 	 */
 	public java.lang.String getXmlConfig() {
@@ -97,7 +97,7 @@ public class FlexProject implements java.io.Serializable {
 
 	/**
 	 * Sets the xmlConfig value for this FlexProject.
-	 *
+	 * 
 	 * @param xmlConfig
 	 */
 	public void setXmlConfig(java.lang.String xmlConfig) {
@@ -162,11 +162,11 @@ public class FlexProject implements java.io.Serializable {
 
 	static {
 		typeDesc.setXmlType(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "FlexProject"));
+				"http://vo.api.scadabr.org.br", "FlexProject"));
 		org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
 		elemField.setFieldName("id");
 		elemField.setXmlName(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "id"));
+				"http://vo.api.scadabr.org.br", "id"));
 		elemField.setXmlType(new javax.xml.namespace.QName(
 				"http://www.w3.org/2001/XMLSchema", "int"));
 		elemField.setNillable(true);
@@ -174,7 +174,7 @@ public class FlexProject implements java.io.Serializable {
 		elemField = new org.apache.axis.description.ElementDesc();
 		elemField.setFieldName("name");
 		elemField.setXmlName(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "name"));
+				"http://vo.api.scadabr.org.br", "name"));
 		elemField.setXmlType(new javax.xml.namespace.QName(
 				"http://www.w3.org/2001/XMLSchema", "string"));
 		elemField.setNillable(false);
@@ -182,7 +182,7 @@ public class FlexProject implements java.io.Serializable {
 		elemField = new org.apache.axis.description.ElementDesc();
 		elemField.setFieldName("description");
 		elemField.setXmlName(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "description"));
+				"http://vo.api.scadabr.org.br", "description"));
 		elemField.setXmlType(new javax.xml.namespace.QName(
 				"http://www.w3.org/2001/XMLSchema", "string"));
 		elemField.setNillable(true);
@@ -190,7 +190,7 @@ public class FlexProject implements java.io.Serializable {
 		elemField = new org.apache.axis.description.ElementDesc();
 		elemField.setFieldName("xmlConfig");
 		elemField.setXmlName(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "xmlConfig"));
+				"http://vo.api.scadabr.org.br", "xmlConfig"));
 		elemField.setXmlType(new javax.xml.namespace.QName(
 				"http://www.w3.org/2001/XMLSchema", "string"));
 		elemField.setNillable(true);

@@ -5,9 +5,9 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api;
+package br.org.scadabr.api;
 
-public class APILocator extends org.apache.axis.client.Service implements br.org.scadamy.api.API {
+public class APILocator extends org.apache.axis.client.Service implements br.org.scadabr.api.API {
 
     public APILocator() {
     }
@@ -39,7 +39,7 @@ public class APILocator extends org.apache.axis.client.Service implements br.org
         APIWSDDServiceName = name;
     }
 
-    public br.org.scadamy.api.ScadaBRAPI getAPI() throws javax.xml.rpc.ServiceException {
+    public br.org.scadabr.api.ScadaBRAPI getAPI() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
             endpoint = new java.net.URL(API_address);
@@ -50,9 +50,9 @@ public class APILocator extends org.apache.axis.client.Service implements br.org
         return getAPI(endpoint);
     }
 
-    public br.org.scadamy.api.ScadaBRAPI getAPI(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public br.org.scadabr.api.ScadaBRAPI getAPI(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            br.org.scadamy.api.ScadaBRAPIStub _stub = new br.org.scadamy.api.ScadaBRAPIStub(portAddress, this);
+            br.org.scadabr.api.ScadaBRAPIStub _stub = new br.org.scadabr.api.ScadaBRAPIStub(portAddress, this);
             _stub.setPortName(getAPIWSDDServiceName());
             return _stub;
         }
@@ -72,8 +72,8 @@ public class APILocator extends org.apache.axis.client.Service implements br.org
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (br.org.scadamy.api.ScadaBRAPI.class.isAssignableFrom(serviceEndpointInterface)) {
-                br.org.scadamy.api.ScadaBRAPIStub _stub = new br.org.scadamy.api.ScadaBRAPIStub(new java.net.URL(API_address), this);
+            if (br.org.scadabr.api.ScadaBRAPI.class.isAssignableFrom(serviceEndpointInterface)) {
+                br.org.scadabr.api.ScadaBRAPIStub _stub = new br.org.scadabr.api.ScadaBRAPIStub(new java.net.URL(API_address), this);
                 _stub.setPortName(getAPIWSDDServiceName());
                 return _stub;
             }
@@ -105,7 +105,7 @@ public class APILocator extends org.apache.axis.client.Service implements br.org
     }
 
     public javax.xml.namespace.QName getServiceName() {
-        return new javax.xml.namespace.QName("http://scadamy.org.br/api/", "API");
+        return new javax.xml.namespace.QName("http://scadabr.org.br/api/", "API");
     }
 
     private java.util.HashSet ports = null;
@@ -113,7 +113,7 @@ public class APILocator extends org.apache.axis.client.Service implements br.org
     public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
-            ports.add(new javax.xml.namespace.QName("http://scadamy.org.br/api/", "API"));
+            ports.add(new javax.xml.namespace.QName("http://scadabr.org.br/api/", "API"));
         }
         return ports.iterator();
     }
@@ -122,11 +122,11 @@ public class APILocator extends org.apache.axis.client.Service implements br.org
     * Set the endpoint address for the specified port name.
     */
     public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
-
+        
 if ("API".equals(portName)) {
             setAPIEndpointAddress(address);
         }
-        else
+        else 
 { // Unknown Port Name
             throw new javax.xml.rpc.ServiceException(" Cannot set Endpoint Address for Unknown Port" + portName);
         }

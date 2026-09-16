@@ -1,0 +1,200 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+plugins {
+    id 'java'
+    id 'war'
+    id 'eclipse'
+}
+
+group = 'my.org.scadamy'
+version = '1.2'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    embedTomcat
+    all {
+        exclude group: 'org.springframework'
+        exclude group: 'com.fasterxml.jackson.core'
+        exclude group: 'org.slf4j'
+    }
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    if (JavaVersion.current().isJava9Compatible()) {
+        options.release = 11
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']
+        }
+        resources {
+            srcDirs = ['src']
+            exclude '**/*.java'
+        }
+    }
+    test {
+        java {
+            srcDirs = ['test']
+        }
+        resources {
+            srcDirs = ['test']
+            exclude '**/*.java'
+        }
+    }
+}
+
+dependencies {
+    compileOnly fileTree(dir: 'WebContent/WEB-INF/tmp-lib', include: ['*.jar'])
+    implementation fileTree(dir: 'WebContent/WEB-INF/lib', include: ['*.jar'])
+
+    implementation ('io.springfox:springfox-swagger2:2.9.2') {
+        exclude group: 'org.springframework'
+        exclude group: 'com.fasterxml.jackson.core'
+        exclude group: 'org.slf4j'
+    }
+    implementation ('io.springfox:springfox-swagger-ui:2.9.2') {
+        exclude group: 'org.springframework'
+        exclude group: 'com.fasterxml.jackson.core'
+        exclude group: 'org.slf4j'
+    }
+
+    testImplementation fileTree(dir: 'WebContent/WEB-INF/tmp-lib', include: ['*.jar'])
+
+    compileOnly 'org.apache.tomcat.embed:tomcat-embed-core:9.0.89'
+    compileOnly 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.89'
+    compileOnly 'org.apache.tomcat.embed:tomcat-embed-el:9.0.89'
+    compileOnly 'org.apache.tomcat.embed:tomcat-embed-websocket:9.0.89'
+
+    embedTomcat 'org.apache.tomcat.embed:tomcat-embed-core:9.0.89'
+    embedTomcat 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.89'
+    embedTomcat 'org.apache.tomcat.embed:tomcat-embed-el:9.0.89'
+    embedTomcat 'org.apache.tomcat.embed:tomcat-embed-websocket:9.0.89'
+    embedTomcat 'org.eclipse.jdt:ecj:3.26.0'
+}
+
+def buildProps = new Properties()
+def propsFile = file('build.properties')
+if (propsFile.exists()) {
+    propsFile.withInputStream { buildProps.load(it) }
+}
+
+task configureProperties(type: Copy) {
+    if (propsFile.exists()) {
+        inputs.file('build.properties')
+    }
+    from 'templates'
+    include 'log4j.xml', 'env.properties'
+    into 'WebContent/WEB-INF/classes'
+    filter(ReplaceTokens, tokens: [
+        'tomcathome': buildProps.getProperty('hudson.integration-tests', ''),
+        'logThreshold': buildProps.getProperty('log4j.xml.logThreshold', 'warn'),
+        'db.type': buildProps.getProperty('db.type', 'derby'),
+        'db.url': buildProps.getProperty('db.url', 'db/scadamyDB'),
+        'db.username': buildProps.getProperty('db.username', ''),
+        'db.password': buildProps.getProperty('db.password', ''),
+        'convert.db.type': buildProps.getProperty('convert.db.type', ''),
+        'convert.db.url': buildProps.getProperty('convert.db.url', ''),
+        'convert.db.username': buildProps.getProperty('convert.db.username', ''),
+        'convert.db.password': buildProps.getProperty('convert.db.password', ''),
+        'grove.url': buildProps.getProperty('grove.url', 'http://mango.serotoninsoftware.com/servlet')
+    ])
+}
+
+processResources.dependsOn configureProperties
+
+webAppDirName = 'WebContent'
+
+war {
+    archiveFileName = 'ScadaMY.war'
+    destinationDirectory = file('target')
+    webXml = file('WebContent/WEB-INF/web.xml')
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    manifest {
+        attributes(
+            'Build-Number': System.getenv('BUILD_NUMBER') ?: 'manual',
+            'Version-Number': project.version
+        )
+    }
+}
+
+test {
+    ignoreFailures = true
+}
+
+task executableJar(type: Jar, dependsOn: war) {
+    archiveFileName = 'ScadaMY.jar'
+    destinationDirectory = file('target')
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    manifest {
+        attributes(
+            'Main-Class': 'my.com.emserv.launcher.TomcatLauncher',
+            'Build-Number': System.getenv('BUILD_NUMBER') ?: 'manual',
+            'Version-Number': project.version
+        )
+    }
+
+    from(sourceSets.main.output) {
+        include 'my/com/emserv/launcher/**'
+    }
+
+    from {
+        configurations.embedTomcat.collect { it.isDirectory() ? it : zipTree(it) }
+    } {
+        exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.EC'
+    }
+
+    from(war.archiveFile) {
+        rename { 'ScadaMY.war' }
+    }
+}
+
+task syncWebappLibs(type: Copy) {
+    from { configurations.runtimeClasspath - fileTree(dir: 'WebContent/WEB-INF/lib', include: ['*.jar']) }
+    into 'WebContent/WEB-INF/lib'
+}
+
+compileJava.dependsOn syncWebappLibs
+
+task syncWebappClasses(type: Copy, dependsOn: classes) {
+    from sourceSets.main.output
+    exclude 'my/com/emserv/launcher/**'
+    into 'WebContent/WEB-INF/classes'
+}
+
+task launcherJar(type: Jar, dependsOn: syncWebappClasses) {
+    archiveFileName = 'ScadaMY-launcher.jar'
+    destinationDirectory = file('target')
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    manifest {
+        attributes(
+            'Main-Class': 'my.com.emserv.launcher.TomcatLauncher',
+            'Build-Number': System.getenv('BUILD_NUMBER') ?: 'manual',
+            'Version-Number': project.version
+        )
+    }
+
+    from(sourceSets.main.output) {
+        include 'my/com/emserv/launcher/**'
+    }
+
+    from {
+        configurations.embedTomcat.collect { it.isDirectory() ? it : zipTree(it) }
+    } {
+        exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.EC'
+    }
+}

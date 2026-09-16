@@ -24,6 +24,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import com.serotonin.db.spring.GenericRowMapper;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.HashMap;
@@ -38,7 +39,6 @@ import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 
 import com.serotonin.db.IntValuePair;
-import com.serotonin.db.spring.GenericRowMapper;
 import com.serotonin.db.spring.IntValuePairRowMapper;
 import com.serotonin.mango.Common;
 import com.serotonin.mango.view.ShareUser;
@@ -238,7 +238,7 @@ public class ViewDao extends BaseDao {
 			view.setId(doInsert(
 					"insert into mangoViews (xid, name, background, userId, anonymousAccess, data) values (?,?,?,?,?,?)",
 					new Object[] { view.getXid(), view.getName(), view.getBackgroundFilename(), view.getUserId(),
-							view.getAnonymousAccess(), SerializationHelper.writeObject(view) },
+							view.getAnonymousAccess(), SerializationHelper.writeObjectToArray(view) },
 					new int[] { Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.INTEGER, Types.INTEGER,
 							Common.getEnvironmentProfile().getString("db.type").equals("postgres") ? Types.BINARY
 									: Types.BLOB }));
@@ -248,7 +248,7 @@ public class ViewDao extends BaseDao {
 	void updateView(View view) {
 		ejt.update("update mangoViews set xid=?, name=?, background=?, anonymousAccess=?, data=? where id=?",
 				new Object[] { view.getXid(), view.getName(), view.getBackgroundFilename(), view.getAnonymousAccess(),
-						SerializationHelper.writeObject(view), view.getId() },
+						SerializationHelper.writeObjectToArray(view), view.getId() },
 				new int[] { Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.INTEGER,
 						Common.getEnvironmentProfile().getString("db.type").equals("postgres") ? Types.BINARY
 								: Types.BLOB,

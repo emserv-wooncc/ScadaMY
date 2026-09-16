@@ -1,6 +1,6 @@
-package br.org.scadamy.api.exception;
+package br.org.scadabr.api.exception;
 
-import br.org.scadamy.api.vo.APIError;
+import br.org.scadabr.api.vo.APIError;
 
 public class ScadaBRAPIException extends Exception {
 	private APIError error;

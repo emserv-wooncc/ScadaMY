@@ -5,7 +5,7 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.vo;
+package br.org.scadabr.api.vo;
 
 public class ModbusSerialConfig implements java.io.Serializable {
 	private int id;
@@ -49,7 +49,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Gets the id value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @return id
 	 */
 	public int getId() {
@@ -58,7 +58,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Sets the id value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @param id
 	 */
 	public void setId(int id) {
@@ -67,7 +67,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Gets the enabled value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @return enabled
 	 */
 	public boolean isEnabled() {
@@ -76,7 +76,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Sets the enabled value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @param enabled
 	 */
 	public void setEnabled(boolean enabled) {
@@ -85,7 +85,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Gets the name value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @return name
 	 */
 	public java.lang.String getName() {
@@ -94,7 +94,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Sets the name value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @param name
 	 */
 	public void setName(java.lang.String name) {
@@ -103,7 +103,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Gets the pollingPeriod value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @return pollingPeriod
 	 */
 	public long getPollingPeriod() {
@@ -112,7 +112,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Sets the pollingPeriod value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @param pollingPeriod
 	 */
 	public void setPollingPeriod(long pollingPeriod) {
@@ -121,7 +121,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Gets the contiguousBatches value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @return contiguousBatches
 	 */
 	public boolean isContiguousBatches() {
@@ -130,7 +130,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Sets the contiguousBatches value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @param contiguousBatches
 	 */
 	public void setContiguousBatches(boolean contiguousBatches) {
@@ -139,7 +139,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Gets the createSlaveMonitorPoints value for this ModbusIPConfig.
-	 *
+	 * 
 	 * @return createSlaveMonitorPoints
 	 */
 	public boolean isCreateSlaveMonitorPoints() {
@@ -148,7 +148,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Sets the createSlaveMonitorPoints value for this ModbusIPConfig.
-	 *
+	 * 
 	 * @param createSlaveMonitorPoints
 	 */
 	public void setCreateSlaveMonitorPoints(boolean createSlaveMonitorPoints) {
@@ -157,7 +157,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Gets the timeout value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @return timeout
 	 */
 	public int getTimeout() {
@@ -166,7 +166,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Sets the timeout value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @param timeout
 	 */
 	public void setTimeout(int timeout) {
@@ -175,7 +175,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Gets the retries value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @return retries
 	 */
 	public int getRetries() {
@@ -184,7 +184,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Sets the retries value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @param retries
 	 */
 	public void setRetries(int retries) {
@@ -193,7 +193,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Gets the serialPort value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @return serialPort
 	 */
 	public java.lang.String getSerialPort() {
@@ -202,7 +202,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Sets the serialPort value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @param serialPort
 	 */
 	public void setSerialPort(java.lang.String serialPort) {
@@ -211,7 +211,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Gets the baudrate value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @return baudrate
 	 */
 	public int getBaudrate() {
@@ -220,7 +220,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	/**
 	 * Sets the baudrate value for this ModbusSerialConfig.
-	 *
+	 * 
 	 * @param baudrate
 	 */
 	public void setBaudrate(int baudrate) {
@@ -292,11 +292,11 @@ public class ModbusSerialConfig implements java.io.Serializable {
 
 	static {
 		typeDesc.setXmlType(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "ModbusSerialConfig"));
+				"http://vo.api.scadabr.org.br", "ModbusSerialConfig"));
 		org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
 		elemField.setFieldName("id");
 		elemField.setXmlName(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "id"));
+				"http://vo.api.scadabr.org.br", "id"));
 		elemField.setXmlType(new javax.xml.namespace.QName(
 				"http://www.w3.org/2001/XMLSchema", "int"));
 		elemField.setNillable(false);
@@ -304,7 +304,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 		elemField = new org.apache.axis.description.ElementDesc();
 		elemField.setFieldName("enabled");
 		elemField.setXmlName(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "enabled"));
+				"http://vo.api.scadabr.org.br", "enabled"));
 		elemField.setXmlType(new javax.xml.namespace.QName(
 				"http://www.w3.org/2001/XMLSchema", "boolean"));
 		elemField.setNillable(false);
@@ -312,7 +312,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 		elemField = new org.apache.axis.description.ElementDesc();
 		elemField.setFieldName("name");
 		elemField.setXmlName(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "name"));
+				"http://vo.api.scadabr.org.br", "name"));
 		elemField.setXmlType(new javax.xml.namespace.QName(
 				"http://www.w3.org/2001/XMLSchema", "string"));
 		elemField.setNillable(true);
@@ -320,7 +320,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 		elemField = new org.apache.axis.description.ElementDesc();
 		elemField.setFieldName("pollingPeriod");
 		elemField.setXmlName(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "pollingPeriod"));
+				"http://vo.api.scadabr.org.br", "pollingPeriod"));
 		elemField.setXmlType(new javax.xml.namespace.QName(
 				"http://www.w3.org/2001/XMLSchema", "long"));
 		elemField.setNillable(false);
@@ -328,7 +328,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 		elemField = new org.apache.axis.description.ElementDesc();
 		elemField.setFieldName("contiguousBatches");
 		elemField.setXmlName(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "contiguousBatches"));
+				"http://vo.api.scadabr.org.br", "contiguousBatches"));
 		elemField.setXmlType(new javax.xml.namespace.QName(
 				"http://www.w3.org/2001/XMLSchema", "boolean"));
 		elemField.setNillable(false);
@@ -336,7 +336,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 		elemField = new org.apache.axis.description.ElementDesc();
 		elemField.setFieldName("createSlaveMonitorPoints");
 		elemField.setXmlName(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "createSlaveMonitorPoints"));
+				"http://vo.api.scadabr.org.br", "createSlaveMonitorPoints"));
 		elemField.setXmlType(new javax.xml.namespace.QName(
 				"http://www.w3.org/2001/XMLSchema", "boolean"));
 		elemField.setNillable(false);
@@ -344,7 +344,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 		elemField = new org.apache.axis.description.ElementDesc();
 		elemField.setFieldName("timeout");
 		elemField.setXmlName(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "timeout"));
+				"http://vo.api.scadabr.org.br", "timeout"));
 		elemField.setXmlType(new javax.xml.namespace.QName(
 				"http://www.w3.org/2001/XMLSchema", "int"));
 		elemField.setNillable(false);
@@ -352,7 +352,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 		elemField = new org.apache.axis.description.ElementDesc();
 		elemField.setFieldName("retries");
 		elemField.setXmlName(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "retries"));
+				"http://vo.api.scadabr.org.br", "retries"));
 		elemField.setXmlType(new javax.xml.namespace.QName(
 				"http://www.w3.org/2001/XMLSchema", "int"));
 		elemField.setNillable(false);
@@ -360,7 +360,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 		elemField = new org.apache.axis.description.ElementDesc();
 		elemField.setFieldName("serialPort");
 		elemField.setXmlName(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "serialPort"));
+				"http://vo.api.scadabr.org.br", "serialPort"));
 		elemField.setXmlType(new javax.xml.namespace.QName(
 				"http://www.w3.org/2001/XMLSchema", "string"));
 		elemField.setNillable(true);
@@ -368,7 +368,7 @@ public class ModbusSerialConfig implements java.io.Serializable {
 		elemField = new org.apache.axis.description.ElementDesc();
 		elemField.setFieldName("baudrate");
 		elemField.setXmlName(new javax.xml.namespace.QName(
-				"http://vo.api.scadamy.org.br", "baudrate"));
+				"http://vo.api.scadabr.org.br", "baudrate"));
 		elemField.setXmlType(new javax.xml.namespace.QName(
 				"http://www.w3.org/2001/XMLSchema", "int"));
 		elemField.setNillable(false);

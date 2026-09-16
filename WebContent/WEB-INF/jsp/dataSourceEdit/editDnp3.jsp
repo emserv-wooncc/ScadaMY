@@ -17,7 +17,7 @@
     along with this program.  If not, see http://www.gnu.org/licenses/.
 --%>
 <%@ include file="/WEB-INF/jsp/include/tech.jsp"%>
-<%@page import="br.org.scadamy.vo.dataSource.dnp3.Dnp3PointLocatorVO"%>
+<%@page import="br.org.scadabr.vo.dataSource.dnp3.Dnp3PointLocatorVO"%>
 
 <script type="text/javascript">
   function appendPointListColumnFunctions(pointListColumnHeaders, pointListColumnFunctions) {

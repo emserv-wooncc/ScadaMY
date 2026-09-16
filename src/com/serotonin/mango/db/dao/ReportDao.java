@@ -19,6 +19,7 @@
 package com.serotonin.mango.db.dao;
 
 import java.sql.ResultSet;
+import com.serotonin.db.spring.GenericRowMapper;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.ArrayList;
@@ -28,7 +29,6 @@ import java.util.ResourceBundle;
 import org.springframework.jdbc.core.RowCallbackHandler;
 
 import com.serotonin.ShouldNeverHappenException;
-import com.serotonin.db.spring.GenericRowMapper;
 import com.serotonin.mango.Common;
 import com.serotonin.mango.DataTypes;
 import com.serotonin.mango.db.DatabaseAccess;
@@ -134,7 +134,7 @@ public class ReportDao extends BaseDao {
         }        
         else{
             report.setId(doInsert(REPORT_INSERT,
-                    new Object[] { report.getUserId(), report.getName(), SerializationHelper.writeObject(report) },
+                    new Object[] { report.getUserId(), report.getName(), SerializationHelper.writeObjectToArray(report) },
                     new int[] { Types.INTEGER, Types.VARCHAR, Common.getEnvironmentProfile().getString("db.type").equals("postgres") ? Types.BINARY: Types.BLOB }));
         }
     }
@@ -144,7 +144,7 @@ public class ReportDao extends BaseDao {
     private void updateReport(final ReportVO report) {
         ejt.update(
                 REPORT_UPDATE,
-                new Object[] { report.getUserId(), report.getName(), SerializationHelper.writeObject(report),
+                new Object[] { report.getUserId(), report.getName(), SerializationHelper.writeObjectToArray(report),
                         report.getId() }, new int[] { Types.INTEGER, Types.VARCHAR, Common.getEnvironmentProfile().getString("db.type").equals("postgres") ? Types.BINARY: Types.BLOB, Types.INTEGER });
     }
 
@@ -376,7 +376,7 @@ public class ReportDao extends BaseDao {
                         REPORT_INSTANCE_POINTS_INSERT,
                         new Object[] { instance.getId(), point.getDeviceName(), name, dataType,
                                 DataTypes.valueToString(startValue),
-                                SerializationHelper.writeObject(point.getTextRenderer()), pointInfo.getColour(),
+                                SerializationHelper.writeObjectToArray(point.getTextRenderer()), pointInfo.getColour(),
                                 boolToChar(pointInfo.isConsolidatedChart()) }, new int[] { Types.INTEGER, Types.VARCHAR,
                                 Types.VARCHAR, Types.INTEGER, Types.VARCHAR, Common.getEnvironmentProfile().getString("db.type").equals("postgres") ? Types.BINARY: Types.BLOB, Types.VARCHAR, Types.CHAR });
             }

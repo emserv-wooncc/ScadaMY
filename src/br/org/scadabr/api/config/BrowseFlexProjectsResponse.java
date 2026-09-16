@@ -5,19 +5,19 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.config;
+package br.org.scadabr.api.config;
 
 public class BrowseFlexProjectsResponse  implements java.io.Serializable {
-    private br.org.scadamy.api.vo.FlexProject[] projects;
+    private br.org.scadabr.api.vo.FlexProject[] projects;
 
-    private br.org.scadamy.api.vo.ReplyBase replyBase;
+    private br.org.scadabr.api.vo.ReplyBase replyBase;
 
     public BrowseFlexProjectsResponse() {
     }
 
     public BrowseFlexProjectsResponse(
-           br.org.scadamy.api.vo.FlexProject[] projects,
-           br.org.scadamy.api.vo.ReplyBase replyBase) {
+           br.org.scadabr.api.vo.FlexProject[] projects,
+           br.org.scadabr.api.vo.ReplyBase replyBase) {
            this.projects = projects;
            this.replyBase = replyBase;
     }
@@ -25,48 +25,48 @@ public class BrowseFlexProjectsResponse  implements java.io.Serializable {
 
     /**
      * Gets the projects value for this BrowseFlexProjectsResponse.
-     *
+     * 
      * @return projects
      */
-    public br.org.scadamy.api.vo.FlexProject[] getProjects() {
+    public br.org.scadabr.api.vo.FlexProject[] getProjects() {
         return projects;
     }
 
 
     /**
      * Sets the projects value for this BrowseFlexProjectsResponse.
-     *
+     * 
      * @param projects
      */
-    public void setProjects(br.org.scadamy.api.vo.FlexProject[] projects) {
+    public void setProjects(br.org.scadabr.api.vo.FlexProject[] projects) {
         this.projects = projects;
     }
 
-    public br.org.scadamy.api.vo.FlexProject getProjects(int i) {
+    public br.org.scadabr.api.vo.FlexProject getProjects(int i) {
         return this.projects[i];
     }
 
-    public void setProjects(int i, br.org.scadamy.api.vo.FlexProject _value) {
+    public void setProjects(int i, br.org.scadabr.api.vo.FlexProject _value) {
         this.projects[i] = _value;
     }
 
 
     /**
      * Gets the replyBase value for this BrowseFlexProjectsResponse.
-     *
+     * 
      * @return replyBase
      */
-    public br.org.scadamy.api.vo.ReplyBase getReplyBase() {
+    public br.org.scadabr.api.vo.ReplyBase getReplyBase() {
         return replyBase;
     }
 
 
     /**
      * Sets the replyBase value for this BrowseFlexProjectsResponse.
-     *
+     * 
      * @param replyBase
      */
-    public void setReplyBase(br.org.scadamy.api.vo.ReplyBase replyBase) {
+    public void setReplyBase(br.org.scadabr.api.vo.ReplyBase replyBase) {
         this.replyBase = replyBase;
     }
 
@@ -81,11 +81,11 @@ public class BrowseFlexProjectsResponse  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
-            ((this.projects==null && other.getProjects()==null) ||
+        _equals = true && 
+            ((this.projects==null && other.getProjects()==null) || 
              (this.projects!=null &&
               java.util.Arrays.equals(this.projects, other.getProjects()))) &&
-            ((this.replyBase==null && other.getReplyBase()==null) ||
+            ((this.replyBase==null && other.getReplyBase()==null) || 
              (this.replyBase!=null &&
               this.replyBase.equals(other.getReplyBase())));
         __equalsCalc = null;
@@ -122,19 +122,19 @@ public class BrowseFlexProjectsResponse  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(BrowseFlexProjectsResponse.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">BrowseFlexProjectsResponse"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">BrowseFlexProjectsResponse"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("projects");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "projects"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "FlexProject"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "projects"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "FlexProject"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         elemField.setMaxOccursUnbounded(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("replyBase");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "replyBase"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "ReplyBase"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "replyBase"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "ReplyBase"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }
@@ -150,10 +150,10 @@ public class BrowseFlexProjectsResponse  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -162,10 +162,10 @@ public class BrowseFlexProjectsResponse  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

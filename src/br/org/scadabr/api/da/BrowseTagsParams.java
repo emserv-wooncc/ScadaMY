@@ -5,19 +5,19 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.da;
+package br.org.scadabr.api.da;
 
 public class BrowseTagsParams  implements java.io.Serializable {
     private java.lang.String itemsPath;
 
-    private br.org.scadamy.api.da.BrowseTagsOptions options;
+    private br.org.scadabr.api.da.BrowseTagsOptions options;
 
     public BrowseTagsParams() {
     }
 
     public BrowseTagsParams(
            java.lang.String itemsPath,
-           br.org.scadamy.api.da.BrowseTagsOptions options) {
+           br.org.scadabr.api.da.BrowseTagsOptions options) {
            this.itemsPath = itemsPath;
            this.options = options;
     }
@@ -25,7 +25,7 @@ public class BrowseTagsParams  implements java.io.Serializable {
 
     /**
      * Gets the itemsPath value for this BrowseTagsParams.
-     *
+     * 
      * @return itemsPath
      */
     public java.lang.String getItemsPath() {
@@ -35,7 +35,7 @@ public class BrowseTagsParams  implements java.io.Serializable {
 
     /**
      * Sets the itemsPath value for this BrowseTagsParams.
-     *
+     * 
      * @param itemsPath
      */
     public void setItemsPath(java.lang.String itemsPath) {
@@ -45,20 +45,20 @@ public class BrowseTagsParams  implements java.io.Serializable {
 
     /**
      * Gets the options value for this BrowseTagsParams.
-     *
+     * 
      * @return options
      */
-    public br.org.scadamy.api.da.BrowseTagsOptions getOptions() {
+    public br.org.scadabr.api.da.BrowseTagsOptions getOptions() {
         return options;
     }
 
 
     /**
      * Sets the options value for this BrowseTagsParams.
-     *
+     * 
      * @param options
      */
-    public void setOptions(br.org.scadamy.api.da.BrowseTagsOptions options) {
+    public void setOptions(br.org.scadabr.api.da.BrowseTagsOptions options) {
         this.options = options;
     }
 
@@ -73,11 +73,11 @@ public class BrowseTagsParams  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
-            ((this.itemsPath==null && other.getItemsPath()==null) ||
+        _equals = true && 
+            ((this.itemsPath==null && other.getItemsPath()==null) || 
              (this.itemsPath!=null &&
               this.itemsPath.equals(other.getItemsPath()))) &&
-            ((this.options==null && other.getOptions()==null) ||
+            ((this.options==null && other.getOptions()==null) || 
              (this.options!=null &&
               this.options.equals(other.getOptions())));
         __equalsCalc = null;
@@ -106,17 +106,17 @@ public class BrowseTagsParams  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(BrowseTagsParams.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">BrowseTagsParams"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">BrowseTagsParams"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("itemsPath");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "itemsPath"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "itemsPath"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("options");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "options"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "BrowseTagsOptions"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "options"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "BrowseTagsOptions"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
@@ -132,10 +132,10 @@ public class BrowseTagsParams  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -144,10 +144,10 @@ public class BrowseTagsParams  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

@@ -1,8 +1,8 @@
-package br.org.scadamy.rt.scripting;
+package br.org.scadabr.rt.scripting;
 
 import javax.script.ScriptException;
 
-import br.org.scadamy.vo.scripting.ScriptVO;
+import br.org.scadabr.vo.scripting.ScriptVO;
 
 import com.serotonin.util.ILifecycle;
 import com.serotonin.util.LifecycleException;

@@ -1,28 +1,28 @@
 ﻿<!--
-  ScadaMY 1.0  - Pacote de Modificações Community Edition
-  http://www.scadamy.org.br
+  ScadaBR 1.0  - Pacote de Modificações Community Edition
+  http://www.scadabr.org.br
   Adecuación y Traducion para Español: Copyright (C) 2012 por Mílmero González milmero@gmail.com
-
-  This file is free software: you may copy, redistribute and/or modify it
-  under the terms of the GNU General Public License as published by the
-  Free Software Foundation, either version 3 of the License, or (at your
-  option) any later version.
-
-  This file is distributed in the hope that it will be useful, but
-  WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-  General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-  This file incorporates work covered by the following copyright and
+  
+  This file is free software: you may copy, redistribute and/or modify it  
+  under the terms of the GNU General Public License as published by the  
+  Free Software Foundation, either version 3 of the License, or (at your  
+  option) any later version.  
+  
+  This file is distributed in the hope that it will be useful, but  
+  WITHOUT ANY WARRANTY; without even the implied warranty of  
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  
+  General Public License for more details.  
+  
+  You should have received a copy of the GNU General Public License  
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.  
+   
+  This file incorporates work covered by the following copyright and  
   permission notice:
 
     Mango - Open Source M2M - http://mango.serotoninsoftware.com
     Copyright (C) 2006-2011 Serotonin Software Technologies Inc.
     @author Matthew Lohbihler
-
+    
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -38,7 +38,7 @@
 -->
 
 
-<p>El ScadaMY soporta cuatro tipos de registro de valores de punto</p>
+<p>El ScadaBR soporta cuatro tipos de registro de valores de punto</p>
 
 <p>
   La configuraci&oacute;n predeterminada del registro es <b>Cuando cambie su valor</b>. El valor del punto y su hora de ocurrencia
@@ -49,7 +49,7 @@
 </p>
 
 <p>
-  La configuraci&oacute;n <b>Toda la data</b> causa que cada actualizaci&oacute;n del punto ser&aacute; almacenada en la base de datos. Unicamente utilice
+  La configuraci&oacute;n <b>Toda la data</b> causa que cada actualizaci&oacute;n del punto ser&aacute; almacenada en la base de datos. Unicamente utilice 
  esta configuraci&oacute;n cuando requiera registrar cada actualizaci&oacute;n del punto, ya que esta configuraci&oacute;n genera grandes cantidades de datos
  que ser&aacute;n almacenados de forma constante y r&aacute;pida, y con el tiempo puede causar serios problemas de degradaci&oacute;n del rendimiento del sistema.
 </p>
@@ -76,7 +76,7 @@
 <p>
   Puede configurar valores a descartar para interactuar con equipos que ocasionalmente puedan enviar valores errados. Al activar
  <b>Descartar valores extremos</b>, las casillas del <b>L&iacute;mite inferior de descarte</b> y <b>L&iacute;mite superior de descarte</b> ser&aacute;n activadas.
- Los valores por debajo del limite inferior o mayores al l&iacute;mite superior ser&aacute;n descartados. Nota: Los valores almacenados previamente a esta definici&oacute;n
+ Los valores por debajo del limite inferior o mayores al l&iacute;mite superior ser&aacute;n descartados. Nota: Los valores almacenados previamente a esta definici&oacute;n 
  permanecer&aacute;n en la base de datos.
 </p>
 
@@ -93,5 +93,5 @@
  en la base de datos cuando sea necesario. Configurar este valor muy alto puede afectar en el rendimiento del sistema (puede evitar una consulta
  a la base de datos), pero se debe tener precauci&oacute;n con la memoria es consumida por el cach&eacute; y con posibles fallos que en esta ocurran.
  Normalmente no es necesaria utilizar la opci&oacute;n  La opci&oacute;n , pero puede ser &uacute;til en casos donde se realiz&oacute; una limpieza manual de los valores del punto
- (por ejemplo, utilizando una funcionalidad de SQL).
+ (por ejemplo, utilizando una funcionalidad de SQL). 
 </p>

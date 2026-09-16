@@ -1,8 +1,8 @@
-package br.org.scadamy.workarounds;
+package br.org.scadabr.workarounds;
 
 /**
  * This class cleans old views in ViewManager class asynchronously
- *
+ * 
  * @author celso
  */
 

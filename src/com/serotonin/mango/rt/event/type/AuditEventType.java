@@ -152,8 +152,11 @@ public class AuditEventType extends EventType {
 			username = user.getUsername() + " (" + user.getId() + ")";
 		else {
 			String descKey = Common.getBackgroundProcessDescription();
-			if (descKey == null)
+			if (descKey == null) {
 				username = new LocalizableMessage("common.unknown");
+				System.out.println("DEBUG: user is Unknown in raiseEvent! Stack trace:");
+				new Exception("Unknown user trace").printStackTrace();
+			}
 			else
 				username = new LocalizableMessage(descKey);
 		}

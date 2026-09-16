@@ -1,4 +1,4 @@
-package br.org.scadamy.view.component;
+package br.org.scadabr.view.component;
 
 import com.serotonin.mango.view.component.ViewComponent;
 import com.serotonin.mango.vo.User;

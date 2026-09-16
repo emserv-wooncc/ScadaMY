@@ -19,7 +19,6 @@
 package com.serotonin.mango.web.mvc.form;
 
 import com.serotonin.web.util.PagingDataForm;
-
 public class EventsForm extends PagingDataForm {
     private boolean inactive;
 

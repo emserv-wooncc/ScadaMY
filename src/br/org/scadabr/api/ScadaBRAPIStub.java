@@ -5,9 +5,9 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api;
+package br.org.scadabr.api;
 
-public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.org.scadamy.api.ScadaBRAPI {
+public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.org.scadabr.api.ScadaBRAPI {
     private java.util.Vector cachedSerClasses = new java.util.Vector();
     private java.util.Vector cachedSerQNames = new java.util.Vector();
     private java.util.Vector cachedSerFactories = new java.util.Vector();
@@ -29,20 +29,20 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         oper.setName("removeFlexProject");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "id"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">RemoveFlexProjectResponse"));
-        oper.setReturnClass(br.org.scadamy.api.config.RemoveFlexProjectResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "RemoveFlexProjectResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">RemoveFlexProjectResponse"));
+        oper.setReturnClass(br.org.scadabr.api.config.RemoveFlexProjectResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "RemoveFlexProjectResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[0] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("setFlexBuilderConfig");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "SetFlexBuilderConfigParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">SetFlexBuilderConfigParams"), br.org.scadamy.api.config.SetFlexBuilderConfigParams.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "SetFlexBuilderConfigParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">SetFlexBuilderConfigParams"), br.org.scadabr.api.config.SetFlexBuilderConfigParams.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">SetFlexBuilderConfigResponse"));
-        oper.setReturnClass(br.org.scadamy.api.config.SetFlexBuilderConfigResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "SetFlexBuilderConfigResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">SetFlexBuilderConfigResponse"));
+        oper.setReturnClass(br.org.scadabr.api.config.SetFlexBuilderConfigResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "SetFlexBuilderConfigResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[1] = oper;
@@ -51,84 +51,84 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         oper.setName("getFlexBuilderConfig");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("", "projectId"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"), int.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">GetFlexBuilderConfigResponse"));
-        oper.setReturnClass(br.org.scadamy.api.config.GetFlexBuilderConfigResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "GetFlexBuilderConfigResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">GetFlexBuilderConfigResponse"));
+        oper.setReturnClass(br.org.scadabr.api.config.GetFlexBuilderConfigResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "GetFlexBuilderConfigResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[2] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("browseFlexProjects");
-        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">BrowseFlexProjectsResponse"));
-        oper.setReturnClass(br.org.scadamy.api.config.BrowseFlexProjectsResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "BrowseFlexProjectsResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">BrowseFlexProjectsResponse"));
+        oper.setReturnClass(br.org.scadabr.api.config.BrowseFlexProjectsResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "BrowseFlexProjectsResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[3] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("configureDataPoint");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "ConfigureDataPointParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">ConfigureDataPointParams"), br.org.scadamy.api.config.ConfigureDataPointParams.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "ConfigureDataPointParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">ConfigureDataPointParams"), br.org.scadabr.api.config.ConfigureDataPointParams.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">ConfigureDataPointResponse"));
-        oper.setReturnClass(br.org.scadamy.api.config.ConfigureDataPointResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "ConfigureDataPointResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">ConfigureDataPointResponse"));
+        oper.setReturnClass(br.org.scadabr.api.config.ConfigureDataPointResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "ConfigureDataPointResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[4] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("removeDataPoint");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "RemoveDataPointParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">RemoveDataPointParams"), br.org.scadamy.api.config.RemoveDataPointParams.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "RemoveDataPointParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">RemoveDataPointParams"), br.org.scadabr.api.config.RemoveDataPointParams.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">RemoveDataPointResponse"));
-        oper.setReturnClass(br.org.scadamy.api.config.RemoveDataPointResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "RemoveDataPointResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">RemoveDataPointResponse"));
+        oper.setReturnClass(br.org.scadabr.api.config.RemoveDataPointResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "RemoveDataPointResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[5] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("browseDataPoints");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "BrowseDataPointsParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">BrowseDataPointsParams"), br.org.scadamy.api.config.BrowseDataPointsParams.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "BrowseDataPointsParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">BrowseDataPointsParams"), br.org.scadabr.api.config.BrowseDataPointsParams.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">BrowseDataPointsResponse"));
-        oper.setReturnClass(br.org.scadamy.api.config.BrowseDataPointsResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "BrowseDataPointsResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">BrowseDataPointsResponse"));
+        oper.setReturnClass(br.org.scadabr.api.config.BrowseDataPointsResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "BrowseDataPointsResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[6] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("removeDataSource");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "RemoveDataSourceParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">RemoveDataSourceParams"), br.org.scadamy.api.config.RemoveDataSourceParams.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "RemoveDataSourceParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">RemoveDataSourceParams"), br.org.scadabr.api.config.RemoveDataSourceParams.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">RemoveDataSourceResponse"));
-        oper.setReturnClass(br.org.scadamy.api.config.RemoveDataSourceResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "RemoveDataSourceResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">RemoveDataSourceResponse"));
+        oper.setReturnClass(br.org.scadabr.api.config.RemoveDataSourceResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "RemoveDataSourceResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[7] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("configureDataSource");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "ConfigureDataSourceParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">ConfigureDataSourceParams"), br.org.scadamy.api.config.ConfigureDataSourceParams.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "ConfigureDataSourceParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">ConfigureDataSourceParams"), br.org.scadabr.api.config.ConfigureDataSourceParams.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">ConfigureDataSourceResponse"));
-        oper.setReturnClass(br.org.scadamy.api.config.ConfigureDataSourceResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "ConfigureDataSourceResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">ConfigureDataSourceResponse"));
+        oper.setReturnClass(br.org.scadabr.api.config.ConfigureDataSourceResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "ConfigureDataSourceResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[8] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("browseDataSources");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "BrowseDataSourcesParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">BrowseDataSourcesParams"), br.org.scadamy.api.config.BrowseDataSourcesParams.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "BrowseDataSourcesParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">BrowseDataSourcesParams"), br.org.scadabr.api.config.BrowseDataSourcesParams.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">BrowseDataSourcesResponse"));
-        oper.setReturnClass(br.org.scadamy.api.config.BrowseDataSourcesResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "BrowseDataSourcesResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">BrowseDataSourcesResponse"));
+        oper.setReturnClass(br.org.scadabr.api.config.BrowseDataSourcesResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "BrowseDataSourcesResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[9] = oper;
@@ -140,108 +140,108 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getStatus");
-        oper.setReturnType(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">GetStatusResponse"));
-        oper.setReturnClass(br.org.scadamy.api.da.GetStatusResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "GetStatusResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">GetStatusResponse"));
+        oper.setReturnClass(br.org.scadabr.api.da.GetStatusResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "GetStatusResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[10] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("readData");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "ReadDataParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">ReadDataParams"), br.org.scadamy.api.da.ReadDataParams.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "ReadDataParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">ReadDataParams"), br.org.scadabr.api.da.ReadDataParams.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">ReadDataResponse"));
-        oper.setReturnClass(br.org.scadamy.api.da.ReadDataResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "ReadDataResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">ReadDataResponse"));
+        oper.setReturnClass(br.org.scadabr.api.da.ReadDataResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "ReadDataResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[11] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("writeData");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "WriteDataParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">WriteDataParams"), br.org.scadamy.api.da.WriteDataParams.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "WriteDataParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">WriteDataParams"), br.org.scadabr.api.da.WriteDataParams.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">WriteDataResponse"));
-        oper.setReturnClass(br.org.scadamy.api.da.WriteDataResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "WriteDataResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">WriteDataResponse"));
+        oper.setReturnClass(br.org.scadabr.api.da.WriteDataResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "WriteDataResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[12] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("writeStringData");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "WriteStringDataParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">WriteStringDataParams"), br.org.scadamy.api.da.WriteStringDataParams.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "WriteStringDataParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">WriteStringDataParams"), br.org.scadabr.api.da.WriteStringDataParams.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">WriteStringDataResponse"));
-        oper.setReturnClass(br.org.scadamy.api.da.WriteStringDataResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "WriteStringDataResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">WriteStringDataResponse"));
+        oper.setReturnClass(br.org.scadabr.api.da.WriteStringDataResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "WriteStringDataResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[13] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("browseTags");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "BrowseTagsParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">BrowseTagsParams"), br.org.scadamy.api.da.BrowseTagsParams.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "BrowseTagsParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">BrowseTagsParams"), br.org.scadabr.api.da.BrowseTagsParams.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">BrowseTagsResponse"));
-        oper.setReturnClass(br.org.scadamy.api.da.BrowseTagsResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "BrowseTagsResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">BrowseTagsResponse"));
+        oper.setReturnClass(br.org.scadabr.api.da.BrowseTagsResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "BrowseTagsResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[14] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getDataHistory");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://hda.api.scadamy.org.br", "GetDataHistoryParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://hda.api.scadamy.org.br", ">GetDataHistoryParams"), br.org.scadamy.api.hda.GetDataHistoryParams.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://hda.api.scadabr.org.br", "GetDataHistoryParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://hda.api.scadabr.org.br", ">GetDataHistoryParams"), br.org.scadabr.api.hda.GetDataHistoryParams.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://hda.api.scadamy.org.br", ">GetDataHistoryResponse"));
-        oper.setReturnClass(br.org.scadamy.api.hda.GetDataHistoryResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://hda.api.scadamy.org.br", "GetDataHistoryResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://hda.api.scadabr.org.br", ">GetDataHistoryResponse"));
+        oper.setReturnClass(br.org.scadabr.api.hda.GetDataHistoryResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://hda.api.scadabr.org.br", "GetDataHistoryResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[15] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getActiveEvents");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "GetActiveEventsParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">GetActiveEventsParams"), br.org.scadamy.api.ae.GetActiveEventsParams.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "GetActiveEventsParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">GetActiveEventsParams"), br.org.scadabr.api.ae.GetActiveEventsParams.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">GetActiveEventsResponse"));
-        oper.setReturnClass(br.org.scadamy.api.ae.GetActiveEventsResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "GetActiveEventsResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">GetActiveEventsResponse"));
+        oper.setReturnClass(br.org.scadabr.api.ae.GetActiveEventsResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "GetActiveEventsResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[16] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getEventsHistory");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "GetEventsHistoryParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">GetEventsHistoryParams"), br.org.scadamy.api.ae.GetEventsHistoryParams.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "GetEventsHistoryParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">GetEventsHistoryParams"), br.org.scadabr.api.ae.GetEventsHistoryParams.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">GetEventsHistoryResponse"));
-        oper.setReturnClass(br.org.scadamy.api.ae.GetEventsHistoryResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "GetEventsHistoryResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">GetEventsHistoryResponse"));
+        oper.setReturnClass(br.org.scadabr.api.ae.GetEventsHistoryResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "GetEventsHistoryResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[17] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("ackEvents");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "AckEventsParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">AckEventsParams"), br.org.scadamy.api.ae.AckEventsParams.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "AckEventsParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">AckEventsParams"), br.org.scadabr.api.ae.AckEventsParams.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">AckEventsResponse"));
-        oper.setReturnClass(br.org.scadamy.api.ae.AckEventsResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "AckEventsResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">AckEventsResponse"));
+        oper.setReturnClass(br.org.scadabr.api.ae.AckEventsResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "AckEventsResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[18] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("browseEventsDefinitions");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "BrowseEventsParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">BrowseEventsParams"), br.org.scadamy.api.ae.BrowseEventsParams.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "BrowseEventsParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">BrowseEventsParams"), br.org.scadabr.api.ae.BrowseEventsParams.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">BrowseEventsResponse"));
-        oper.setReturnClass(br.org.scadamy.api.ae.BrowseEventsResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "BrowseEventsResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">BrowseEventsResponse"));
+        oper.setReturnClass(br.org.scadabr.api.ae.BrowseEventsResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "BrowseEventsResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[19] = oper;
@@ -253,11 +253,11 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         org.apache.axis.description.ParameterDesc param;
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("annotateEvent");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "AnnotateEventParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">AnnotateEventParams"), br.org.scadamy.api.ae.AnnotateEventParams.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "AnnotateEventParams"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">AnnotateEventParams"), br.org.scadabr.api.ae.AnnotateEventParams.class, false, false);
         oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">AnnotateEventResponse"));
-        oper.setReturnClass(br.org.scadamy.api.ae.AnnotateEventResponse.class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "AnnotateEventResponse"));
+        oper.setReturnType(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">AnnotateEventResponse"));
+        oper.setReturnClass(br.org.scadabr.api.ae.AnnotateEventResponse.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "AnnotateEventResponse"));
         oper.setStyle(org.apache.axis.constants.Style.DOCUMENT);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
         _operations[20] = oper;
@@ -293,492 +293,492 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
             java.lang.Class simpledf = org.apache.axis.encoding.ser.SimpleDeserializerFactory.class;
             java.lang.Class simplelistsf = org.apache.axis.encoding.ser.SimpleListSerializerFactory.class;
             java.lang.Class simplelistdf = org.apache.axis.encoding.ser.SimpleListDeserializerFactory.class;
-            qName = new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">AckEventsParams");
+            qName = new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">AckEventsParams");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.ae.AckEventsParams.class;
+            cls = br.org.scadabr.api.ae.AckEventsParams.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">AckEventsResponse");
+            qName = new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">AckEventsResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.ae.AckEventsResponse.class;
+            cls = br.org.scadabr.api.ae.AckEventsResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">AnnotateEventParams");
+            qName = new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">AnnotateEventParams");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.ae.AnnotateEventParams.class;
+            cls = br.org.scadabr.api.ae.AnnotateEventParams.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">AnnotateEventResponse");
+            qName = new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">AnnotateEventResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.ae.AnnotateEventResponse.class;
+            cls = br.org.scadabr.api.ae.AnnotateEventResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">BrowseEventsParams");
+            qName = new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">BrowseEventsParams");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.ae.BrowseEventsParams.class;
+            cls = br.org.scadabr.api.ae.BrowseEventsParams.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">BrowseEventsResponse");
+            qName = new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">BrowseEventsResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.ae.BrowseEventsResponse.class;
+            cls = br.org.scadabr.api.ae.BrowseEventsResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">GetActiveEventsParams");
+            qName = new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">GetActiveEventsParams");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.ae.GetActiveEventsParams.class;
+            cls = br.org.scadabr.api.ae.GetActiveEventsParams.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">GetActiveEventsResponse");
+            qName = new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">GetActiveEventsResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.ae.GetActiveEventsResponse.class;
+            cls = br.org.scadabr.api.ae.GetActiveEventsResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">GetEventsHistoryParams");
+            qName = new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">GetEventsHistoryParams");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.ae.GetEventsHistoryParams.class;
+            cls = br.org.scadabr.api.ae.GetEventsHistoryParams.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">GetEventsHistoryResponse");
+            qName = new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">GetEventsHistoryResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.ae.GetEventsHistoryResponse.class;
+            cls = br.org.scadabr.api.ae.GetEventsHistoryResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "AckEventsOptions");
+            qName = new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "AckEventsOptions");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.ae.AckEventsOptions.class;
+            cls = br.org.scadabr.api.ae.AckEventsOptions.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "ActiveEventsOptions");
+            qName = new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "ActiveEventsOptions");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.ae.ActiveEventsOptions.class;
+            cls = br.org.scadabr.api.ae.ActiveEventsOptions.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "BrowseEventsOptions");
+            qName = new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "BrowseEventsOptions");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.ae.BrowseEventsOptions.class;
+            cls = br.org.scadabr.api.ae.BrowseEventsOptions.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "EventsHistoryOptions");
+            qName = new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "EventsHistoryOptions");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.ae.EventsHistoryOptions.class;
+            cls = br.org.scadabr.api.ae.EventsHistoryOptions.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">BrowseDataPointsParams");
+            qName = new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">BrowseDataPointsParams");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.config.BrowseDataPointsParams.class;
+            cls = br.org.scadabr.api.config.BrowseDataPointsParams.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">BrowseDataPointsResponse");
+            qName = new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">BrowseDataPointsResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.config.BrowseDataPointsResponse.class;
+            cls = br.org.scadabr.api.config.BrowseDataPointsResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">BrowseDataSourcesParams");
+            qName = new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">BrowseDataSourcesParams");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.config.BrowseDataSourcesParams.class;
+            cls = br.org.scadabr.api.config.BrowseDataSourcesParams.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">BrowseDataSourcesResponse");
+            qName = new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">BrowseDataSourcesResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.config.BrowseDataSourcesResponse.class;
+            cls = br.org.scadabr.api.config.BrowseDataSourcesResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">BrowseFlexProjectsResponse");
+            qName = new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">BrowseFlexProjectsResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.config.BrowseFlexProjectsResponse.class;
+            cls = br.org.scadabr.api.config.BrowseFlexProjectsResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">ConfigureDataPointParams");
+            qName = new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">ConfigureDataPointParams");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.config.ConfigureDataPointParams.class;
+            cls = br.org.scadabr.api.config.ConfigureDataPointParams.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">ConfigureDataPointResponse");
+            qName = new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">ConfigureDataPointResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.config.ConfigureDataPointResponse.class;
+            cls = br.org.scadabr.api.config.ConfigureDataPointResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">ConfigureDataSourceParams");
+            qName = new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">ConfigureDataSourceParams");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.config.ConfigureDataSourceParams.class;
+            cls = br.org.scadabr.api.config.ConfigureDataSourceParams.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">ConfigureDataSourceResponse");
+            qName = new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">ConfigureDataSourceResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.config.ConfigureDataSourceResponse.class;
+            cls = br.org.scadabr.api.config.ConfigureDataSourceResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">GetFlexBuilderConfigResponse");
+            qName = new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">GetFlexBuilderConfigResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.config.GetFlexBuilderConfigResponse.class;
+            cls = br.org.scadabr.api.config.GetFlexBuilderConfigResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">RemoveDataPointParams");
+            qName = new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">RemoveDataPointParams");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.config.RemoveDataPointParams.class;
+            cls = br.org.scadabr.api.config.RemoveDataPointParams.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">RemoveDataPointResponse");
+            qName = new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">RemoveDataPointResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.config.RemoveDataPointResponse.class;
+            cls = br.org.scadabr.api.config.RemoveDataPointResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">RemoveDataSourceParams");
+            qName = new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">RemoveDataSourceParams");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.config.RemoveDataSourceParams.class;
+            cls = br.org.scadabr.api.config.RemoveDataSourceParams.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">RemoveDataSourceResponse");
+            qName = new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">RemoveDataSourceResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.config.RemoveDataSourceResponse.class;
+            cls = br.org.scadabr.api.config.RemoveDataSourceResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">RemoveFlexProjectResponse");
+            qName = new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">RemoveFlexProjectResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.config.RemoveFlexProjectResponse.class;
+            cls = br.org.scadabr.api.config.RemoveFlexProjectResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">SetFlexBuilderConfigParams");
+            qName = new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">SetFlexBuilderConfigParams");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.config.SetFlexBuilderConfigParams.class;
+            cls = br.org.scadabr.api.config.SetFlexBuilderConfigParams.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">SetFlexBuilderConfigResponse");
+            qName = new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">SetFlexBuilderConfigResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.config.SetFlexBuilderConfigResponse.class;
+            cls = br.org.scadabr.api.config.SetFlexBuilderConfigResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "AlarmLevel");
+            qName = new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "AlarmLevel");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.constants.AlarmLevel.class;
+            cls = br.org.scadabr.api.constants.AlarmLevel.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "DataSourceType");
+            qName = new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "DataSourceType");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.constants.DataSourceType.class;
+            cls = br.org.scadabr.api.constants.DataSourceType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "DataType");
+            qName = new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "DataType");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.constants.DataType.class;
+            cls = br.org.scadabr.api.constants.DataType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "ErrorCode");
+            qName = new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "ErrorCode");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.constants.ErrorCode.class;
+            cls = br.org.scadabr.api.constants.ErrorCode.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "EventType");
+            qName = new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "EventType");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.constants.EventType.class;
+            cls = br.org.scadabr.api.constants.EventType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "ModbusDataType");
+            qName = new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "ModbusDataType");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.constants.ModbusDataType.class;
+            cls = br.org.scadabr.api.constants.ModbusDataType.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "ModbusRegisterRange");
+            qName = new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "ModbusRegisterRange");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.constants.ModbusRegisterRange.class;
+            cls = br.org.scadabr.api.constants.ModbusRegisterRange.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "QualityCode");
+            qName = new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "QualityCode");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.constants.QualityCode.class;
+            cls = br.org.scadabr.api.constants.QualityCode.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "ServerStateCode");
+            qName = new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "ServerStateCode");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.constants.ServerStateCode.class;
+            cls = br.org.scadabr.api.constants.ServerStateCode.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(enumsf);
             cachedDeserFactories.add(enumdf);
 
-            qName = new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">BrowseTagsParams");
+            qName = new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">BrowseTagsParams");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.da.BrowseTagsParams.class;
+            cls = br.org.scadabr.api.da.BrowseTagsParams.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">BrowseTagsResponse");
+            qName = new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">BrowseTagsResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.da.BrowseTagsResponse.class;
+            cls = br.org.scadabr.api.da.BrowseTagsResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">GetStatusResponse");
+            qName = new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">GetStatusResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.da.GetStatusResponse.class;
+            cls = br.org.scadabr.api.da.GetStatusResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">ReadDataParams");
+            qName = new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">ReadDataParams");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.da.ReadDataParams.class;
+            cls = br.org.scadabr.api.da.ReadDataParams.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">ReadDataResponse");
+            qName = new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">ReadDataResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.da.ReadDataResponse.class;
+            cls = br.org.scadabr.api.da.ReadDataResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">WriteDataParams");
+            qName = new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">WriteDataParams");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.da.WriteDataParams.class;
+            cls = br.org.scadabr.api.da.WriteDataParams.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">WriteDataResponse");
+            qName = new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">WriteDataResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.da.WriteDataResponse.class;
+            cls = br.org.scadabr.api.da.WriteDataResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">WriteStringDataParams");
+            qName = new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">WriteStringDataParams");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.da.WriteStringDataParams.class;
+            cls = br.org.scadabr.api.da.WriteStringDataParams.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">WriteStringDataResponse");
+            qName = new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">WriteStringDataResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.da.WriteStringDataResponse.class;
+            cls = br.org.scadabr.api.da.WriteStringDataResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "BrowseTagsOptions");
+            qName = new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "BrowseTagsOptions");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.da.BrowseTagsOptions.class;
+            cls = br.org.scadabr.api.da.BrowseTagsOptions.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "ReadDataOptions");
+            qName = new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "ReadDataOptions");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.da.ReadDataOptions.class;
+            cls = br.org.scadabr.api.da.ReadDataOptions.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "WriteDataOptions");
+            qName = new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "WriteDataOptions");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.da.WriteDataOptions.class;
+            cls = br.org.scadabr.api.da.WriteDataOptions.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "WriteStringDataOptions");
+            qName = new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "WriteStringDataOptions");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.da.WriteStringDataOptions.class;
+            cls = br.org.scadabr.api.da.WriteStringDataOptions.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://hda.api.scadamy.org.br", ">GetDataHistoryParams");
+            qName = new javax.xml.namespace.QName("http://hda.api.scadabr.org.br", ">GetDataHistoryParams");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.hda.GetDataHistoryParams.class;
+            cls = br.org.scadabr.api.hda.GetDataHistoryParams.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://hda.api.scadamy.org.br", ">GetDataHistoryResponse");
+            qName = new javax.xml.namespace.QName("http://hda.api.scadabr.org.br", ">GetDataHistoryResponse");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.hda.GetDataHistoryResponse.class;
+            cls = br.org.scadabr.api.hda.GetDataHistoryResponse.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://hda.api.scadamy.org.br", "GetDataHistoryOptions");
+            qName = new javax.xml.namespace.QName("http://hda.api.scadabr.org.br", "GetDataHistoryOptions");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.hda.GetDataHistoryOptions.class;
+            cls = br.org.scadabr.api.hda.GetDataHistoryOptions.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", ">Authentication");
+            qName = new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", ">Authentication");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.vo.Authentication.class;
+            cls = br.org.scadabr.api.vo.Authentication.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "APIError");
+            qName = new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "APIError");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.vo.APIError.class;
+            cls = br.org.scadabr.api.vo.APIError.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "EventDefinition");
+            qName = new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "EventDefinition");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.vo.EventDefinition.class;
+            cls = br.org.scadabr.api.vo.EventDefinition.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "EventMessage");
+            qName = new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "EventMessage");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.vo.EventMessage.class;
+            cls = br.org.scadabr.api.vo.EventMessage.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "EventNotification");
+            qName = new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "EventNotification");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.vo.EventNotification.class;
+            cls = br.org.scadabr.api.vo.EventNotification.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "FlexProject");
+            qName = new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "FlexProject");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.vo.FlexProject.class;
+            cls = br.org.scadabr.api.vo.FlexProject.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "ItemInfo");
+            qName = new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "ItemInfo");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.vo.ItemInfo.class;
+            cls = br.org.scadabr.api.vo.ItemInfo.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "ItemStringValue");
+            qName = new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "ItemStringValue");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.vo.ItemStringValue.class;
+            cls = br.org.scadabr.api.vo.ItemStringValue.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "ItemValue");
+            qName = new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "ItemValue");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.vo.ItemValue.class;
+            cls = br.org.scadabr.api.vo.ItemValue.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "ModbusIPConfig");
+            qName = new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "ModbusIPConfig");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.vo.ModbusIPConfig.class;
+            cls = br.org.scadabr.api.vo.ModbusIPConfig.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "ModbusPointConfig");
+            qName = new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "ModbusPointConfig");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.vo.ModbusPointConfig.class;
+            cls = br.org.scadabr.api.vo.ModbusPointConfig.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "ModbusSerialConfig");
+            qName = new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "ModbusSerialConfig");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.vo.ModbusSerialConfig.class;
+            cls = br.org.scadabr.api.vo.ModbusSerialConfig.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "ReplyBase");
+            qName = new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "ReplyBase");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.vo.ReplyBase.class;
+            cls = br.org.scadabr.api.vo.ReplyBase.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "ServerStatus");
+            qName = new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "ServerStatus");
             cachedSerQNames.add(qName);
-            cls = br.org.scadamy.api.vo.ServerStatus.class;
+            cls = br.org.scadabr.api.vo.ServerStatus.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -849,7 +849,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         }
     }
 
-    public br.org.scadamy.api.config.RemoveFlexProjectResponse removeFlexProject(int id) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.config.RemoveFlexProjectResponse removeFlexProject(int id) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -871,9 +871,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.config.RemoveFlexProjectResponse) _resp;
+                return (br.org.scadabr.api.config.RemoveFlexProjectResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.config.RemoveFlexProjectResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.config.RemoveFlexProjectResponse.class);
+                return (br.org.scadabr.api.config.RemoveFlexProjectResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.config.RemoveFlexProjectResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -881,7 +881,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.config.SetFlexBuilderConfigResponse setFlexBuilderConfig(br.org.scadamy.api.config.SetFlexBuilderConfigParams parameters) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.config.SetFlexBuilderConfigResponse setFlexBuilderConfig(br.org.scadabr.api.config.SetFlexBuilderConfigParams parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -903,9 +903,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.config.SetFlexBuilderConfigResponse) _resp;
+                return (br.org.scadabr.api.config.SetFlexBuilderConfigResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.config.SetFlexBuilderConfigResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.config.SetFlexBuilderConfigResponse.class);
+                return (br.org.scadabr.api.config.SetFlexBuilderConfigResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.config.SetFlexBuilderConfigResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -913,7 +913,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.config.GetFlexBuilderConfigResponse getFlexBuilderConfig(int projectId) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.config.GetFlexBuilderConfigResponse getFlexBuilderConfig(int projectId) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -935,9 +935,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.config.GetFlexBuilderConfigResponse) _resp;
+                return (br.org.scadabr.api.config.GetFlexBuilderConfigResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.config.GetFlexBuilderConfigResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.config.GetFlexBuilderConfigResponse.class);
+                return (br.org.scadabr.api.config.GetFlexBuilderConfigResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.config.GetFlexBuilderConfigResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -945,7 +945,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.config.BrowseFlexProjectsResponse browseFlexProjects() throws java.rmi.RemoteException {
+    public br.org.scadabr.api.config.BrowseFlexProjectsResponse browseFlexProjects() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -967,9 +967,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.config.BrowseFlexProjectsResponse) _resp;
+                return (br.org.scadabr.api.config.BrowseFlexProjectsResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.config.BrowseFlexProjectsResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.config.BrowseFlexProjectsResponse.class);
+                return (br.org.scadabr.api.config.BrowseFlexProjectsResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.config.BrowseFlexProjectsResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -977,7 +977,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.config.ConfigureDataPointResponse configureDataPoint(br.org.scadamy.api.config.ConfigureDataPointParams parameters) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.config.ConfigureDataPointResponse configureDataPoint(br.org.scadabr.api.config.ConfigureDataPointParams parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -999,9 +999,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.config.ConfigureDataPointResponse) _resp;
+                return (br.org.scadabr.api.config.ConfigureDataPointResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.config.ConfigureDataPointResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.config.ConfigureDataPointResponse.class);
+                return (br.org.scadabr.api.config.ConfigureDataPointResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.config.ConfigureDataPointResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1009,7 +1009,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.config.RemoveDataPointResponse removeDataPoint(br.org.scadamy.api.config.RemoveDataPointParams parameters) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.config.RemoveDataPointResponse removeDataPoint(br.org.scadabr.api.config.RemoveDataPointParams parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1031,9 +1031,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.config.RemoveDataPointResponse) _resp;
+                return (br.org.scadabr.api.config.RemoveDataPointResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.config.RemoveDataPointResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.config.RemoveDataPointResponse.class);
+                return (br.org.scadabr.api.config.RemoveDataPointResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.config.RemoveDataPointResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1041,7 +1041,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.config.BrowseDataPointsResponse browseDataPoints(br.org.scadamy.api.config.BrowseDataPointsParams parameters) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.config.BrowseDataPointsResponse browseDataPoints(br.org.scadabr.api.config.BrowseDataPointsParams parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1063,9 +1063,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.config.BrowseDataPointsResponse) _resp;
+                return (br.org.scadabr.api.config.BrowseDataPointsResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.config.BrowseDataPointsResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.config.BrowseDataPointsResponse.class);
+                return (br.org.scadabr.api.config.BrowseDataPointsResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.config.BrowseDataPointsResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1073,7 +1073,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.config.RemoveDataSourceResponse removeDataSource(br.org.scadamy.api.config.RemoveDataSourceParams parameters) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.config.RemoveDataSourceResponse removeDataSource(br.org.scadabr.api.config.RemoveDataSourceParams parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1095,9 +1095,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.config.RemoveDataSourceResponse) _resp;
+                return (br.org.scadabr.api.config.RemoveDataSourceResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.config.RemoveDataSourceResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.config.RemoveDataSourceResponse.class);
+                return (br.org.scadabr.api.config.RemoveDataSourceResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.config.RemoveDataSourceResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1105,7 +1105,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.config.ConfigureDataSourceResponse configureDataSource(br.org.scadamy.api.config.ConfigureDataSourceParams parameters) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.config.ConfigureDataSourceResponse configureDataSource(br.org.scadabr.api.config.ConfigureDataSourceParams parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1127,9 +1127,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.config.ConfigureDataSourceResponse) _resp;
+                return (br.org.scadabr.api.config.ConfigureDataSourceResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.config.ConfigureDataSourceResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.config.ConfigureDataSourceResponse.class);
+                return (br.org.scadabr.api.config.ConfigureDataSourceResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.config.ConfigureDataSourceResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1137,7 +1137,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.config.BrowseDataSourcesResponse browseDataSources(br.org.scadamy.api.config.BrowseDataSourcesParams parameters) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.config.BrowseDataSourcesResponse browseDataSources(br.org.scadabr.api.config.BrowseDataSourcesParams parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1159,9 +1159,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.config.BrowseDataSourcesResponse) _resp;
+                return (br.org.scadabr.api.config.BrowseDataSourcesResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.config.BrowseDataSourcesResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.config.BrowseDataSourcesResponse.class);
+                return (br.org.scadabr.api.config.BrowseDataSourcesResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.config.BrowseDataSourcesResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1169,7 +1169,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.da.GetStatusResponse getStatus() throws java.rmi.RemoteException {
+    public br.org.scadabr.api.da.GetStatusResponse getStatus() throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1191,9 +1191,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.da.GetStatusResponse) _resp;
+                return (br.org.scadabr.api.da.GetStatusResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.da.GetStatusResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.da.GetStatusResponse.class);
+                return (br.org.scadabr.api.da.GetStatusResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.da.GetStatusResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1201,7 +1201,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.da.ReadDataResponse readData(br.org.scadamy.api.da.ReadDataParams parameters) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.da.ReadDataResponse readData(br.org.scadabr.api.da.ReadDataParams parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1223,9 +1223,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.da.ReadDataResponse) _resp;
+                return (br.org.scadabr.api.da.ReadDataResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.da.ReadDataResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.da.ReadDataResponse.class);
+                return (br.org.scadabr.api.da.ReadDataResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.da.ReadDataResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1233,7 +1233,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.da.WriteDataResponse writeData(br.org.scadamy.api.da.WriteDataParams parameters) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.da.WriteDataResponse writeData(br.org.scadabr.api.da.WriteDataParams parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1255,9 +1255,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.da.WriteDataResponse) _resp;
+                return (br.org.scadabr.api.da.WriteDataResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.da.WriteDataResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.da.WriteDataResponse.class);
+                return (br.org.scadabr.api.da.WriteDataResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.da.WriteDataResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1265,7 +1265,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.da.WriteStringDataResponse writeStringData(br.org.scadamy.api.da.WriteStringDataParams parameters) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.da.WriteStringDataResponse writeStringData(br.org.scadabr.api.da.WriteStringDataParams parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1287,9 +1287,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.da.WriteStringDataResponse) _resp;
+                return (br.org.scadabr.api.da.WriteStringDataResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.da.WriteStringDataResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.da.WriteStringDataResponse.class);
+                return (br.org.scadabr.api.da.WriteStringDataResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.da.WriteStringDataResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1297,7 +1297,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.da.BrowseTagsResponse browseTags(br.org.scadamy.api.da.BrowseTagsParams parameters) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.da.BrowseTagsResponse browseTags(br.org.scadabr.api.da.BrowseTagsParams parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1319,9 +1319,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.da.BrowseTagsResponse) _resp;
+                return (br.org.scadabr.api.da.BrowseTagsResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.da.BrowseTagsResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.da.BrowseTagsResponse.class);
+                return (br.org.scadabr.api.da.BrowseTagsResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.da.BrowseTagsResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1329,7 +1329,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.hda.GetDataHistoryResponse getDataHistory(br.org.scadamy.api.hda.GetDataHistoryParams parameters) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.hda.GetDataHistoryResponse getDataHistory(br.org.scadabr.api.hda.GetDataHistoryParams parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1351,9 +1351,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.hda.GetDataHistoryResponse) _resp;
+                return (br.org.scadabr.api.hda.GetDataHistoryResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.hda.GetDataHistoryResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.hda.GetDataHistoryResponse.class);
+                return (br.org.scadabr.api.hda.GetDataHistoryResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.hda.GetDataHistoryResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1361,7 +1361,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.ae.GetActiveEventsResponse getActiveEvents(br.org.scadamy.api.ae.GetActiveEventsParams parameters) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.ae.GetActiveEventsResponse getActiveEvents(br.org.scadabr.api.ae.GetActiveEventsParams parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1383,9 +1383,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.ae.GetActiveEventsResponse) _resp;
+                return (br.org.scadabr.api.ae.GetActiveEventsResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.ae.GetActiveEventsResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.ae.GetActiveEventsResponse.class);
+                return (br.org.scadabr.api.ae.GetActiveEventsResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.ae.GetActiveEventsResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1393,7 +1393,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.ae.GetEventsHistoryResponse getEventsHistory(br.org.scadamy.api.ae.GetEventsHistoryParams parameters) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.ae.GetEventsHistoryResponse getEventsHistory(br.org.scadabr.api.ae.GetEventsHistoryParams parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1415,9 +1415,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.ae.GetEventsHistoryResponse) _resp;
+                return (br.org.scadabr.api.ae.GetEventsHistoryResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.ae.GetEventsHistoryResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.ae.GetEventsHistoryResponse.class);
+                return (br.org.scadabr.api.ae.GetEventsHistoryResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.ae.GetEventsHistoryResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1425,7 +1425,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.ae.AckEventsResponse ackEvents(br.org.scadamy.api.ae.AckEventsParams parameters) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.ae.AckEventsResponse ackEvents(br.org.scadabr.api.ae.AckEventsParams parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1447,9 +1447,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.ae.AckEventsResponse) _resp;
+                return (br.org.scadabr.api.ae.AckEventsResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.ae.AckEventsResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.ae.AckEventsResponse.class);
+                return (br.org.scadabr.api.ae.AckEventsResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.ae.AckEventsResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1457,7 +1457,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.ae.BrowseEventsResponse browseEventsDefinitions(br.org.scadamy.api.ae.BrowseEventsParams parameters) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.ae.BrowseEventsResponse browseEventsDefinitions(br.org.scadabr.api.ae.BrowseEventsParams parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1479,9 +1479,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.ae.BrowseEventsResponse) _resp;
+                return (br.org.scadabr.api.ae.BrowseEventsResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.ae.BrowseEventsResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.ae.BrowseEventsResponse.class);
+                return (br.org.scadabr.api.ae.BrowseEventsResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.ae.BrowseEventsResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {
@@ -1489,7 +1489,7 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
 }
     }
 
-    public br.org.scadamy.api.ae.AnnotateEventResponse annotateEvent(br.org.scadamy.api.ae.AnnotateEventParams parameters) throws java.rmi.RemoteException {
+    public br.org.scadabr.api.ae.AnnotateEventResponse annotateEvent(br.org.scadabr.api.ae.AnnotateEventParams parameters) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -1511,9 +1511,9 @@ public class ScadaBRAPIStub extends org.apache.axis.client.Stub implements br.or
         else {
             extractAttachments(_call);
             try {
-                return (br.org.scadamy.api.ae.AnnotateEventResponse) _resp;
+                return (br.org.scadabr.api.ae.AnnotateEventResponse) _resp;
             } catch (java.lang.Exception _exception) {
-                return (br.org.scadamy.api.ae.AnnotateEventResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadamy.api.ae.AnnotateEventResponse.class);
+                return (br.org.scadabr.api.ae.AnnotateEventResponse) org.apache.axis.utils.JavaUtils.convert(_resp, br.org.scadabr.api.ae.AnnotateEventResponse.class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

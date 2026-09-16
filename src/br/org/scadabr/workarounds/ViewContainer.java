@@ -1,11 +1,11 @@
-package br.org.scadamy.workarounds;
+package br.org.scadabr.workarounds;
 
 import com.serotonin.mango.view.View;
 
 /**
  * This class stores graphic views in memory, and provides methods to access
  * these views from ViewManager class
- *
+ * 
  * @author celso
  */
 

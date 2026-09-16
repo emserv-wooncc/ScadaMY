@@ -1,4 +1,4 @@
-package br.org.scadamy.vo.dataSource.asciiFile;
+package br.org.scadabr.vo.dataSource.asciiFile;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -8,7 +8,7 @@ import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 
-import br.org.scadamy.rt.dataSource.asciiFile.ASCIIFileDataSource;
+import br.org.scadabr.rt.dataSource.asciiFile.ASCIIFileDataSource;
 
 import com.serotonin.json.JsonException;
 import com.serotonin.json.JsonObject;

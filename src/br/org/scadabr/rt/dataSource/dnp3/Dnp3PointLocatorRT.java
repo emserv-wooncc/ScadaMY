@@ -1,6 +1,6 @@
-package br.org.scadamy.rt.dataSource.dnp3;
+package br.org.scadabr.rt.dataSource.dnp3;
 
-import br.org.scadamy.vo.dataSource.dnp3.Dnp3PointLocatorVO;
+import br.org.scadabr.vo.dataSource.dnp3.Dnp3PointLocatorVO;
 
 import com.serotonin.mango.rt.dataSource.PointLocatorRT;
 

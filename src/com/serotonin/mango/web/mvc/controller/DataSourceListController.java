@@ -26,6 +26,8 @@ import java.util.ResourceBundle;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.validation.BindException;
+import com.serotonin.web.util.PagingDataForm;
+import com.serotonin.web.util.PaginatedData;
 
 import com.serotonin.mango.Common;
 import com.serotonin.mango.db.dao.DataPointDao;
@@ -37,9 +39,7 @@ import com.serotonin.mango.vo.dataSource.DataSourceVO;
 import com.serotonin.mango.vo.permission.Permissions;
 import com.serotonin.mango.web.comparators.BaseComparator;
 import com.serotonin.web.i18n.I18NUtils;
-import com.serotonin.web.util.PaginatedData;
 import com.serotonin.web.util.PaginatedListController;
-import com.serotonin.web.util.PagingDataForm;
 
 public class DataSourceListController extends PaginatedListController {
     @Override

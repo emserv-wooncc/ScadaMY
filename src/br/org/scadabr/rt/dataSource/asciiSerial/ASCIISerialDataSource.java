@@ -1,4 +1,4 @@
-package br.org.scadamy.rt.dataSource.asciiSerial;
+package br.org.scadabr.rt.dataSource.asciiSerial;
 
 import gnu.io.CommPortIdentifier;
 import gnu.io.SerialPort;
@@ -16,8 +16,8 @@ import java.util.regex.Pattern;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import br.org.scadamy.vo.dataSource.asciiSerial.ASCIISerialDataSourceVO;
-import br.org.scadamy.vo.dataSource.asciiSerial.ASCIISerialPointLocatorVO;
+import br.org.scadabr.vo.dataSource.asciiSerial.ASCIISerialDataSourceVO;
+import br.org.scadabr.vo.dataSource.asciiSerial.ASCIISerialPointLocatorVO;
 
 import com.serotonin.mango.rt.dataImage.DataPointRT;
 import com.serotonin.mango.rt.dataImage.PointValueTime;

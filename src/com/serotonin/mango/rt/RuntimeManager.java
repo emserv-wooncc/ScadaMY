@@ -2,7 +2,7 @@
     Mango - Open Source M2M - http://mango.serotoninsoftware.com
     Copyright (C) 2006-2011 Serotonin Software Technologies Inc.
     @author Matthew Lohbihler
-
+    
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -68,7 +68,7 @@ import com.serotonin.util.LifecycleException;
 import com.serotonin.web.i18n.LocalizableException;
 import com.serotonin.web.i18n.LocalizableMessage;
 
-import br.org.scadamy.vo.userCache.UserCache;
+import br.org.scadabr.vo.userCache.UserCache;
 
 public class RuntimeManager {
 	private static final Log LOG = LogFactory.getLog(RuntimeManager.class);
@@ -451,6 +451,7 @@ public class RuntimeManager {
 				LOG.trace("Init DpRT");
 				// Initialize it.
 				dataPoint.initialize();
+				addDataPointListener(vo.getId(), new my.com.emserv.web.ws.rt.WebSocketDataPointListener(vo.getId()));
 
 				LOG.trace("Inform Dp listeners");
 				DataPointListener l = getDataPointListeners(vo.getId());

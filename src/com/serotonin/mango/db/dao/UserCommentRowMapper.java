@@ -19,9 +19,9 @@
 package com.serotonin.mango.db.dao;
 
 import java.sql.ResultSet;
+import com.serotonin.db.spring.GenericRowMapper;
 import java.sql.SQLException;
 
-import com.serotonin.db.spring.GenericRowMapper;
 import com.serotonin.mango.vo.UserComment;
 
 public class UserCommentRowMapper implements GenericRowMapper<UserComment> {

@@ -1,10 +1,10 @@
-package br.org.scadamy.rt.dataSource.dnp3;
+package br.org.scadabr.rt.dataSource.dnp3;
 
 import gnu.io.NoSuchPortException;
 
 import java.util.Date;
 
-import br.org.scadamy.vo.dataSource.dnp3.Dnp3SerialDataSourceVO;
+import br.org.scadabr.vo.dataSource.dnp3.Dnp3SerialDataSourceVO;
 
 import com.serotonin.mango.rt.dataSource.DataSourceRT;
 import com.serotonin.web.i18n.LocalizableMessage;

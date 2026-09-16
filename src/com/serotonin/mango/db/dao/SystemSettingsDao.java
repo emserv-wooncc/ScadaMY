@@ -227,7 +227,7 @@ public class SystemSettingsDao extends BaseDao {
 		DEFAULT_VALUES.put(EMAIL_FROM_ADDRESS, "");
 		DEFAULT_VALUES.put(EMAIL_SMTP_USERNAME, "");
 		DEFAULT_VALUES.put(EMAIL_SMTP_PASSWORD, "");
-		DEFAULT_VALUES.put(EMAIL_FROM_NAME, "ScadaMY");
+		DEFAULT_VALUES.put(EMAIL_FROM_NAME, "ScadaBR");
 
 		DEFAULT_VALUES.put(EVENT_PURGE_PERIOD_TYPE, Common.TimePeriods.YEARS);
 		DEFAULT_VALUES.put(EVENT_PURGE_PERIODS, 1);
@@ -237,7 +237,7 @@ public class SystemSettingsDao extends BaseDao {
 
 		DEFAULT_VALUES.put(NEW_VERSION_NOTIFICATION_LEVEL, NOTIFICATION_LEVEL_STABLE);
 
-		DEFAULT_VALUES.put(LANGUAGE, "pt");
+		DEFAULT_VALUES.put(LANGUAGE, "en");
 
 		DEFAULT_VALUES.put(FILEDATA_PATH, "~/WEB-INF/filedata");
 		DEFAULT_VALUES.put(HTTPDS_PROLOGUE, "");
@@ -280,7 +280,18 @@ public class SystemSettingsDao extends BaseDao {
 				ejt2.execute("delete from mailingLists");
 				ejt2.execute("delete from compoundEventDetectors");
 
+				ejt2.execute("delete from reportInstanceDataAnnotations");
+				ejt2.execute("delete from reportInstanceData");
+				ejt2.execute("delete from reportInstancePoints");
+				ejt2.execute("delete from reportInstanceEvents");
+				ejt2.execute("delete from reportInstanceUserComments");
+				ejt2.execute("delete from reportInstances");
+
+				ejt2.execute("delete from userEvents");
+
+				ejt2.execute("delete from userComments");
 				ejt2.execute("delete from users");
+				ejt2.execute("delete from usersProfiles");
 
 				ejt2.execute("delete from publishers");
 

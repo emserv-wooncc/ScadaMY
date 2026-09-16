@@ -5,10 +5,10 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.config;
+package br.org.scadabr.api.config;
 
 public class AddDataSourceParams  implements java.io.Serializable {
-    private br.org.scadamy.api.constants.DataSourceType type;
+    private br.org.scadabr.api.constants.DataSourceType type;
 
     private java.lang.Object dataSource;
 
@@ -16,7 +16,7 @@ public class AddDataSourceParams  implements java.io.Serializable {
     }
 
     public AddDataSourceParams(
-           br.org.scadamy.api.constants.DataSourceType type,
+           br.org.scadabr.api.constants.DataSourceType type,
            java.lang.Object dataSource) {
            this.type = type;
            this.dataSource = dataSource;
@@ -25,27 +25,27 @@ public class AddDataSourceParams  implements java.io.Serializable {
 
     /**
      * Gets the type value for this AddDataSourceParams.
-     *
+     * 
      * @return type
      */
-    public br.org.scadamy.api.constants.DataSourceType getType() {
+    public br.org.scadabr.api.constants.DataSourceType getType() {
         return type;
     }
 
 
     /**
      * Sets the type value for this AddDataSourceParams.
-     *
+     * 
      * @param type
      */
-    public void setType(br.org.scadamy.api.constants.DataSourceType type) {
+    public void setType(br.org.scadabr.api.constants.DataSourceType type) {
         this.type = type;
     }
 
 
     /**
      * Gets the dataSource value for this AddDataSourceParams.
-     *
+     * 
      * @return dataSource
      */
     public java.lang.Object getDataSource() {
@@ -55,7 +55,7 @@ public class AddDataSourceParams  implements java.io.Serializable {
 
     /**
      * Sets the dataSource value for this AddDataSourceParams.
-     *
+     * 
      * @param dataSource
      */
     public void setDataSource(java.lang.Object dataSource) {
@@ -73,11 +73,11 @@ public class AddDataSourceParams  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
-            ((this.type==null && other.getType()==null) ||
+        _equals = true && 
+            ((this.type==null && other.getType()==null) || 
              (this.type!=null &&
               this.type.equals(other.getType()))) &&
-            ((this.dataSource==null && other.getDataSource()==null) ||
+            ((this.dataSource==null && other.getDataSource()==null) || 
              (this.dataSource!=null &&
               this.dataSource.equals(other.getDataSource())));
         __equalsCalc = null;
@@ -106,16 +106,16 @@ public class AddDataSourceParams  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(AddDataSourceParams.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">AddDataSourceParams"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">AddDataSourceParams"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("type");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "type"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "DataSourceType"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "type"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "DataSourceType"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("dataSource");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "dataSource"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "dataSource"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "anyType"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
@@ -132,10 +132,10 @@ public class AddDataSourceParams  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -144,10 +144,10 @@ public class AddDataSourceParams  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

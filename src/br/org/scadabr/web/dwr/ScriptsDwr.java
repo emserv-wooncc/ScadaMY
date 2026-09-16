@@ -1,11 +1,11 @@
-package br.org.scadamy.web.dwr;
+package br.org.scadabr.web.dwr;
 
 import java.util.List;
 
-import br.org.scadamy.db.dao.ScriptDao;
-import br.org.scadamy.rt.scripting.ScriptRT;
-import br.org.scadamy.vo.scripting.ContextualizedScriptVO;
-import br.org.scadamy.vo.scripting.ScriptVO;
+import br.org.scadabr.db.dao.ScriptDao;
+import br.org.scadabr.rt.scripting.ScriptRT;
+import br.org.scadabr.vo.scripting.ContextualizedScriptVO;
+import br.org.scadabr.vo.scripting.ScriptVO;
 
 import com.serotonin.db.IntValuePair;
 import com.serotonin.mango.Common;

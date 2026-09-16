@@ -49,16 +49,14 @@ public class IncrementMultistateChangeRT extends ChangeTypeRT {
             index++;
             if (index >= vo.getValues().length)
                 index = 0;
-        }
-        else {
+        } else {
             if (decrement) {
                 index--;
                 if (index == -1) {
                     index = 1;
                     decrement = false;
                 }
-            }
-            else {
+            } else {
                 index++;
                 if (index == vo.getValues().length) {
                     index = vo.getValues().length - 2;

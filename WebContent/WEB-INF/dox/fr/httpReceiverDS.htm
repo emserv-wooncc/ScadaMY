@@ -2,7 +2,7 @@
     Mango - Open Source M2M - http://mango.serotoninsoftware.com
     Copyright (C) 2006-2011 Serotonin Software Technologies Inc.
     @author Matthew Lohbihler
-
+    
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -18,19 +18,19 @@
  -->
 <h1>Overview</h1>
 <p>
-  The HTTP receiver data source is used to accept data delivered to the system using HTTP GET or POST methods. Data can
-  be delivered by anything that can act as an HTTP client, the most obvious example of which is a web browser, although
+  The HTTP receiver data source is used to accept data delivered to the system using HTTP GET or POST methods. Data can 
+  be delivered by anything that can act as an HTTP client, the most obvious example of which is a web browser, although 
   there are many others.
 </p>
 <p>
-  Multiple HTTP receiver data sources can be configured, each of which optionally listens for different data (e.g.
+  Multiple HTTP receiver data sources can be configured, each of which optionally listens for different data (e.g. 
   device IDs or source IP addresses).
 </p>
 <p>
-  Data is received at the path <b>httpds</b>. So, if your system is accessible at, for example, 'http://localhost/',
-  data should be directed to 'http://localhost/httpds'. <a href="httpds?testKey=testValue" target="_blank">Try it
-  now</a>. This link sends a parameter called 'testKey' with the value 'testValue'. Because there is likely no receiver
-  listening for this parameter name, you will probably see the message 'Unconsumed key: testKey'. This is normal; the
+  Data is received at the path <b>httpds</b>. So, if your system is accessible at, for example, 'http://localhost/', 
+  data should be directed to 'http://localhost/httpds'. <a href="httpds?testKey=testValue" target="_blank">Try it 
+  now</a>. This link sends a parameter called 'testKey' with the value 'testValue'. Because there is likely no receiver 
+  listening for this parameter name, you will probably see the message 'Unconsumed key: testKey'. This is normal; the 
   message is a convenience to indicate to users that data is being sent that is not being used.
 </p>
 
@@ -45,21 +45,21 @@
 
 <h1>Request parameters</h1>
 <p>
-  Requests are delivered using normal HTTP parameterized request formats. When using the GET method, the format is
-  'http://&lt;domain name and port&gt;/&lt;optional path&gt;/httpds?param1=value1&amp;param2=value2'. Request sent with the
-  POST method typically require a specialized client; please refer to the client's documentation if you wish to use
+  Requests are delivered using normal HTTP parameterized request formats. When using the GET method, the format is 
+  'http://&lt;domain name and port&gt;/&lt;optional path&gt;/httpds?param1=value1&amp;param2=value2'. Request sent with the 
+  POST method typically require a specialized client; please refer to the client's documentation if you wish to use 
   POST.
 </p>
 <p>
-  Point values can be specified in two ways. The first is with the 'pointName=pointValue' format. The second is by
-  providing the key and value as two separate parameters using the key prefixes '__point' and '__value'. For example,
-  '__pointFoo=pointName&amp;__valueFoo=pointValue' (collated by matching the 'Foo' that follows the prefix) has the same
+  Point values can be specified in two ways. The first is with the 'pointName=pointValue' format. The second is by 
+  providing the key and value as two separate parameters using the key prefixes '__point' and '__value'. For example, 
+  '__pointFoo=pointName&amp;__valueFoo=pointValue' (collated by matching the 'Foo' that follows the prefix) has the same 
   effect as 'pointName=pointValue'.
 </p>
 <p>The order in which parameters are provided in the request is not significant.</p>
 <p>The following special parameter keys are recognized. Note that all begin with two underscores. All are optional.</p>
 <p>
-  Timestamps can be represented in multiple ways. If a timestamp is detected (i.e. is not empty), ScadaMY will attempt to
+  Timestamps can be represented in multiple ways. If a timestamp is detected (i.e. is not empty), ScadaBR will attempt to 
   parse it first in the format "yyyyMMddHHmmss", then "yyyy-MM-dd'T'HH:mm:ss'Z'", and finally as a UTC millisecond count
   since midnight on Jan 1, 1970. (See the "Date/time formats" documentation for more information.)
 </p>
@@ -88,26 +88,26 @@
 
 <h1>HTTP Responses</h1>
 <p>
-  Successful requests sent to the receiver will receive a '200 OK' response. Requests that result in errors or warnings
+  Successful requests sent to the receiver will receive a '200 OK' response. Requests that result in errors or warnings 
   will receive the following potential error or warning messages in the HTTP response content:
 </p>
 <ul>
   <li>
-    'Time override parse error' indicating that the given time override was not correctly formatted. The request will
+    'Time override parse error' indicating that the given time override was not correctly formatted. The request will 
     have been processed using the system time.
   </li>
   <li>
     'Unconsumed key' indicating that the given parameter key was not used by any HTTP receiver data point.
   </li>
   <li>
-    'Value not found for paired point key' indicating that a parameter key specified using the '__point/__value'
+    'Value not found for paired point key' indicating that a parameter key specified using the '__point/__value' 
     mechanism was not matched with a value. The parameter will not have been included in the request processing.
   </li>
 </ul>
 <p>
-  By default only the above error or warning messages are returned in the HTTP response. If you require additional
+  By default only the above error or warning messages are returned in the HTTP response. If you require additional 
   content to be returned you can specify static content as the prologue (written before error and warning messages) and
-  epilogue (written after error and warning messages). Use the following insert statements (or analogous update
+  epilogue (written after error and warning messages). Use the following insert statements (or analogous update 
   statements if the keys already exist) to specify your customized content:
 </p>
 <pre>

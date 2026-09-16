@@ -5,7 +5,7 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.vo;
+package br.org.scadabr.api.vo;
 
 public class Authentication  implements java.io.Serializable {
     private java.lang.String username;
@@ -25,7 +25,7 @@ public class Authentication  implements java.io.Serializable {
 
     /**
      * Gets the username value for this Authentication.
-     *
+     * 
      * @return username
      */
     public java.lang.String getUsername() {
@@ -35,7 +35,7 @@ public class Authentication  implements java.io.Serializable {
 
     /**
      * Sets the username value for this Authentication.
-     *
+     * 
      * @param username
      */
     public void setUsername(java.lang.String username) {
@@ -45,7 +45,7 @@ public class Authentication  implements java.io.Serializable {
 
     /**
      * Gets the password value for this Authentication.
-     *
+     * 
      * @return password
      */
     public java.lang.String getPassword() {
@@ -55,7 +55,7 @@ public class Authentication  implements java.io.Serializable {
 
     /**
      * Sets the password value for this Authentication.
-     *
+     * 
      * @param password
      */
     public void setPassword(java.lang.String password) {
@@ -73,11 +73,11 @@ public class Authentication  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
-            ((this.username==null && other.getUsername()==null) ||
+        _equals = true && 
+            ((this.username==null && other.getUsername()==null) || 
              (this.username!=null &&
               this.username.equals(other.getUsername()))) &&
-            ((this.password==null && other.getPassword()==null) ||
+            ((this.password==null && other.getPassword()==null) || 
              (this.password!=null &&
               this.password.equals(other.getPassword())));
         __equalsCalc = null;
@@ -106,16 +106,16 @@ public class Authentication  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(Authentication.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", ">Authentication"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", ">Authentication"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("username");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "username"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "username"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("password");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "password"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "password"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
@@ -132,10 +132,10 @@ public class Authentication  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -144,10 +144,10 @@ public class Authentication  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

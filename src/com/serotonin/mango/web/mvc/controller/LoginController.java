@@ -18,6 +18,7 @@
  */
 package com.serotonin.mango.web.mvc.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,8 +27,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.validation.BindException;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.SimpleFormController;
+import org.springframework.web.servlet.mvc.Controller;
 import org.springframework.web.servlet.view.RedirectView;
 
 import com.serotonin.mango.Common;
@@ -38,12 +41,16 @@ import com.serotonin.mango.web.mvc.form.LoginForm;
 import com.serotonin.util.StringUtils;
 import com.serotonin.util.ValidationUtils;
 
-public class LoginController extends SimpleFormController {
+public class LoginController implements Controller {
 	private static final Log logger = LogFactory.getLog(LoginController.class);
 
 	private boolean mobile;
 	private String successUrl;
 	private String newUserUrl;
+	private String formView = "login";
+	private String commandName = "login";
+	private Class<?> commandClass = LoginForm.class;
+	private boolean bindOnNewForm = true;
 
 	public void setMobile(boolean mobile) {
 		this.mobile = mobile;
@@ -57,9 +64,40 @@ public class LoginController extends SimpleFormController {
 		this.newUserUrl = newUserUrl;
 	}
 
+	public void setFormView(String formView) {
+		this.formView = formView;
+	}
+
+	public void setCommandName(String commandName) {
+		this.commandName = commandName;
+	}
+
+	public void setCommandClass(Class<?> commandClass) {
+		this.commandClass = commandClass;
+	}
+
+	public void setBindOnNewForm(boolean bindOnNewForm) {
+		this.bindOnNewForm = bindOnNewForm;
+	}
+
 	@Override
+	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		if ("POST".equalsIgnoreCase(request.getMethod())) {
+			LoginForm login = new LoginForm();
+			ServletRequestDataBinder binder = new ServletRequestDataBinder(login, commandName);
+			binder.bind(request);
+			BindException errors = new BindException(binder.getBindingResult());
+			onBindAndValidate(request, login, errors);
+			return onSubmit(request, response, login, errors);
+		} else {
+			LoginForm login = new LoginForm();
+			BindException errors = new BindException(login, commandName);
+			return showForm(request, response, errors, new HashMap<String, Object>());
+		}
+	}
+
 	protected ModelAndView showForm(HttpServletRequest request, HttpServletResponse response, BindException errors,
-			@SuppressWarnings("rawtypes") Map controlModel) throws Exception {
+			Map<String, Object> controlModel) throws Exception {
 		// Check if Crowd is enabled
 		if (CrowdUtils.isCrowdEnabled()) {
 			String username = CrowdUtils.getCrowdUsername(request);
@@ -69,7 +107,6 @@ public class LoginController extends SimpleFormController {
 
 				// The user is logged into Crowd. Make sure the username is
 				// valid in this instance.
-				// User user = Common.ctx.getUserCache().getUser(username);
 				User user = new UserDao().getUser(username);
 				if (user == null)
 					ValidationUtils.rejectValue(errors, "username", "login.validation.noSuchUser");
@@ -89,10 +126,13 @@ public class LoginController extends SimpleFormController {
 				}
 			}
 		}
-		return super.showForm(request, response, errors, controlModel);
+		return showForm(request, response, errors);
 	}
 
-	@Override
+	protected ModelAndView showForm(HttpServletRequest request, HttpServletResponse response, BindException errors) {
+		return new ModelAndView(formView, errors.getModel());
+	}
+
 	protected void onBindAndValidate(HttpServletRequest request, Object command, BindException errors) {
 		LoginForm login = (LoginForm) command;
 
@@ -105,7 +145,6 @@ public class LoginController extends SimpleFormController {
 			ValidationUtils.rejectValue(errors, "password", "login.validation.noPassword");
 	}
 
-	@Override
 	protected ModelAndView onSubmit(HttpServletRequest request, HttpServletResponse response, Object command,
 			BindException errors) throws Exception {
 		LoginForm login = (LoginForm) command;

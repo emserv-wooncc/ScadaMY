@@ -5,7 +5,7 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.da;
+package br.org.scadabr.api.da;
 
 public class WriteStringDataOptions  implements java.io.Serializable {
     private boolean returnItemValues;
@@ -21,7 +21,7 @@ public class WriteStringDataOptions  implements java.io.Serializable {
 
     /**
      * Gets the returnItemValues value for this WriteStringDataOptions.
-     *
+     * 
      * @return returnItemValues
      */
     public boolean isReturnItemValues() {
@@ -31,7 +31,7 @@ public class WriteStringDataOptions  implements java.io.Serializable {
 
     /**
      * Sets the returnItemValues value for this WriteStringDataOptions.
-     *
+     * 
      * @param returnItemValues
      */
     public void setReturnItemValues(boolean returnItemValues) {
@@ -49,7 +49,7 @@ public class WriteStringDataOptions  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
+        _equals = true && 
             this.returnItemValues == other.isReturnItemValues();
         __equalsCalc = null;
         return _equals;
@@ -72,10 +72,10 @@ public class WriteStringDataOptions  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(WriteStringDataOptions.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "WriteStringDataOptions"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "WriteStringDataOptions"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("returnItemValues");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "returnItemValues"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "returnItemValues"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
@@ -92,10 +92,10 @@ public class WriteStringDataOptions  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -104,10 +104,10 @@ public class WriteStringDataOptions  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

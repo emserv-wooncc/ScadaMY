@@ -1,4 +1,4 @@
-<%--
+ï»¿<%--
     Mango - Open Source M2M - http://mango.serotoninsoftware.com
     Copyright (C) 2006-2011 Serotonin Software Technologies Inc.
     @author Matthew Lohbihler
@@ -33,9 +33,9 @@
   <!-- Meta -->
   <meta http-equiv="content-type" content="application/xhtml+xml;charset=utf-8"/>
   <meta http-equiv="Content-Style-Type" content="text/css" />
-  <meta name="Copyright" content="ScadaMY (c) 2009-2011 Fundação Certi, MCA Sistemas, Unis Sistemas, Conetec, Todos os direitos reservados."/>
-  <meta name="DESCRIPTION" content="ScadaMY Software"/>
-  <meta name="KEYWORDS" content="ScadaMY Software"/>
+  <meta name="Copyright" content="ScadaBR (c) 2009-2011 FundaÃ§Ã£o Certi, MCA Sistemas, Unis Sistemas, Conetec, Todos os direitos reservados."/>
+  <meta name="DESCRIPTION" content="ScadaBR Software"/>
+  <meta name="KEYWORDS" content="ScadaBR Software"/>
 
   <!-- Style -->
   <link rel="icon" href="images/favicon.ico"/>
@@ -105,7 +105,7 @@
 <body>
 <table width="100%" cellspacing="0" cellpadding="0" border="0" id="mainHeader">
   <tr>
-    <td><img src="images/scadabrLogoMed.svg" style="max-height: 50px;" alt="ScadaMY Logo"/></td>
+    <td><img src="images/scadabrLogoMed.svg" style="max-height: 50px;" alt="ScadaBR Logo"/></td>
     <c:if test="${!simple}">
       <td align="center" width="99%" id="eventsRow">
         <a href="events.shtm">

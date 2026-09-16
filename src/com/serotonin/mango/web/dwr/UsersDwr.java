@@ -2,7 +2,7 @@
     Mango - Open Source M2M - http://mango.serotoninsoftware.com
     Copyright (C) 2006-2011 Serotonin Software Technologies Inc.
     @author Matthew Lohbihler
-
+    
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -51,8 +51,8 @@ import com.serotonin.web.dwr.DwrResponseI18n;
 import com.serotonin.web.i18n.I18NUtils;
 import com.serotonin.web.i18n.LocalizableMessage;
 
-import br.org.scadamy.db.dao.UsersProfileDao;
-import br.org.scadamy.vo.usersProfiles.UsersProfileVO;
+import br.org.scadabr.db.dao.UsersProfileDao;
+import br.org.scadabr.vo.usersProfiles.UsersProfileVO;
 
 public class UsersDwr extends BaseDwr {
 	public Log LOG = LogFactory.getLog(UsersDwr.class);
@@ -125,8 +125,11 @@ public class UsersDwr extends BaseDwr {
 
 		// Validate the given information. If there is a problem, return an
 		// appropriate error message.
-		HttpServletRequest request = WebContextFactory.get().getHttpServletRequest();
-		User currentUser = Common.getUser(request);
+		HttpServletRequest request = null;
+		if (WebContextFactory.get() != null) {
+			request = WebContextFactory.get().getHttpServletRequest();
+		}
+		User currentUser = Common.getUser();
 		UserDao userDao = Common.ctx.getUserCache().getUserDao();
 
 		User user;
@@ -194,7 +197,7 @@ public class UsersDwr extends BaseDwr {
 				// set permission on all watchlists
 			}
 
-			if (currentUser.getId() == id)
+			if (currentUser.getId() == id && request != null)
 				// Update the user object in session too. Why not?
 				Common.setUser(request, user);
 
@@ -208,10 +211,13 @@ public class UsersDwr extends BaseDwr {
 	public DwrResponseI18n saveUser(int id, String password, String email, String phone, int receiveAlarmEmails,
 			boolean receiveOwnAuditEvents, int usersProfileId) {
 
-		HttpServletRequest request = WebContextFactory.get().getHttpServletRequest();
-		User user = Common.getUser(request);
-		if (user.getId() != id)
-			throw new PermissionException("Cannot update a different user", user);
+		HttpServletRequest request = null;
+		if (WebContextFactory.get() != null) {
+			request = WebContextFactory.get().getHttpServletRequest();
+		}
+		User currentUser = Common.getUser();
+		if (currentUser.getId() != id)
+			throw new PermissionException("Cannot update a different user", currentUser);
 
 		UserDao userDao = Common.ctx.getUserCache().getUserDao();
 		User updateUser = Common.ctx.getUserCache().getUser(id);
@@ -227,7 +233,9 @@ public class UsersDwr extends BaseDwr {
 
 		if (!response.getHasMessages()) {
 			userDao.saveUser(updateUser);
-			Common.setUser(request, updateUser);
+			if (request != null) {
+				Common.setUser(request, updateUser);
+			}
 			Common.ctx.getUserCache().updateUser(updateUser);
 		}
 

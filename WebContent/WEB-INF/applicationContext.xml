@@ -3,7 +3,7 @@
     Mango - Open Source M2M - http://mango.serotoninsoftware.com
     Copyright (C) 2006-2011 Serotonin Software Technologies Inc.
     @author Matthew Lohbihler
-
+    
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -17,9 +17,11 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see http://www.gnu.org/licenses/.
 -->
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
-
-<beans>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
   <!-- DWR -->
   <bean id="CompoundEventsDwr" class="com.serotonin.mango.web.dwr.CompoundEventsDwr"/>
   <bean id="CustomViewDwr" class="com.serotonin.mango.web.dwr.CustomViewDwr"/>
@@ -43,12 +45,12 @@
   <bean id="UsersDwr" class="com.serotonin.mango.web.dwr.UsersDwr"/>
   <bean id="ViewDwr" class="com.serotonin.mango.web.dwr.ViewDwr"/>
   <bean id="WatchListDwr" class="com.serotonin.mango.web.dwr.WatchListDwr"/>
-  <bean id="ScriptsDwr" class="br.org.scadamy.web.dwr.ScriptsDwr"/>
-  <bean id="UsersProfilesDwr" class="br.org.scadamy.web.dwr.UsersProfilesDwr"/>
-
+  <bean id="ScriptsDwr" class="br.org.scadabr.web.dwr.ScriptsDwr"/>
+  <bean id="UsersProfilesDwr" class="br.org.scadabr.web.dwr.UsersProfilesDwr"/>
+  
   <!-- i18n -->
   <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"/>
-
+  
   <bean id="messageSource" class="com.serotonin.web.i18n.Utf8ResourceBundleMessageSource">
     <property name="basename"><value>messages</value></property>
   </bean>

@@ -5,19 +5,19 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.ae;
+package br.org.scadabr.api.ae;
 
 public class AnnotateEventParams  implements java.io.Serializable {
     private java.lang.Integer eventId;
 
-    private br.org.scadamy.api.vo.EventMessage message;
+    private br.org.scadabr.api.vo.EventMessage message;
 
     public AnnotateEventParams() {
     }
 
     public AnnotateEventParams(
            java.lang.Integer eventId,
-           br.org.scadamy.api.vo.EventMessage message) {
+           br.org.scadabr.api.vo.EventMessage message) {
            this.eventId = eventId;
            this.message = message;
     }
@@ -25,7 +25,7 @@ public class AnnotateEventParams  implements java.io.Serializable {
 
     /**
      * Gets the eventId value for this AnnotateEventParams.
-     *
+     * 
      * @return eventId
      */
     public java.lang.Integer getEventId() {
@@ -35,7 +35,7 @@ public class AnnotateEventParams  implements java.io.Serializable {
 
     /**
      * Sets the eventId value for this AnnotateEventParams.
-     *
+     * 
      * @param eventId
      */
     public void setEventId(java.lang.Integer eventId) {
@@ -45,20 +45,20 @@ public class AnnotateEventParams  implements java.io.Serializable {
 
     /**
      * Gets the message value for this AnnotateEventParams.
-     *
+     * 
      * @return message
      */
-    public br.org.scadamy.api.vo.EventMessage getMessage() {
+    public br.org.scadabr.api.vo.EventMessage getMessage() {
         return message;
     }
 
 
     /**
      * Sets the message value for this AnnotateEventParams.
-     *
+     * 
      * @param message
      */
-    public void setMessage(br.org.scadamy.api.vo.EventMessage message) {
+    public void setMessage(br.org.scadabr.api.vo.EventMessage message) {
         this.message = message;
     }
 
@@ -73,11 +73,11 @@ public class AnnotateEventParams  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
-            ((this.eventId==null && other.getEventId()==null) ||
+        _equals = true && 
+            ((this.eventId==null && other.getEventId()==null) || 
              (this.eventId!=null &&
               this.eventId.equals(other.getEventId()))) &&
-            ((this.message==null && other.getMessage()==null) ||
+            ((this.message==null && other.getMessage()==null) || 
              (this.message!=null &&
               this.message.equals(other.getMessage())));
         __equalsCalc = null;
@@ -106,17 +106,17 @@ public class AnnotateEventParams  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(AnnotateEventParams.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", ">AnnotateEventParams"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", ">AnnotateEventParams"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("eventId");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "eventId"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "eventId"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("message");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "message"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "EventMessage"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "message"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "EventMessage"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
@@ -132,10 +132,10 @@ public class AnnotateEventParams  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -144,10 +144,10 @@ public class AnnotateEventParams  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

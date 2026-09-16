@@ -25,6 +25,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import com.serotonin.db.spring.GenericRowMapper;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.Collections;
@@ -41,7 +42,6 @@ import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 
 import com.serotonin.db.spring.ExtendedJdbcTemplate;
 import com.serotonin.db.spring.GenericResultSetExtractor;
-import com.serotonin.db.spring.GenericRowMapper;
 import com.serotonin.db.spring.GenericTransactionCallback;
 import com.serotonin.mango.Common;
 import com.serotonin.mango.rt.event.type.AuditEventType;
@@ -142,7 +142,7 @@ public class DataSourceDao extends BaseDao {
 		} else {
 			vo.setId(doInsert("insert into dataSources (xid, name, dataSourceType, data) values (?,?,?,?)",
 					new Object[] { vo.getXid(), vo.getName(), vo.getType().getId(),
-							SerializationHelper.writeObject(vo) },
+							SerializationHelper.writeObjectToArray(vo) },
 					new int[] { Types.VARCHAR, Types.VARCHAR, Types.INTEGER,
 							Common.getEnvironmentProfile().getString("db.type").equals("postgres") ? Types.BINARY
 									: Types.BLOB }));
@@ -155,7 +155,7 @@ public class DataSourceDao extends BaseDao {
 	private void updateDataSource(final DataSourceVO<?> vo) {
 		DataSourceVO<?> old = getDataSource(vo.getId());
 		ejt.update("update dataSources set xid=?, name=?, data=? where id=?",
-				new Object[] { vo.getXid(), vo.getName(), SerializationHelper.writeObject(vo), vo.getId() },
+				new Object[] { vo.getXid(), vo.getName(), SerializationHelper.writeObjectToArray(vo), vo.getId() },
 				new int[] { Types.VARCHAR, Types.VARCHAR,
 						Common.getEnvironmentProfile().getString("db.type").equals("postgres") ? Types.BINARY
 								: Types.BLOB,
@@ -293,7 +293,7 @@ public class DataSourceDao extends BaseDao {
 
 	public void savePersistentData(int id, Object data) {
 		ejt.update("update dataSources set rtdata=? where id=?",
-				new Object[] { SerializationHelper.writeObject(data), id },
+				new Object[] { SerializationHelper.writeObjectToArray(data), id },
 				new int[] { Common.getEnvironmentProfile().getString("db.type").equals("postgres") ? Types.BINARY
 						: Types.BLOB, Types.INTEGER });
 	}

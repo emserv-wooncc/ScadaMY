@@ -1,6 +1,6 @@
-package br.org.scadamy.rt.dataSource.opc;
+package br.org.scadabr.rt.dataSource.opc;
 
-import br.org.scadamy.vo.dataSource.opc.OPCPointLocatorVO;
+import br.org.scadabr.vo.dataSource.opc.OPCPointLocatorVO;
 
 import com.serotonin.mango.rt.dataSource.PointLocatorRT;
 

@@ -1,6 +1,7 @@
-package br.org.scadamy.db.dao;
+package br.org.scadabr.db.dao;
 
 import java.sql.ResultSet;
+import com.serotonin.db.spring.GenericRowMapper;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.List;
@@ -8,10 +9,9 @@ import java.util.List;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 
-import br.org.scadamy.vo.scripting.ScriptVO;
+import br.org.scadabr.vo.scripting.ScriptVO;
 
 import com.serotonin.db.spring.ExtendedJdbcTemplate;
-import com.serotonin.db.spring.GenericRowMapper;
 import com.serotonin.mango.Common;
 import com.serotonin.mango.db.dao.BaseDao;
 import com.serotonin.util.SerializationHelper;
@@ -33,7 +33,7 @@ public class ScriptDao extends BaseDao {
 	}
 
 	private void insertScript(final ScriptVO<?> vo) {
-                if (Common.getEnvironmentProfile().getString("db.type").equals("postgres")){
+                if (Common.getEnvironmentProfile().getString("db.type").equals("postgres")){                
                     try {
                         Connection conn = DriverManager.getConnection(Common.getEnvironmentProfile().getString("db.url"),
                                                     Common.getEnvironmentProfile().getString("db.username"),
@@ -45,15 +45,15 @@ public class ScriptDao extends BaseDao {
                         preStmt.setInt(4, vo.getUserId());
                         preStmt.setBytes(5, SerializationHelper.writeObjectToArray(vo));
                         preStmt.executeUpdate();
-
+                        
                         ResultSet resSEQ = conn.createStatement().executeQuery("SELECT currval('scripts_id_seq')");
                         resSEQ.next();
                         int id = resSEQ.getInt(1);
 
-                        conn.close();
-
+                        conn.close(); 
+                        
                         vo.setId(id);
-
+                        
                     } catch (SQLException ex) {
                         Logger.getLogger(FlexProjectDao.class.getName()).log(Level.SEVERE, null, ex);
                         vo.setId(0);
@@ -64,8 +64,8 @@ public class ScriptDao extends BaseDao {
                                                     "insert into scripts (xid, name,  script, userId, data) values (?,?,?,?,?)",
                                                     new Object[] { vo.getXid(), vo.getName(),
                                                                     vo.getScript(), vo.getUserId(),
-                                                                    SerializationHelper.writeObject(vo) },
-                                                    new int[] { Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.INTEGER,
+                                                                    SerializationHelper.writeObjectToArray(vo) },
+                                                    new int[] { Types.VARCHAR, Types.VARCHAR, Types.VARCHAR, Types.INTEGER, 
                                                         Common.getEnvironmentProfile().getString("db.type").equals("postgres") ? Types.BINARY: Types.BLOB }));
                 }
 	}
@@ -78,7 +78,7 @@ public class ScriptDao extends BaseDao {
 						"update scripts set xid=?, name=?, script=?, userId=?, data=? where id=?",
 						new Object[] { vo.getXid(), vo.getName(),
 								vo.getScript(), vo.getUserId(),
-								SerializationHelper.writeObject(vo), vo.getId() },
+								SerializationHelper.writeObjectToArray(vo), vo.getId() },
 						new int[] { Types.VARCHAR, Types.VARCHAR,
 								Types.VARCHAR, Types.INTEGER, Common.getEnvironmentProfile().getString("db.type").equals("postgres") ? Types.BINARY: Types.BLOB,
 								Types.INTEGER });
@@ -118,7 +118,7 @@ public class ScriptDao extends BaseDao {
                         }
                         else{
                             script = (ScriptVO<?>) SerializationHelper.readObject(rs.getBlob(6).getBinaryStream());
-                        }
+                        }                    
 			script.setId(rs.getInt(1));
 			script.setXid(rs.getString(2));
 			script.setName(rs.getString(3));

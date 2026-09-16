@@ -1,4 +1,4 @@
-package br.org.scadamy.vo.importer;
+package br.org.scadabr.vo.importer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,11 +22,11 @@ import com.serotonin.mango.vo.permission.DataPointAccess;
 import com.serotonin.mango.web.dwr.beans.ImportTask;
 import com.serotonin.web.dwr.DwrResponseI18n;
 
-import br.org.scadamy.api.exception.DAOException;
-import br.org.scadamy.db.dao.UsersProfileDao;
-import br.org.scadamy.vo.permission.ViewAccess;
-import br.org.scadamy.vo.permission.WatchListAccess;
-import br.org.scadamy.vo.usersProfiles.UsersProfileVO;
+import br.org.scadabr.api.exception.DAOException;
+import br.org.scadabr.db.dao.UsersProfileDao;
+import br.org.scadabr.vo.permission.ViewAccess;
+import br.org.scadabr.vo.permission.WatchListAccess;
+import br.org.scadabr.vo.usersProfiles.UsersProfileVO;
 
 public class UsersProfileImporter {
 

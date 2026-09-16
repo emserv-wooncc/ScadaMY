@@ -5,7 +5,7 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.config;
+package br.org.scadabr.api.config;
 
 public class BrowseDataPointsParams  implements java.io.Serializable {
     private int dataSourceId;
@@ -21,7 +21,7 @@ public class BrowseDataPointsParams  implements java.io.Serializable {
 
     /**
      * Gets the dataSourceId value for this BrowseDataPointsParams.
-     *
+     * 
      * @return dataSourceId
      */
     public int getDataSourceId() {
@@ -31,7 +31,7 @@ public class BrowseDataPointsParams  implements java.io.Serializable {
 
     /**
      * Sets the dataSourceId value for this BrowseDataPointsParams.
-     *
+     * 
      * @param dataSourceId
      */
     public void setDataSourceId(int dataSourceId) {
@@ -49,7 +49,7 @@ public class BrowseDataPointsParams  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
+        _equals = true && 
             this.dataSourceId == other.getDataSourceId();
         __equalsCalc = null;
         return _equals;
@@ -72,10 +72,10 @@ public class BrowseDataPointsParams  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(BrowseDataPointsParams.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">BrowseDataPointsParams"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">BrowseDataPointsParams"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("dataSourceId");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "dataSourceId"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "dataSourceId"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
@@ -92,10 +92,10 @@ public class BrowseDataPointsParams  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -104,10 +104,10 @@ public class BrowseDataPointsParams  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

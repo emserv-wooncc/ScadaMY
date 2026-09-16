@@ -5,12 +5,12 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.config;
+package br.org.scadabr.api.config;
 
 public class ConfigureDataPointParams  implements java.io.Serializable {
     private java.lang.Integer dataSourceId;
 
-    private br.org.scadamy.api.constants.DataSourceType type;
+    private br.org.scadabr.api.constants.DataSourceType type;
 
     private java.lang.Object dataPoint;
 
@@ -19,7 +19,7 @@ public class ConfigureDataPointParams  implements java.io.Serializable {
 
     public ConfigureDataPointParams(
            java.lang.Integer dataSourceId,
-           br.org.scadamy.api.constants.DataSourceType type,
+           br.org.scadabr.api.constants.DataSourceType type,
            java.lang.Object dataPoint) {
            this.dataSourceId = dataSourceId;
            this.type = type;
@@ -29,7 +29,7 @@ public class ConfigureDataPointParams  implements java.io.Serializable {
 
     /**
      * Gets the dataSourceId value for this ConfigureDataPointParams.
-     *
+     * 
      * @return dataSourceId
      */
     public java.lang.Integer getDataSourceId() {
@@ -39,7 +39,7 @@ public class ConfigureDataPointParams  implements java.io.Serializable {
 
     /**
      * Sets the dataSourceId value for this ConfigureDataPointParams.
-     *
+     * 
      * @param dataSourceId
      */
     public void setDataSourceId(java.lang.Integer dataSourceId) {
@@ -49,27 +49,27 @@ public class ConfigureDataPointParams  implements java.io.Serializable {
 
     /**
      * Gets the type value for this ConfigureDataPointParams.
-     *
+     * 
      * @return type
      */
-    public br.org.scadamy.api.constants.DataSourceType getType() {
+    public br.org.scadabr.api.constants.DataSourceType getType() {
         return type;
     }
 
 
     /**
      * Sets the type value for this ConfigureDataPointParams.
-     *
+     * 
      * @param type
      */
-    public void setType(br.org.scadamy.api.constants.DataSourceType type) {
+    public void setType(br.org.scadabr.api.constants.DataSourceType type) {
         this.type = type;
     }
 
 
     /**
      * Gets the dataPoint value for this ConfigureDataPointParams.
-     *
+     * 
      * @return dataPoint
      */
     public java.lang.Object getDataPoint() {
@@ -79,7 +79,7 @@ public class ConfigureDataPointParams  implements java.io.Serializable {
 
     /**
      * Sets the dataPoint value for this ConfigureDataPointParams.
-     *
+     * 
      * @param dataPoint
      */
     public void setDataPoint(java.lang.Object dataPoint) {
@@ -97,14 +97,14 @@ public class ConfigureDataPointParams  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
-            ((this.dataSourceId==null && other.getDataSourceId()==null) ||
+        _equals = true && 
+            ((this.dataSourceId==null && other.getDataSourceId()==null) || 
              (this.dataSourceId!=null &&
               this.dataSourceId.equals(other.getDataSourceId()))) &&
-            ((this.type==null && other.getType()==null) ||
+            ((this.type==null && other.getType()==null) || 
              (this.type!=null &&
               this.type.equals(other.getType()))) &&
-            ((this.dataPoint==null && other.getDataPoint()==null) ||
+            ((this.dataPoint==null && other.getDataPoint()==null) || 
              (this.dataPoint!=null &&
               this.dataPoint.equals(other.getDataPoint())));
         __equalsCalc = null;
@@ -136,22 +136,22 @@ public class ConfigureDataPointParams  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(ConfigureDataPointParams.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">ConfigureDataPointParams"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">ConfigureDataPointParams"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("dataSourceId");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "dataSourceId"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "dataSourceId"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("type");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "type"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "DataSourceType"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "type"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "DataSourceType"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("dataPoint");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "dataPoint"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "dataPoint"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "anyType"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
@@ -168,10 +168,10 @@ public class ConfigureDataPointParams  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -180,10 +180,10 @@ public class ConfigureDataPointParams  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

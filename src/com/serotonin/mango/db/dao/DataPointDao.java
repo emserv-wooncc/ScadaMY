@@ -20,6 +20,7 @@ package com.serotonin.mango.db.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import com.serotonin.db.spring.GenericRowMapper;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.Collections;
@@ -41,7 +42,6 @@ import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 import com.serotonin.ShouldNeverHappenException;
 import com.serotonin.db.IntValuePair;
 import com.serotonin.db.spring.ExtendedJdbcTemplate;
-import com.serotonin.db.spring.GenericRowMapper;
 import com.serotonin.mango.Common;
 import com.serotonin.mango.rt.event.type.AuditEventType;
 import com.serotonin.mango.rt.event.type.EventType;
@@ -218,7 +218,7 @@ public class DataPointDao extends BaseDao {
         }   
         else{
             dp.setId(doInsert("insert into dataPoints (xid, dataSourceId, data) values (?,?,?)", new Object[] {
-                    dp.getXid(), dp.getDataSourceId(), SerializationHelper.writeObject(dp) }, new int[] { Types.VARCHAR,
+                    dp.getXid(), dp.getDataSourceId(), SerializationHelper.writeObjectToArray(dp) }, new int[] { Types.VARCHAR,
                     Types.INTEGER, Common.getEnvironmentProfile().getString("db.type").equals("postgres") ? Types.BINARY: Types.BLOB }));
         }
         // Save the relational information.
@@ -247,7 +247,7 @@ public class DataPointDao extends BaseDao {
 
     public void updateDataPointShallow(final DataPointVO dp) {
         ejt.update("update dataPoints set xid=?, data=? where id=?",
-                new Object[] { dp.getXid(), SerializationHelper.writeObject(dp), dp.getId() }, new int[] {
+                new Object[] { dp.getXid(), SerializationHelper.writeObjectToArray(dp), dp.getId() }, new int[] {
                         Types.VARCHAR, Common.getEnvironmentProfile().getString("db.type").equals("postgres") ? Types.BINARY: Types.BLOB, Types.INTEGER });
     }
 

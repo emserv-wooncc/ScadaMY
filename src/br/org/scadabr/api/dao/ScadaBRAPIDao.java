@@ -1,19 +1,19 @@
-package br.org.scadamy.api.dao;
+package br.org.scadabr.api.dao;
 
 import java.util.Calendar;
 import java.util.List;
 
-import br.org.scadamy.api.constants.AlarmLevel;
-import br.org.scadamy.api.constants.DataSourceType;
-import br.org.scadamy.api.constants.EventType;
-import br.org.scadamy.api.exception.ScadaBRAPIException;
-import br.org.scadamy.api.vo.APIError;
-import br.org.scadamy.api.vo.EventDefinition;
-import br.org.scadamy.api.vo.EventMessage;
-import br.org.scadamy.api.vo.EventNotification;
-import br.org.scadamy.api.vo.ItemInfo;
-import br.org.scadamy.api.vo.ItemStringValue;
-import br.org.scadamy.api.vo.ItemValue;
+import br.org.scadabr.api.constants.AlarmLevel;
+import br.org.scadabr.api.constants.DataSourceType;
+import br.org.scadabr.api.constants.EventType;
+import br.org.scadabr.api.exception.ScadaBRAPIException;
+import br.org.scadabr.api.vo.APIError;
+import br.org.scadabr.api.vo.EventDefinition;
+import br.org.scadabr.api.vo.EventMessage;
+import br.org.scadabr.api.vo.EventNotification;
+import br.org.scadabr.api.vo.ItemInfo;
+import br.org.scadabr.api.vo.ItemStringValue;
+import br.org.scadabr.api.vo.ItemValue;
 
 public interface ScadaBRAPIDao {
 

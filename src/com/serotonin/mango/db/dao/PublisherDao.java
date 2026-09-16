@@ -21,6 +21,7 @@ package com.serotonin.mango.db.dao;
 import java.io.Serializable;
 import java.sql.Blob;
 import java.sql.ResultSet;
+import com.serotonin.db.spring.GenericRowMapper;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.Collections;
@@ -33,7 +34,6 @@ import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 
 import com.serotonin.db.spring.ExtendedJdbcTemplate;
 import com.serotonin.db.spring.GenericResultSetExtractor;
-import com.serotonin.db.spring.GenericRowMapper;
 import com.serotonin.mango.Common;
 import com.serotonin.mango.rt.event.type.EventType;
 import com.serotonin.mango.vo.publish.PublishedPointVO;
@@ -134,7 +134,7 @@ public class PublisherDao extends BaseDao {
         }
         else{
             ejt.update("update publishers set xid=?, data=? where id=?", new Object[] { vo.getXid(),
-                    SerializationHelper.writeObject(vo), vo.getId() }, new int[] { Types.VARCHAR, Common.getEnvironmentProfile().getString("db.type").equals("postgres") ? Types.BINARY: Types.BLOB,
+                    SerializationHelper.writeObjectToArray(vo), vo.getId() }, new int[] { Types.VARCHAR, Common.getEnvironmentProfile().getString("db.type").equals("postgres") ? Types.BINARY: Types.BLOB,
                     Types.INTEGER });
         }
     }
@@ -179,7 +179,7 @@ public class PublisherDao extends BaseDao {
     }
 
     public void savePersistentData(int id, Object data) {
-        ejt.update("update publishers set rtdata=? where id=?", new Object[] { SerializationHelper.writeObject(data),
+        ejt.update("update publishers set rtdata=? where id=?", new Object[] { SerializationHelper.writeObjectToArray(data),
                 id }, new int[] { Common.getEnvironmentProfile().getString("db.type").equals("postgres") ? Types.BINARY: Types.BLOB, Types.INTEGER });
     }
 }

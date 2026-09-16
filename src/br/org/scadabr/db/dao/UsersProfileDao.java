@@ -1,7 +1,8 @@
-package br.org.scadamy.db.dao;
+package br.org.scadabr.db.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import com.serotonin.db.spring.GenericRowMapper;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.ListIterator;
@@ -13,7 +14,6 @@ import org.springframework.jdbc.core.BatchPreparedStatementSetter;
 import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.support.TransactionCallbackWithoutResult;
 
-import com.serotonin.db.spring.GenericRowMapper;
 import com.serotonin.mango.Common;
 import com.serotonin.mango.db.dao.BaseDao;
 import com.serotonin.mango.db.dao.UserDao;
@@ -24,10 +24,10 @@ import com.serotonin.mango.vo.User;
 import com.serotonin.mango.vo.WatchList;
 import com.serotonin.mango.vo.permission.DataPointAccess;
 
-import br.org.scadamy.api.exception.DAOException;
-import br.org.scadamy.vo.permission.ViewAccess;
-import br.org.scadamy.vo.permission.WatchListAccess;
-import br.org.scadamy.vo.usersProfiles.UsersProfileVO;
+import br.org.scadabr.api.exception.DAOException;
+import br.org.scadabr.vo.permission.ViewAccess;
+import br.org.scadabr.vo.permission.WatchListAccess;
+import br.org.scadabr.vo.usersProfiles.UsersProfileVO;
 
 public class UsersProfileDao extends BaseDao {
 	public Log LOG = LogFactory.getLog(UsersProfileDao.class);
@@ -62,7 +62,7 @@ public class UsersProfileDao extends BaseDao {
 		 * UsersProfileVO profile = queryForObject(PROFILES_SELECT +
 		 * " where lower(u.name)=?", new Object[] { name.toLowerCase() }, new
 		 * UsersProfilesRowMapper(), null);
-		 *
+		 * 
 		 * populateUserProfilePermissions(profile); return profile;
 		 */
 		ListIterator<UsersProfileVO> iterator = currentProfileList.listIterator();
@@ -177,11 +177,11 @@ public class UsersProfileDao extends BaseDao {
 		}
 
 		/*
-		 * This actually overwrites the views and WLs in ScadaMY running.
-		 *
+		 * This actually overwrites the views and WLs in ScadaBR running.
+		 * 
 		 * for (WatchList watchlist : profile.retrieveWatchlists()) {
 		 * watchlistDao.saveWatchList(watchlist); }
-		 *
+		 * 
 		 * for (View view : profile.retrieveViews()) { viewDao.saveView(view); }
 		 */
 		ListIterator<UsersProfileVO> iterator = currentProfileList.listIterator();

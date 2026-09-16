@@ -5,19 +5,19 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.config;
+package br.org.scadabr.api.config;
 
 public class SetFlexBuilderConfigResponse  implements java.io.Serializable {
     private int projectId;
 
-    private br.org.scadamy.api.vo.ReplyBase replyBase;
+    private br.org.scadabr.api.vo.ReplyBase replyBase;
 
     public SetFlexBuilderConfigResponse() {
     }
 
     public SetFlexBuilderConfigResponse(
            int projectId,
-           br.org.scadamy.api.vo.ReplyBase replyBase) {
+           br.org.scadabr.api.vo.ReplyBase replyBase) {
            this.projectId = projectId;
            this.replyBase = replyBase;
     }
@@ -25,7 +25,7 @@ public class SetFlexBuilderConfigResponse  implements java.io.Serializable {
 
     /**
      * Gets the projectId value for this SetFlexBuilderConfigResponse.
-     *
+     * 
      * @return projectId
      */
     public int getProjectId() {
@@ -35,7 +35,7 @@ public class SetFlexBuilderConfigResponse  implements java.io.Serializable {
 
     /**
      * Sets the projectId value for this SetFlexBuilderConfigResponse.
-     *
+     * 
      * @param projectId
      */
     public void setProjectId(int projectId) {
@@ -45,20 +45,20 @@ public class SetFlexBuilderConfigResponse  implements java.io.Serializable {
 
     /**
      * Gets the replyBase value for this SetFlexBuilderConfigResponse.
-     *
+     * 
      * @return replyBase
      */
-    public br.org.scadamy.api.vo.ReplyBase getReplyBase() {
+    public br.org.scadabr.api.vo.ReplyBase getReplyBase() {
         return replyBase;
     }
 
 
     /**
      * Sets the replyBase value for this SetFlexBuilderConfigResponse.
-     *
+     * 
      * @param replyBase
      */
-    public void setReplyBase(br.org.scadamy.api.vo.ReplyBase replyBase) {
+    public void setReplyBase(br.org.scadabr.api.vo.ReplyBase replyBase) {
         this.replyBase = replyBase;
     }
 
@@ -73,9 +73,9 @@ public class SetFlexBuilderConfigResponse  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
+        _equals = true && 
             this.projectId == other.getProjectId() &&
-            ((this.replyBase==null && other.getReplyBase()==null) ||
+            ((this.replyBase==null && other.getReplyBase()==null) || 
              (this.replyBase!=null &&
               this.replyBase.equals(other.getReplyBase())));
         __equalsCalc = null;
@@ -102,17 +102,17 @@ public class SetFlexBuilderConfigResponse  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(SetFlexBuilderConfigResponse.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", ">SetFlexBuilderConfigResponse"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", ">SetFlexBuilderConfigResponse"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("projectId");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "projectId"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "projectId"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("replyBase");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadamy.org.br", "replyBase"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "ReplyBase"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://config.api.scadabr.org.br", "replyBase"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "ReplyBase"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }
@@ -128,10 +128,10 @@ public class SetFlexBuilderConfigResponse  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -140,10 +140,10 @@ public class SetFlexBuilderConfigResponse  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

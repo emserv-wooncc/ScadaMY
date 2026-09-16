@@ -5,7 +5,7 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.hda;
+package br.org.scadabr.api.hda;
 
 public class GetDataHistoryOptions  implements java.io.Serializable {
     private int maxReturn;
@@ -29,7 +29,7 @@ public class GetDataHistoryOptions  implements java.io.Serializable {
 
     /**
      * Gets the maxReturn value for this GetDataHistoryOptions.
-     *
+     * 
      * @return maxReturn
      */
     public int getMaxReturn() {
@@ -39,7 +39,7 @@ public class GetDataHistoryOptions  implements java.io.Serializable {
 
     /**
      * Sets the maxReturn value for this GetDataHistoryOptions.
-     *
+     * 
      * @param maxReturn
      */
     public void setMaxReturn(int maxReturn) {
@@ -49,7 +49,7 @@ public class GetDataHistoryOptions  implements java.io.Serializable {
 
     /**
      * Gets the initialDate value for this GetDataHistoryOptions.
-     *
+     * 
      * @return initialDate
      */
     public java.util.Calendar getInitialDate() {
@@ -59,7 +59,7 @@ public class GetDataHistoryOptions  implements java.io.Serializable {
 
     /**
      * Sets the initialDate value for this GetDataHistoryOptions.
-     *
+     * 
      * @param initialDate
      */
     public void setInitialDate(java.util.Calendar initialDate) {
@@ -69,7 +69,7 @@ public class GetDataHistoryOptions  implements java.io.Serializable {
 
     /**
      * Gets the finalDate value for this GetDataHistoryOptions.
-     *
+     * 
      * @return finalDate
      */
     public java.util.Calendar getFinalDate() {
@@ -79,7 +79,7 @@ public class GetDataHistoryOptions  implements java.io.Serializable {
 
     /**
      * Sets the finalDate value for this GetDataHistoryOptions.
-     *
+     * 
      * @param finalDate
      */
     public void setFinalDate(java.util.Calendar finalDate) {
@@ -97,12 +97,12 @@ public class GetDataHistoryOptions  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
+        _equals = true && 
             this.maxReturn == other.getMaxReturn() &&
-            ((this.initialDate==null && other.getInitialDate()==null) ||
+            ((this.initialDate==null && other.getInitialDate()==null) || 
              (this.initialDate!=null &&
               this.initialDate.equals(other.getInitialDate()))) &&
-            ((this.finalDate==null && other.getFinalDate()==null) ||
+            ((this.finalDate==null && other.getFinalDate()==null) || 
              (this.finalDate!=null &&
               this.finalDate.equals(other.getFinalDate())));
         __equalsCalc = null;
@@ -132,22 +132,22 @@ public class GetDataHistoryOptions  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(GetDataHistoryOptions.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://hda.api.scadamy.org.br", "GetDataHistoryOptions"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://hda.api.scadabr.org.br", "GetDataHistoryOptions"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("maxReturn");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://hda.api.scadamy.org.br", "maxReturn"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://hda.api.scadabr.org.br", "maxReturn"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("initialDate");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://hda.api.scadamy.org.br", "initialDate"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://hda.api.scadabr.org.br", "initialDate"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("finalDate");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://hda.api.scadamy.org.br", "finalDate"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://hda.api.scadabr.org.br", "finalDate"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
@@ -164,10 +164,10 @@ public class GetDataHistoryOptions  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -176,10 +176,10 @@ public class GetDataHistoryOptions  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

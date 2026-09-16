@@ -1,6 +1,6 @@
 /*
-    ScadaMY - http://scadamy.com.br
-
+    ScadaBR - http://scadabr.com.br
+    
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -29,11 +29,11 @@ import gnu.io.SerialPort;
 
 /**
  *
- *
+ * 
  * This class is not finished
- *
+ * 
  * @author Terry Packer
- *
+ * 
  */
 
 public class SerialPortWrapperImpl implements SerialPortWrapper {

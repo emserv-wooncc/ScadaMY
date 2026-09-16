@@ -1,4 +1,4 @@
-package br.org.scadamy.rt.dataSource.iec101;
+package br.org.scadabr.rt.dataSource.iec101;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -7,9 +7,9 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import br.org.scadamy.protocol.iec101.session.database.DataElement;
-import br.org.scadamy.vo.dataSource.iec101.IEC101DataSourceVO;
-import br.org.scadamy.vo.dataSource.iec101.IEC101PointLocatorVO;
+import br.org.scadabr.protocol.iec101.session.database.DataElement;
+import br.org.scadabr.vo.dataSource.iec101.IEC101DataSourceVO;
+import br.org.scadabr.vo.dataSource.iec101.IEC101PointLocatorVO;
 
 import com.serotonin.mango.rt.dataImage.DataPointRT;
 import com.serotonin.mango.rt.dataImage.PointValueTime;

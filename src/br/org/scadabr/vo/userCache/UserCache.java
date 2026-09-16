@@ -1,4 +1,4 @@
-package br.org.scadamy.vo.userCache;
+package br.org.scadabr.vo.userCache;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -12,9 +12,9 @@ import com.serotonin.mango.vo.User;
 import com.serotonin.util.ILifecycle;
 import com.serotonin.util.LifecycleException;
 
-import br.org.scadamy.api.exception.DAOException;
-import br.org.scadamy.db.dao.UsersProfileDao;
-import br.org.scadamy.vo.usersProfiles.UsersProfileVO;
+import br.org.scadabr.api.exception.DAOException;
+import br.org.scadabr.db.dao.UsersProfileDao;
+import br.org.scadabr.vo.usersProfiles.UsersProfileVO;
 
 public class UserCache implements ILifecycle {
 

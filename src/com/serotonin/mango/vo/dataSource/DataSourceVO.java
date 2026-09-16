@@ -2,7 +2,7 @@
     Mango - Open Source M2M - http://mango.serotoninsoftware.com
     Copyright (C) 2006-2011 Serotonin Software Technologies Inc.
     @author Matthew Lohbihler
-
+    
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -28,17 +28,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-import br.org.scadamy.vo.dataSource.alpha2.Alpha2DataSourceVO;
-import br.org.scadamy.vo.dataSource.asciiFile.ASCIIFileDataSourceVO;
-import br.org.scadamy.vo.dataSource.asciiSerial.ASCIISerialDataSourceVO;
-import br.org.scadamy.vo.dataSource.dnp3.Dnp3IpDataSourceVO;
-import br.org.scadamy.vo.dataSource.dnp3.Dnp3SerialDataSourceVO;
-import br.org.scadamy.vo.dataSource.drStorageHt5b.DrStorageHt5bDataSourceVO;
-import br.org.scadamy.vo.dataSource.iec101.IEC101EthernetDataSourceVO;
-import br.org.scadamy.vo.dataSource.iec101.IEC101SerialDataSourceVO;
-import br.org.scadamy.vo.dataSource.nodaves7.NodaveS7DataSourceVO;
-import br.org.scadamy.vo.dataSource.opc.OPCDataSourceVO;
-import cc.radiuino.scadamy.vo.datasource.radiuino.RadiuinoDataSourceVO;
+import br.org.scadabr.vo.dataSource.alpha2.Alpha2DataSourceVO;
+import br.org.scadabr.vo.dataSource.asciiFile.ASCIIFileDataSourceVO;
+import br.org.scadabr.vo.dataSource.asciiSerial.ASCIISerialDataSourceVO;
+import br.org.scadabr.vo.dataSource.dnp3.Dnp3IpDataSourceVO;
+import br.org.scadabr.vo.dataSource.dnp3.Dnp3SerialDataSourceVO;
+import br.org.scadabr.vo.dataSource.drStorageHt5b.DrStorageHt5bDataSourceVO;
+import br.org.scadabr.vo.dataSource.iec101.IEC101EthernetDataSourceVO;
+import br.org.scadabr.vo.dataSource.iec101.IEC101SerialDataSourceVO;
+import br.org.scadabr.vo.dataSource.nodaves7.NodaveS7DataSourceVO;
+import br.org.scadabr.vo.dataSource.opc.OPCDataSourceVO;
+import cc.radiuino.scadabr.vo.datasource.radiuino.RadiuinoDataSourceVO;
 
 import com.serotonin.ShouldNeverHappenException;
 import com.serotonin.json.JsonException;
@@ -196,7 +196,7 @@ abstract public class DataSourceVO<T extends DataSourceVO<?>> implements
 		},
 		/*
 		 * FHZ_4_J(40, "dsEdit.fhz4j", true) {
-		 *
+		 * 
 		 * @Override public DataSourceVO<?> createDataSourceVO() { return new
 		 * Fhz4JDataSourceVO(); } },
 		 */PACHUBE(23, "dsEdit.pachube", true) {
@@ -225,7 +225,7 @@ abstract public class DataSourceVO<T extends DataSourceVO<?>> implements
 		},
 		/*
 		 * SPINWAVE(4, "dsEdit.spinwave", true) {
-		 *
+		 * 
 		 * @Override public DataSourceVO<?> createDataSourceVO() { return new
 		 * SpinwaveDataSourceVO(); } },
 		 */SQL(6, "dsEdit.sql", true) {

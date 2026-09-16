@@ -1,4 +1,4 @@
-Hello ScadaMY community!
+Hello ScadaBR community!
 
 These are the documentation pages that need to be written:
 
@@ -13,4 +13,4 @@ viconicsPP.htm
 
 Several other pages still need to be translated.
 Please, if you are a multilingual speaker,
-help with the translation of these files.
+help with the translation of these files. 

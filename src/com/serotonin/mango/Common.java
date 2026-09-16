@@ -208,16 +208,23 @@ public class Common {
 	//
 	// Session user
 	public static User getUser() {
+		User user = null;
 		WebContext webContext = WebContextFactory.get();
-		if (webContext == null) {
-			// If there is no web context, check if there is a background
-			// context
-			BackgroundContext backgroundContext = BackgroundContext.get();
-			if (backgroundContext == null)
-				return null;
-			return backgroundContext.getUser();
+		if (webContext != null) {
+			try {
+				user = getUser(webContext.getHttpServletRequest());
+			} catch (Exception e) {
+				// Ignore if the request context is dead
+			}
 		}
-		return getUser(webContext.getHttpServletRequest());
+		if (user == null) {
+			// If there is no web context or it returned a null user, check if there is a background context
+			BackgroundContext backgroundContext = BackgroundContext.get();
+			if (backgroundContext != null) {
+				user = backgroundContext.getUser();
+			}
+		}
+		return user;
 	}
 
 	public static User getUser(HttpServletRequest request) {

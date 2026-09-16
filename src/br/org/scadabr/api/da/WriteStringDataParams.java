@@ -5,19 +5,19 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.da;
+package br.org.scadabr.api.da;
 
 public class WriteStringDataParams  implements java.io.Serializable {
-    private br.org.scadamy.api.vo.ItemStringValue[] itemsList;
+    private br.org.scadabr.api.vo.ItemStringValue[] itemsList;
 
-    private br.org.scadamy.api.da.WriteDataOptions options;
+    private br.org.scadabr.api.da.WriteDataOptions options;
 
     public WriteStringDataParams() {
     }
 
     public WriteStringDataParams(
-           br.org.scadamy.api.vo.ItemStringValue[] itemsList,
-           br.org.scadamy.api.da.WriteDataOptions options) {
+           br.org.scadabr.api.vo.ItemStringValue[] itemsList,
+           br.org.scadabr.api.da.WriteDataOptions options) {
            this.itemsList = itemsList;
            this.options = options;
     }
@@ -25,48 +25,48 @@ public class WriteStringDataParams  implements java.io.Serializable {
 
     /**
      * Gets the itemsList value for this WriteStringDataParams.
-     *
+     * 
      * @return itemsList
      */
-    public br.org.scadamy.api.vo.ItemStringValue[] getItemsList() {
+    public br.org.scadabr.api.vo.ItemStringValue[] getItemsList() {
         return itemsList;
     }
 
 
     /**
      * Sets the itemsList value for this WriteStringDataParams.
-     *
+     * 
      * @param itemsList
      */
-    public void setItemsList(br.org.scadamy.api.vo.ItemStringValue[] itemsList) {
+    public void setItemsList(br.org.scadabr.api.vo.ItemStringValue[] itemsList) {
         this.itemsList = itemsList;
     }
 
-    public br.org.scadamy.api.vo.ItemStringValue getItemsList(int i) {
+    public br.org.scadabr.api.vo.ItemStringValue getItemsList(int i) {
         return this.itemsList[i];
     }
 
-    public void setItemsList(int i, br.org.scadamy.api.vo.ItemStringValue _value) {
+    public void setItemsList(int i, br.org.scadabr.api.vo.ItemStringValue _value) {
         this.itemsList[i] = _value;
     }
 
 
     /**
      * Gets the options value for this WriteStringDataParams.
-     *
+     * 
      * @return options
      */
-    public br.org.scadamy.api.da.WriteDataOptions getOptions() {
+    public br.org.scadabr.api.da.WriteDataOptions getOptions() {
         return options;
     }
 
 
     /**
      * Sets the options value for this WriteStringDataParams.
-     *
+     * 
      * @param options
      */
-    public void setOptions(br.org.scadamy.api.da.WriteDataOptions options) {
+    public void setOptions(br.org.scadabr.api.da.WriteDataOptions options) {
         this.options = options;
     }
 
@@ -81,11 +81,11 @@ public class WriteStringDataParams  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
-            ((this.itemsList==null && other.getItemsList()==null) ||
+        _equals = true && 
+            ((this.itemsList==null && other.getItemsList()==null) || 
              (this.itemsList!=null &&
               java.util.Arrays.equals(this.itemsList, other.getItemsList()))) &&
-            ((this.options==null && other.getOptions()==null) ||
+            ((this.options==null && other.getOptions()==null) || 
              (this.options!=null &&
               this.options.equals(other.getOptions())));
         __equalsCalc = null;
@@ -122,19 +122,19 @@ public class WriteStringDataParams  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(WriteStringDataParams.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", ">WriteStringDataParams"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", ">WriteStringDataParams"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("itemsList");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "itemsList"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadamy.org.br", "ItemStringValue"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "itemsList"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://vo.api.scadabr.org.br", "ItemStringValue"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         elemField.setMaxOccursUnbounded(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("options");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "options"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://da.api.scadamy.org.br", "WriteDataOptions"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "options"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://da.api.scadabr.org.br", "WriteDataOptions"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
     }
@@ -150,10 +150,10 @@ public class WriteStringDataParams  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -162,10 +162,10 @@ public class WriteStringDataParams  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

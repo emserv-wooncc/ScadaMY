@@ -2,7 +2,7 @@
     Mango - Open Source M2M - http://mango.serotoninsoftware.com
     Copyright (C) 2006-2011 Serotonin Software Technologies Inc.
     @author Matthew Lohbihler
-
+    
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -41,7 +41,7 @@ import com.serotonin.mango.web.mvc.form.ViewEditForm;
 import com.serotonin.util.ValidationUtils;
 import com.serotonin.web.dwr.DwrResponseI18n;
 
-import br.org.scadamy.workarounds.ViewManager;
+import br.org.scadabr.workarounds.ViewManager;
 
 public class ViewEditController extends SimpleFormRedirectController {
 	private static final String SUBMIT_UPLOAD = "upload";
@@ -182,7 +182,7 @@ public class ViewEditController extends SimpleFormRedirectController {
 			view.setUserId(Common.getUser(request).getId());
 			viewDao.saveView(view);
 
-			// Update View in View Manager (ScadaMY workarounds)
+			// Update View in View Manager (ScadaBR workarounds)
 			ViewManager.updateView(view);
 
 			return getSuccessRedirectView("viewId=" + form.getView().getId());

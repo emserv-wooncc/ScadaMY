@@ -1,6 +1,6 @@
-package br.org.scadamy.rt.dataSource.drStorageHt5b;
+package br.org.scadabr.rt.dataSource.drStorageHt5b;
 
-import br.org.scadamy.vo.dataSource.drStorageHt5b.DrStorageHt5bPointLocatorVO;
+import br.org.scadabr.vo.dataSource.drStorageHt5b.DrStorageHt5bPointLocatorVO;
 
 import com.serotonin.mango.rt.dataSource.PointLocatorRT;
 

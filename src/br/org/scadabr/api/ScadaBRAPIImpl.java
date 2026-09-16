@@ -5,77 +5,77 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api;
+package br.org.scadabr.api;
 
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import br.org.scadamy.api.ae.AckEventsOptions;
-import br.org.scadamy.api.ae.AckEventsParams;
-import br.org.scadamy.api.ae.AckEventsResponse;
-import br.org.scadamy.api.ae.ActiveEventsOptions;
-import br.org.scadamy.api.ae.AnnotateEventParams;
-import br.org.scadamy.api.ae.AnnotateEventResponse;
-import br.org.scadamy.api.ae.BrowseEventsOptions;
-import br.org.scadamy.api.ae.BrowseEventsParams;
-import br.org.scadamy.api.ae.BrowseEventsResponse;
-import br.org.scadamy.api.ae.EventsHistoryOptions;
-import br.org.scadamy.api.ae.GetActiveEventsParams;
-import br.org.scadamy.api.ae.GetActiveEventsResponse;
-import br.org.scadamy.api.ae.GetEventsHistoryParams;
-import br.org.scadamy.api.ae.GetEventsHistoryResponse;
-import br.org.scadamy.api.config.BrowseDataPointsResponse;
-import br.org.scadamy.api.config.BrowseDataSourcesResponse;
-import br.org.scadamy.api.config.BrowseFlexProjectsResponse;
-import br.org.scadamy.api.config.ConfigureDataPointResponse;
-import br.org.scadamy.api.config.ConfigureDataSourceResponse;
-import br.org.scadamy.api.config.GetFlexBuilderConfigResponse;
-import br.org.scadamy.api.config.RemoveDataPointResponse;
-import br.org.scadamy.api.config.RemoveDataSourceResponse;
-import br.org.scadamy.api.config.RemoveFlexProjectResponse;
-import br.org.scadamy.api.config.SetFlexBuilderConfigParams;
-import br.org.scadamy.api.config.SetFlexBuilderConfigResponse;
-import br.org.scadamy.api.constants.AlarmLevel;
-import br.org.scadamy.api.constants.ErrorCode;
-import br.org.scadamy.api.constants.EventType;
-import br.org.scadamy.api.constants.ServerStateCode;
-import br.org.scadamy.api.da.BrowseTagsOptions;
-import br.org.scadamy.api.da.BrowseTagsParams;
-import br.org.scadamy.api.da.BrowseTagsResponse;
-import br.org.scadamy.api.da.GetStatusResponse;
-import br.org.scadamy.api.da.ReadDataParams;
-import br.org.scadamy.api.da.ReadDataResponse;
-import br.org.scadamy.api.da.WriteDataOptions;
-import br.org.scadamy.api.da.WriteDataParams;
-import br.org.scadamy.api.da.WriteDataResponse;
-import br.org.scadamy.api.da.WriteStringDataParams;
-import br.org.scadamy.api.da.WriteStringDataResponse;
-import br.org.scadamy.api.dao.MangoDaoImpl;
-import br.org.scadamy.api.dao.ScadaBRAPIDao;
-import br.org.scadamy.api.exception.ScadaBRAPIException;
-import br.org.scadamy.api.hda.GetDataHistoryOptions;
-import br.org.scadamy.api.hda.GetDataHistoryParams;
-import br.org.scadamy.api.hda.GetDataHistoryResponse;
-import br.org.scadamy.api.utils.APIConstants;
-import br.org.scadamy.api.utils.APIUtils;
-import br.org.scadamy.api.vo.APIError;
-import br.org.scadamy.api.vo.EventDefinition;
-import br.org.scadamy.api.vo.EventMessage;
-import br.org.scadamy.api.vo.EventNotification;
-import br.org.scadamy.api.vo.FlexProject;
-import br.org.scadamy.api.vo.ItemInfo;
-import br.org.scadamy.api.vo.ItemStringValue;
-import br.org.scadamy.api.vo.ItemValue;
-import br.org.scadamy.api.vo.ReplyBase;
-import br.org.scadamy.api.vo.ServerStatus;
-import br.org.scadamy.db.dao.FlexProjectDao;
-import br.org.scadamy.rt.dataSource.ServerStateChecker;
+import br.org.scadabr.api.ae.AckEventsOptions;
+import br.org.scadabr.api.ae.AckEventsParams;
+import br.org.scadabr.api.ae.AckEventsResponse;
+import br.org.scadabr.api.ae.ActiveEventsOptions;
+import br.org.scadabr.api.ae.AnnotateEventParams;
+import br.org.scadabr.api.ae.AnnotateEventResponse;
+import br.org.scadabr.api.ae.BrowseEventsOptions;
+import br.org.scadabr.api.ae.BrowseEventsParams;
+import br.org.scadabr.api.ae.BrowseEventsResponse;
+import br.org.scadabr.api.ae.EventsHistoryOptions;
+import br.org.scadabr.api.ae.GetActiveEventsParams;
+import br.org.scadabr.api.ae.GetActiveEventsResponse;
+import br.org.scadabr.api.ae.GetEventsHistoryParams;
+import br.org.scadabr.api.ae.GetEventsHistoryResponse;
+import br.org.scadabr.api.config.BrowseDataPointsResponse;
+import br.org.scadabr.api.config.BrowseDataSourcesResponse;
+import br.org.scadabr.api.config.BrowseFlexProjectsResponse;
+import br.org.scadabr.api.config.ConfigureDataPointResponse;
+import br.org.scadabr.api.config.ConfigureDataSourceResponse;
+import br.org.scadabr.api.config.GetFlexBuilderConfigResponse;
+import br.org.scadabr.api.config.RemoveDataPointResponse;
+import br.org.scadabr.api.config.RemoveDataSourceResponse;
+import br.org.scadabr.api.config.RemoveFlexProjectResponse;
+import br.org.scadabr.api.config.SetFlexBuilderConfigParams;
+import br.org.scadabr.api.config.SetFlexBuilderConfigResponse;
+import br.org.scadabr.api.constants.AlarmLevel;
+import br.org.scadabr.api.constants.ErrorCode;
+import br.org.scadabr.api.constants.EventType;
+import br.org.scadabr.api.constants.ServerStateCode;
+import br.org.scadabr.api.da.BrowseTagsOptions;
+import br.org.scadabr.api.da.BrowseTagsParams;
+import br.org.scadabr.api.da.BrowseTagsResponse;
+import br.org.scadabr.api.da.GetStatusResponse;
+import br.org.scadabr.api.da.ReadDataParams;
+import br.org.scadabr.api.da.ReadDataResponse;
+import br.org.scadabr.api.da.WriteDataOptions;
+import br.org.scadabr.api.da.WriteDataParams;
+import br.org.scadabr.api.da.WriteDataResponse;
+import br.org.scadabr.api.da.WriteStringDataParams;
+import br.org.scadabr.api.da.WriteStringDataResponse;
+import br.org.scadabr.api.dao.MangoDaoImpl;
+import br.org.scadabr.api.dao.ScadaBRAPIDao;
+import br.org.scadabr.api.exception.ScadaBRAPIException;
+import br.org.scadabr.api.hda.GetDataHistoryOptions;
+import br.org.scadabr.api.hda.GetDataHistoryParams;
+import br.org.scadabr.api.hda.GetDataHistoryResponse;
+import br.org.scadabr.api.utils.APIConstants;
+import br.org.scadabr.api.utils.APIUtils;
+import br.org.scadabr.api.vo.APIError;
+import br.org.scadabr.api.vo.EventDefinition;
+import br.org.scadabr.api.vo.EventMessage;
+import br.org.scadabr.api.vo.EventNotification;
+import br.org.scadabr.api.vo.FlexProject;
+import br.org.scadabr.api.vo.ItemInfo;
+import br.org.scadabr.api.vo.ItemStringValue;
+import br.org.scadabr.api.vo.ItemValue;
+import br.org.scadabr.api.vo.ReplyBase;
+import br.org.scadabr.api.vo.ServerStatus;
+import br.org.scadabr.db.dao.FlexProjectDao;
+import br.org.scadabr.rt.dataSource.ServerStateChecker;
 
 import com.serotonin.mango.Common;
 
-public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
+public class ScadaBRAPIImpl implements br.org.scadabr.api.ScadaBRAPI,
 		APIConstants {
 	private ScadaBRAPIDao dataDao = new MangoDaoImpl(
 			AuthenticationHandler.getUsername());
@@ -84,9 +84,9 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 	 * This method attempts to return a {@link GetStatusResponse} object
 	 * containing basic information about the host server, such as software
 	 * version, start up time, etc.
-	 *
+	 * 
 	 * @since 0.2
-	 *
+	 * 
 	 * @see GetStatusResponse
 	 * @see ReplyBase
 	 * @see ServerStatus
@@ -94,7 +94,7 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 	 * @return {@link GetStatusResponse}({@link ReplyBase}, {@link ServerStatus}
 	 *         )
 	 */
-	public br.org.scadamy.api.da.GetStatusResponse getStatus()
+	public br.org.scadabr.api.da.GetStatusResponse getStatus()
 			throws java.rmi.RemoteException {
 		ReplyBase rb = new ReplyBase();
 		rb.setRcvTime(Calendar.getInstance());
@@ -123,11 +123,11 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 	 * read the value of one or more determinated TAGs just set the TAG's name
 	 * on "itemsPath". As a return option, the maximum's return value
 	 * "maxReturn" can be settable.
-	 *
+	 * 
 	 * @since 0.2
 	 * @param {@link ReadDataParams}(String[] itemPathList,
 	 *        {@link RequestOptions} options)
-	 *
+	 * 
 	 * @see ReadDataResponse
 	 * @see ReplyBase
 	 * @see ItemValue
@@ -187,13 +187,13 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 	 * write, just set the name and value of each ItemValue that will be wrote
 	 * on each TAG. As a return option, the values wrote on each TAG can be
 	 * settable to return or not "returnItemValues".
-	 *
+	 * 
 	 * @since 0.2
-	 *
+	 * 
 	 * @param {@link WriteDataParams}(ItemValue[] itemsList,
 	 *        {@link WriteDataOptions} options)
-	 *
-	 *
+	 * 
+	 * 
 	 * @see WriteDataResponse
 	 * @see APIError
 	 * @see ItemValue
@@ -302,11 +302,11 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 	 * in itemList. To return defined TAGs just set the itemList with the
 	 * desired path. Oherwise, all TAGs will be returned. As a return option,
 	 * the return's maximum value is settable.
-	 *
+	 * 
 	 * @since 0.2
 	 * @param {@link BrowseTagsParams}(String itemsPath,
 	 *        {@link BrowseTagsOptions} options)
-	 *
+	 * 
 	 * @see BrowseTagsResponse
 	 * @see APIError
 	 * @see ReplyBase
@@ -364,12 +364,12 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 	 * This method attempts to collect data from a defined TAG. To collect data,
 	 * is needed determinate a time interval, setting a initial date and a final
 	 * date. A maximum value can be defined as a option.
-	 *
+	 * 
 	 * @since 0.2
-	 *
+	 * 
 	 * @param {@link GetDataHistoryParams}(String itemName,
 	 *        {@link GetDataHistoryOptions} options)
-	 *
+	 * 
 	 * @see GetDataHistoryResponse
 	 * @see APIError
 	 * @see ItemValue
@@ -435,12 +435,12 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 	 * desired alarm level, just set alarm level "alarmLevel" (the above levels
 	 * are returned too), otherwise, all alarms will be returned. Another stuff
 	 * that can be settable is the maximum's value return.
-	 *
+	 * 
 	 * @since 0.2
-	 *
+	 * 
 	 * @param {@link GetActiveEventsParams}(String eventsPath,
 	 *        {@link ActiveEventsOptions} options)
-	 *
+	 * 
 	 * @see GetActiveEventsResponse
 	 * @see APIError
 	 * @see EventNotification
@@ -505,13 +505,13 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 	 * recognize a specified alarm is passed a event ID "eventsIds" that wants
 	 * to be recognized. As another option, can be defined if the recognize's
 	 * event details will be returned, "returnEventDetails".
-	 *
+	 * 
 	 * @since 0.2
-	 *
+	 * 
 	 * @param {@link AckEventsParams}(Integer[] eventsId,
 	 *        {@link AckEventsOptions} options)
-	 *
-	 *
+	 * 
+	 * 
 	 * @see AckEventsResponse
 	 * @see APIError
 	 * @see EventNotification
@@ -572,13 +572,13 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 	 * level, just set alarm level "alarmLevel" (the above levels are returned
 	 * too), otherwise, all alarms will be returned. Another stuff that can be
 	 * settable is the maximum's value return.
-	 *
+	 * 
 	 * @since 0.2
-	 *
+	 * 
 	 * @param {@link GetEventsHistoryParams}(String eventsPath,
 	 *        {@link EventsHistoryOptions} options)
-	 *
-	 *
+	 * 
+	 * 
 	 * @see GetEventsHistoryResponse
 	 * @see APIError
 	 * @see EventNotification
@@ -638,13 +638,13 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 	 * determinate type just set the event type "eventType" to the wished type.
 	 * If not, will be returned all. As another option, to return specified
 	 * options of each event just set "returnEventsConfig".
-	 *
+	 * 
 	 * @since 0.2
-	 *
+	 * 
 	 * @param {@link BrowseEventsParams}(String eventsPath,
 	 *        {@link BrowseEventsOptions} options)
-	 *
-	 *
+	 * 
+	 * 
 	 * @see BrowseEventsResponse
 	 * @see APIError
 	 * @see EventDefinition
@@ -694,12 +694,12 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 	 * This method attempts to write a message on a defined event. To annote a
 	 * message on a event just pass the event's ID and a message to be attached
 	 * on it.
-	 *
+	 * 
 	 * @since 0.2
-	 *
+	 * 
 	 * @param {@link AnnotateEventParams}(Integer eventId, {@link EventMessage}
 	 *        message)
-	 *
+	 * 
 	 * @see AnnotateEventResponse
 	 * @see APIError
 	 * @see EventMessage
@@ -707,8 +707,8 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 	 * @return {@link AnnotateEventResponse}({@link ReplyBase},
 	 *         {@link EventMessage} , {@link APIError} )
 	 */
-	public br.org.scadamy.api.ae.AnnotateEventResponse annotateEvent(
-			br.org.scadamy.api.ae.AnnotateEventParams parameters)
+	public br.org.scadabr.api.ae.AnnotateEventResponse annotateEvent(
+			br.org.scadabr.api.ae.AnnotateEventParams parameters)
 			throws java.rmi.RemoteException {
 		ReplyBase rb = new ReplyBase();
 		rb.setRcvTime(Calendar.getInstance());
@@ -743,8 +743,8 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 		return response;
 	}
 
-	public br.org.scadamy.api.config.BrowseDataSourcesResponse browseDataSources(
-			br.org.scadamy.api.config.BrowseDataSourcesParams parameters)
+	public br.org.scadabr.api.config.BrowseDataSourcesResponse browseDataSources(
+			br.org.scadabr.api.config.BrowseDataSourcesParams parameters)
 			throws java.rmi.RemoteException {
 		ReplyBase rb = new ReplyBase();
 		rb.setRcvTime(Calendar.getInstance());
@@ -779,8 +779,8 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 		return response;
 	}
 
-	public br.org.scadamy.api.config.ConfigureDataSourceResponse configureDataSource(
-			br.org.scadamy.api.config.ConfigureDataSourceParams parameters)
+	public br.org.scadabr.api.config.ConfigureDataSourceResponse configureDataSource(
+			br.org.scadabr.api.config.ConfigureDataSourceParams parameters)
 			throws java.rmi.RemoteException {
 		ReplyBase rb = new ReplyBase();
 		rb.setRcvTime(Calendar.getInstance());
@@ -813,8 +813,8 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 		return response;
 	}
 
-	public br.org.scadamy.api.config.RemoveDataSourceResponse removeDataSource(
-			br.org.scadamy.api.config.RemoveDataSourceParams parameters)
+	public br.org.scadabr.api.config.RemoveDataSourceResponse removeDataSource(
+			br.org.scadabr.api.config.RemoveDataSourceParams parameters)
 			throws java.rmi.RemoteException {
 		ReplyBase rb = new ReplyBase();
 		rb.setRcvTime(Calendar.getInstance());
@@ -844,8 +844,8 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 		return response;
 	}
 
-	public br.org.scadamy.api.config.BrowseDataPointsResponse browseDataPoints(
-			br.org.scadamy.api.config.BrowseDataPointsParams parameters)
+	public br.org.scadabr.api.config.BrowseDataPointsResponse browseDataPoints(
+			br.org.scadabr.api.config.BrowseDataPointsParams parameters)
 			throws java.rmi.RemoteException {
 		ReplyBase rb = new ReplyBase();
 		rb.setRcvTime(Calendar.getInstance());
@@ -879,8 +879,8 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 		return response;
 	}
 
-	public br.org.scadamy.api.config.ConfigureDataPointResponse configureDataPoint(
-			br.org.scadamy.api.config.ConfigureDataPointParams parameters)
+	public br.org.scadabr.api.config.ConfigureDataPointResponse configureDataPoint(
+			br.org.scadabr.api.config.ConfigureDataPointParams parameters)
 			throws java.rmi.RemoteException {
 		ReplyBase rb = new ReplyBase();
 		rb.setRcvTime(Calendar.getInstance());
@@ -914,8 +914,8 @@ public class ScadaBRAPIImpl implements br.org.scadamy.api.ScadaBRAPI,
 		return response;
 	}
 
-	public br.org.scadamy.api.config.RemoveDataPointResponse removeDataPoint(
-			br.org.scadamy.api.config.RemoveDataPointParams parameters)
+	public br.org.scadabr.api.config.RemoveDataPointResponse removeDataPoint(
+			br.org.scadabr.api.config.RemoveDataPointParams parameters)
 			throws java.rmi.RemoteException {
 		ReplyBase rb = new ReplyBase();
 		rb.setRcvTime(Calendar.getInstance());

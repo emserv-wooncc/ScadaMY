@@ -1,4 +1,4 @@
-package br.org.scadamy.vo.dataSource.opc;
+package br.org.scadabr.vo.dataSource.opc;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -6,7 +6,7 @@ import java.io.ObjectOutputStream;
 import java.util.List;
 import java.util.Map;
 
-import br.org.scadamy.rt.dataSource.opc.OPCDataSource;
+import br.org.scadabr.rt.dataSource.opc.OPCDataSource;
 
 import com.serotonin.json.JsonException;
 import com.serotonin.json.JsonObject;

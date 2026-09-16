@@ -1,4 +1,4 @@
-package br.org.scadamy.vo.exporter.util;
+package br.org.scadabr.vo.exporter.util;
 
 import java.util.Map;
 import java.util.Map.Entry;

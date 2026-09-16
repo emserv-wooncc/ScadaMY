@@ -5,10 +5,10 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.ae;
+package br.org.scadabr.api.ae;
 
 public class BrowseEventsOptions  implements java.io.Serializable {
-    private br.org.scadamy.api.constants.EventType eventType;
+    private br.org.scadabr.api.constants.EventType eventType;
 
     private boolean returnEventsConfig;
 
@@ -16,7 +16,7 @@ public class BrowseEventsOptions  implements java.io.Serializable {
     }
 
     public BrowseEventsOptions(
-           br.org.scadamy.api.constants.EventType eventType,
+           br.org.scadabr.api.constants.EventType eventType,
            boolean returnEventsConfig) {
            this.eventType = eventType;
            this.returnEventsConfig = returnEventsConfig;
@@ -25,27 +25,27 @@ public class BrowseEventsOptions  implements java.io.Serializable {
 
     /**
      * Gets the eventType value for this BrowseEventsOptions.
-     *
+     * 
      * @return eventType
      */
-    public br.org.scadamy.api.constants.EventType getEventType() {
+    public br.org.scadabr.api.constants.EventType getEventType() {
         return eventType;
     }
 
 
     /**
      * Sets the eventType value for this BrowseEventsOptions.
-     *
+     * 
      * @param eventType
      */
-    public void setEventType(br.org.scadamy.api.constants.EventType eventType) {
+    public void setEventType(br.org.scadabr.api.constants.EventType eventType) {
         this.eventType = eventType;
     }
 
 
     /**
      * Gets the returnEventsConfig value for this BrowseEventsOptions.
-     *
+     * 
      * @return returnEventsConfig
      */
     public boolean isReturnEventsConfig() {
@@ -55,7 +55,7 @@ public class BrowseEventsOptions  implements java.io.Serializable {
 
     /**
      * Sets the returnEventsConfig value for this BrowseEventsOptions.
-     *
+     * 
      * @param returnEventsConfig
      */
     public void setReturnEventsConfig(boolean returnEventsConfig) {
@@ -73,8 +73,8 @@ public class BrowseEventsOptions  implements java.io.Serializable {
         }
         __equalsCalc = obj;
         boolean _equals;
-        _equals = true &&
-            ((this.eventType==null && other.getEventType()==null) ||
+        _equals = true && 
+            ((this.eventType==null && other.getEventType()==null) || 
              (this.eventType!=null &&
               this.eventType.equals(other.getEventType()))) &&
             this.returnEventsConfig == other.isReturnEventsConfig();
@@ -102,16 +102,16 @@ public class BrowseEventsOptions  implements java.io.Serializable {
         new org.apache.axis.description.TypeDesc(BrowseEventsOptions.class, true);
 
     static {
-        typeDesc.setXmlType(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "BrowseEventsOptions"));
+        typeDesc.setXmlType(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "BrowseEventsOptions"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("eventType");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "eventType"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadamy.org.br", "EventType"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "eventType"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://constants.api.scadabr.org.br", "EventType"));
         elemField.setNillable(true);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("returnEventsConfig");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadamy.org.br", "returnEventsConfig"));
+        elemField.setXmlName(new javax.xml.namespace.QName("http://ae.api.scadabr.org.br", "returnEventsConfig"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
@@ -128,10 +128,10 @@ public class BrowseEventsOptions  implements java.io.Serializable {
      * Get Custom Serializer
      */
     public static org.apache.axis.encoding.Serializer getSerializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanSerializer(
             _javaType, _xmlType, typeDesc);
     }
@@ -140,10 +140,10 @@ public class BrowseEventsOptions  implements java.io.Serializable {
      * Get Custom Deserializer
      */
     public static org.apache.axis.encoding.Deserializer getDeserializer(
-           java.lang.String mechType,
-           java.lang.Class _javaType,
+           java.lang.String mechType, 
+           java.lang.Class _javaType,  
            javax.xml.namespace.QName _xmlType) {
-        return
+        return 
           new  org.apache.axis.encoding.ser.BeanDeserializer(
             _javaType, _xmlType, typeDesc);
     }

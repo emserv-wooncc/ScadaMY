@@ -5,7 +5,7 @@
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
  */
 
-package br.org.scadamy.api.constants;
+package br.org.scadabr.api.constants;
 
 public class ModbusDataType implements java.io.Serializable {
 	private java.lang.String _value_;
@@ -124,7 +124,7 @@ public class ModbusDataType implements java.io.Serializable {
 
 	static {
 		typeDesc.setXmlType(new javax.xml.namespace.QName(
-				"http://constants.api.scadamy.org.br", "ModbusDataType"));
+				"http://constants.api.scadabr.org.br", "ModbusDataType"));
 	}
 
 	/**

@@ -1,9 +1,9 @@
 package com.serotonin.mango.vo.bean;
 
 import java.sql.ResultSet;
+import com.serotonin.db.spring.GenericRowMapper;
 import java.sql.SQLException;
 
-import com.serotonin.db.spring.GenericRowMapper;
 
 public class LongPair {
     public static final GenericRowMapper<LongPair> ROW_MAPPER = new GenericRowMapper<LongPair>() {

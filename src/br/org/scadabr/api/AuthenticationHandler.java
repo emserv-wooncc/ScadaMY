@@ -1,4 +1,4 @@
-package br.org.scadamy.api;
+package br.org.scadabr.api;
 
 import java.util.Iterator;
 
@@ -28,7 +28,7 @@ public class AuthenticationHandler extends BasicHandler {
 	}
 
 	/**
-	 *
+	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
